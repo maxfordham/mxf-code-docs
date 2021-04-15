@@ -68,10 +68,9 @@ to install conda packages into windows you need to expose the conda channel (aga
 Z:\conda\conda-bld> python -m http.server
 
 :: open a new cmd
-```
 
 ```cmd
-mamba install xlsxtemplater -c http://localhost:8000/
+mamba install mypackage -c http://localhost:8000/
 ```
 
 ## pip
