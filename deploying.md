@@ -14,48 +14,61 @@ The jupyterhub is configured to use the repo2docker tool:
 https://github.com/gunstonej/jupyterhub-maxfordham/blob/master/docs/environments.md
 
 This creates a docker image with the required environment for the contents of the repo to run.
-Generally, it downloads packages from conda-forge to do this, but for internally developed private
-conda pacakges we need to expose the packages to the server and repo2docker tool as it is building.
+Generally, it downloads packages from conda-forge, but for internally developed private conda
+packages we need to expose the packages to the server and repo2docker tool as it is building.
 
-It's not possible to mount barbados onto stbarts and reference the channel in the conventional sense because it doesn't get exposed in the docker instances created when running repo2docker. Instead the process is to start a local web server which the docker instances can access. 
+It's not possible to mount barbados onto stbarts and reference the channel in the conventional sense because it doesn't get exposed in the docker instances created when running repo2docker. Instead the process is to start a local web server which the docker instances can access.
 
 **To do this:**
 
-**Start the conda-channel server**
+### SSS/ Putty onto the StBarts server
 
-SSH into StBarts using your preferred method (Putty or SSH)
+host name:  StBarts
+port: 22
+u/n:  jg_admin
+p/w:  JGa.StBarts_125
 
-Mount the network location
-
+```bash
+htop #  for system monitoring information / server load
 ```
+
+### Start the conda-channel server
+
+#### mount the conda-build folder on the server
+
+this only needs to be done after the server has been switched off, otherwise the mount will persist.
+
+```bash
 mkdir /mnt/conda-bld
-sudo mount -t drvfs '\\barbados\apps\conda\conda-bld' /mnt/conda-bld
+sudo mount -t cifs -o user=j.gunstone,password=johnspassword //maxfordham.com/apps/conda/conda-bld /mnt/conda-bld
 ```
 
-Start the webserver on the conda channel - it's important that you do this on St Barts. Doing it from your local machine isn't sufficient. 
+Start the webserver on the conda channel - it's important that you do this on St Barts. Doing it from your local machine isn't sufficient.
 
-```
+```bash
 cd /mnt/conda-bld
-python -m http.server
+python3 -m http.server
 ```
 
-Check that the server is working by visiting <St Barts IP>:8000 and you should see the MF Conda Channel Index page. St Barts IP should be 10.10.30.125
+Check that the server is working by visiting <St Barts IP>:8000 (8000 is local host) and you should see the MF Conda Channel Index page. 
+St Barts IP should be 10.10.30.125.
+i.e. visit http://10.10.30.125:8000 to check that a temporary conda build server exists on the local host.
 
-**Build the repo2docker image**
+### Build the repo2docker image
 
 Then in your repo2docker repsitory binder/environment.yml add the reference to the MF Channel like so. 
 
-```
+```bash
 channels:
-      - defaults
-      - conda-forge
-      - http://10.10.30.125:8000/conda-bld
+    - defaults
+    - conda-forge
+	  - http://10.10.30.125:8000
 dependencies:
   - my_really_cool_mf_conda_package
 ```
 
-​    
-
+__note__. currently
+​
 Then build the image in the conventional way. Once this has complete you can then kill the local server running in conda-bld since it is only used during the installation process. 
 
 **And finally**
@@ -65,4 +78,3 @@ Live
 Laugh
 Love
 ```
-

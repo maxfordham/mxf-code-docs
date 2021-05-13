@@ -1,27 +1,43 @@
+# Developing
 
-### Software Automation
+## Intro
 
-Our primary software also create significant opportunity for software automation:
+there are 2no main strands of internal software development:
 
-- pyRevit
-- IES VEscripts
-- Rhino + Grasshopper + Python (Light and Air only)
+- Standalone Development
+  - Software that is developed independently of a piece of software. This software can interface
+    the core MF software (by passing data between the apps) but does not have direct access to the software API's.
+  - Typically runs on the jupyter server.
+    - Ad-hoc jupyter notebooks for a given job.
+    - Standalone Apps built using Voila and ipywidgets.
+
+- Software Automation
+  - pyRevit
+    - pyRevit is used to automate Revit processes. It is described as RAD (Rapid Application Development),
+      making it fast to build utility scripts the Revit application.
+  - IES VEscripts
+  - Rhino + Grasshopper + Python (currently Light and Air only)
 
 
-- runs Ubuntu with JupyterHub. Configured by [Quantstack](https://quantstack.net/), similar (but smaller) setup to what they did for [PlasmaBio](https://docs.plasmabio.org/en/latest/)
-  - used for:
-  - voila dashboards
-  - involved engineering tools with heavy interface requirements
-  - generating automated report outputs
+## Standalone Development
 
-### Utitilty scripts / customisations of Max Fordham's core software
+### User interfaces and visual experiences
 
-Primarily:
+The jupyter ecosystem has a rich selection of packages that can be used to make high-quality front-ends.
 
-- pyRevit
-- ISE VEscripts
+| package      | description                                                                                                           |
+| ------------ | --------------------------------------------------------------------------------------------------------------------- |
+| voila        | converts a jupyter notebook (.ipynb) into a standalone app                                                            |
+| ipywidgets   | core widget library with common UI components                                                                         |
+| ipydatagrid  | fast, performant datagrid, featuring: filters, cell editing, cell rendering, etc.                                     |
+| bqplot       | 2D plotting library based on the "The Gramma of Graphics". Facilitates customisable complex interactions.             |
+| altair       | 2D plotting library based on the "The Gramma of Graphics". Python binding of vegalite. Excellent for simple plotting. |
+| plotly       | Plotting library. Generally prefer the above, but plotly also very good! Supports 3D plotting.                        |
+| ipycytoscape | widget enabling interactive graph visualization                                                                       |
+| ipygany      | 3D visualisation widget                                                                                               |
+| pydeck       | 3D visualisation widget built using deck.gl                                                                           |
+|              |                                                                                                                       |
 
-#### pyRevit
+## Software Automation
 
-pyRevit is used to automate Revit processes. It is described as RAD (Rapid Application Development), making it fast to build utility scripts the Revit application. 
-
+add brief description here.

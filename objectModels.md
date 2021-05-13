@@ -8,9 +8,16 @@ Python [dataclasses](https://docs.python.org/3/library/dataclasses.html), [typin
 
 The [pydantic documentation](https://pydantic-docs.helpmanual.io/) so take a look if you're interested; below i'll outline some suggested use-cases of Pydantic.
 
+With a clearly defined pydantic model it should be possible to:
+
+- generate a portable JSON schema definition of parameters and datatypes used
+- generate user-facing markdown documentation with parameter definitions
+- facilitate caching appdata to a file-server
+- facilitate interface with a database
+
 ## JSON schemas
 
-pydantic models can be converted to and from json schemas. This allows for language agnostic sharing of object definitions.
+pydantic models can be converted to and from json schemas allowing for language agnostic sharing of object definitions.
 
 - Pydantic model --> JSON schema
   - https://pydantic-docs.helpmanual.io/usage/schema/

@@ -4,7 +4,6 @@
 - __pip__: pip packages can be built from conda packages for use with VEScripts or pyRevit
 - __repo2docker__: repo2docker is used to build docker images of front-end repos for user-interface tools
 
-
 ## conda-build
 
 ### folder structure
@@ -49,7 +48,11 @@ conda build conda.recipe
 
 # publish to mf conda channel
 # copy and paste the croot/linux-64 files `mypackage*.tar.bz2` from into `\\barbados\apps\conda\conda-bld\linux-64`
+# go to conda channel dir
+cd /mnt/conda-bld
+# convert
 conda convert --platform all /mnt/conda-bld/linux-64/mypackage*.tar.bz2
+# update index
 conda index /mnt/conda-bld
 
 # install package into your conda env
@@ -89,3 +92,23 @@ pip install mypackage --target=Z:\pip --extra-index-url = http://localhost:8000/
 :: --target = shared pip folder, this can be appended to `sys.path`
 :: --extra-index-url = where to look for mypackage
 ```
+
+## [Repo2Docker](https://repo2docker.readthedocs.io/en/latest/usage.html)
+
+Repo2docker is a tool that builds a docker image (and associated environment) from a Git repository.
+Max Fordham's jupyter hub server has the [tljh-repo2docker](https://github.com/plasmabio/tljh-repo2docker) plugin installed
+and configured making it simple to add new environments / apps. It works in the same way as [mybinder](https://mybinder.org/).
+
+### Configuring the docker image
+
+The docker image is configured by the [config_files](https://mybinder.readthedocs.io/en/latest/using/config_files.html).
+In the simplest (most common) case, the only file that is required is "environment.yml" file to specify the conda environment.
+The "postbuild" can be used to add jupyter extensions.
+
+e.g. the config files for the TM59ArchetypeResultsViewer App
+![config_repo2docker](images/config_repo2docker.png)
+
+### Adding the J:\drive
+
+The Max Fordham TLJH has been configured to add a "jobs" folder to the root repository when a server or app is launched.
+This gives easy access to read and write files from the J:\drive.

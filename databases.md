@@ -1,11 +1,21 @@
 # databases
 
-Feeding engineering tools. As a rule - all jobs have the files they need to run tools saved on a file-server within the appropriate job. Additional functionality is gained my collating this data using SQL databases, and trends are analysed and fed back to the tools / are presented to the practice following review from Engineering Standards.
+Engineering tools with defined inputs and outputs create the opportunity for recording data used from a given job.
+Thus far, as a general rule, all jobs have the files they need to run the apps saved on a file-server within the appropriate job.
+Additional functionality is gained my collating this data into SQL databases, and trends are analysed and fed back to the
+for enhanced functionality or collated, reviewd and summarised by Engineering Standards.
+
+## MySQL
+
+Historically accounts / admin use MySQL. This is soon to be DEPRECATED.
 
 ## Postgres SQL databases
 
-Dan
+Accounts / admin are moving to Postgres. New databases to be built like this.
+## SQLlite
+
+For lightweight apps and prototyping, SQLlite is great.
 
 ## Speckle Server
 
-Future.
+Creates a "SpeckleStream" from the Revit model to PostgresSQL databases. TBC.
