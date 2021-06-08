@@ -21,7 +21,23 @@ there are 2no main strands of internal software development:
 
 ## Standalone Development
 
-### User interfaces and visual experiences
+### Conda / Mamba for managing package requirements
+
+covered in more detail in "packaging". 
+During development of an App it is typical to use an inflated conda environment that contains more than what is explicitly required for the app.
+See [manage-environments](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html). 
+Use "mamba" as a drop-in replacement for "conda" by installing in your base conda env:
+
+```bash
+conda activate base
+conda install -c conda-forge mamba
+```
+When packaging the app care is then taken to ensure only the packages that are required are listed as dependencies. 
+
+Environment variables can also be specified within a conda environment. 
+see [work-with-variables](https://anaconda-project.readthedocs.io/en/latest/user-guide/tasks/work-with-variables.html#adding-a-variable).
+
+### User interfaces and visual experience
 
 The jupyter ecosystem has a rich selection of packages that can be used to make high-quality front-ends.
 
@@ -37,6 +53,16 @@ The jupyter ecosystem has a rich selection of packages that can be used to make 
 | ipygany      | 3D visualisation widget                                                                                               |
 | pydeck       | 3D visualisation widget built using deck.gl                                                                           |
 |              |                                                                                                                       |
+
+### Accessing the J:\drive
+
+When using the JupyterHub server the a folder called /jobs is mounted onto the root repo. 
+When developing on WSL, it is possible to replicate this as follows:
+
+```
+mkdir /jobs
+sudo mount -t drvfs '\\barbados\jobs' /jobs
+```
 
 ## Software Automation
 
