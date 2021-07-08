@@ -48,10 +48,8 @@ conda build conda.recipe
 
 # publish to mf conda channel
 # copy and paste the croot/linux-64 files `mypackage*.tar.bz2` from into `\\barbados\apps\conda\conda-bld\linux-64`
-# go to conda channel dir
-cd /mnt/conda-bld
 # convert
-conda convert --platform all /mnt/conda-bld/linux-64/mypackage*.tar.bz2
+conda convert --platform all /mnt/conda-bld/linux-64/mypackage*.tar.bz2 --output-dir /mnt/conda-bld
 # update index
 conda index /mnt/conda-bld
 

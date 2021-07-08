@@ -18,12 +18,17 @@ there are 2no main strands of internal software development:
   - IES VEscripts
   - Rhino + Grasshopper + Python (currently Light and Air only)
 
-
 ## Standalone Development
+
+Within this paradigm, apps and packages are developed on the developers machine and deployed to the practice on the
+JupyterHub server. Whilst packages can be developed anywhere, it is suggested to match the server deployment as
+closely as possible.
+
+### [Configure development environment](developing-envsetup.md)
 
 ### Conda / Mamba for managing package requirements
 
-covered in more detail in "packaging". 
+covered in more detail in "packaging".
 During development of an App it is typical to use an inflated conda environment that contains more than what is explicitly required for the app.
 See [manage-environments](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html). 
 Use "mamba" as a drop-in replacement for "conda" by installing in your base conda env:
@@ -32,10 +37,19 @@ Use "mamba" as a drop-in replacement for "conda" by installing in your base cond
 conda activate base
 conda install -c conda-forge mamba
 ```
+
 When packaging the app care is then taken to ensure only the packages that are required are listed as dependencies. 
 
 Environment variables can also be specified within a conda environment. 
 see [work-with-variables](https://anaconda-project.readthedocs.io/en/latest/user-guide/tasks/work-with-variables.html#adding-a-variable).
+
+### Standard development libraries for different tasks
+
+| task                | package    | description                                                                                                                |
+| ------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------- |
+| filepath operations | pathlib    | always use pathlib for filepath operations. avoid using filepath strings. this ensure parity between linux and windows os. |
+| object models       | pydantic   | [objectModels](objectModels.md)                                                                                            |
+| python sql orm      | sqlalchemy |                                                                                       |
 
 ### User interfaces and visual experience
 
@@ -56,14 +70,11 @@ The jupyter ecosystem has a rich selection of packages that can be used to make 
 
 ### Accessing the J:\drive
 
-When using the JupyterHub server the a folder called /jobs is mounted onto the root repo. 
+When using the JupyterHub server the a folder called /jobs is mounted onto the root repo.
 When developing on WSL, it is possible to replicate this as follows:
 
-```
-mkdir /jobs
-sudo mount -t drvfs '\\barbados\jobs' /jobs
-```
+i think there is a way to do ^ using wsl direct also.
 
 ## Software Automation
 
-add brief description here.
+add brief description here

@@ -8,6 +8,34 @@ Refer to:
 [jupyterhub-maxfordham](https://github.com/gunstonej/jupyterhub-maxfordham)
 for the repo developed by QuantStack that automates processes on the JupyterHub server using ansible playbooks
 
+### Accessing the Server
+
+SSH / Putty onto the StBarts server with the following credententials
+
+|           |                 |
+| --------- | --------------- |
+| host name | StBarts         |
+| port      | 22              |
+| u/n       | jg_admin        |
+| p/w       | JGa.StBarts_125 |
+
+### Check server performance
+
+```bash
+htop #  for system monitoring information / server load
+```
+
+### Update if required
+
+[ref](https://askubuntu.com/questions/196768/how-to-install-updates-via-command-line)
+
+```bash
+sudo apt update        # Fetches the list of available updates
+sudo apt upgrade       # Installs some updates; does not remove packages
+sudo apt full-upgrade  # Installs updates; may also remove some packages, if needed
+sudo apt autoremove    # Removes any old packages that are no longer needed
+```
+
 ## Building repo2docker apps that use internal (private) conda repository's
 
 The jupyterhub is configured to use the repo2docker tool:
@@ -17,31 +45,23 @@ This creates a docker image with the required environment for the contents of th
 Generally, it downloads packages from conda-forge, but for internally developed private conda
 packages we need to expose the packages to the server and repo2docker tool as it is building.
 
-It's not possible to mount barbados onto stbarts and reference the channel in the conventional sense because it doesn't get exposed in the docker instances created when running repo2docker. Instead the process is to start a local web server which the docker instances can access.
+It's not possible to mount barbados onto stbarts and reference the channel in the conventional sense because it doesn't get exposed in the docker instances created when running repo2docker.
+Instead the process is to start a local web server which the docker instances can access.
 
 **To do this:**
 
 ### SSS/ Putty onto the StBarts server
 
-host name:  StBarts
-port: 22
-u/n:  jg_admin
-p/w:  JGa.StBarts_125
-
-```bash
-htop #  for system monitoring information / server load
-```
-
-### Start the conda-channel server
-
-#### mount the conda-build folder on the server
+### mount the conda-build folder on the server
 
 this only needs to be done after the server has been switched off, otherwise the mount will persist.
 
 ```bash
 mkdir /mnt/conda-bld
-sudo mount -t cifs -o user=j.gunstone,password=johnspassword //maxfordham.com/apps/conda/conda-bld /mnt/conda-bld
+sudo mount -t cifs -o user=j.gunstone,password=johnspassword '\\barbados\apps\conda\conda-bld' /mnt/conda-bld
 ```
+
+### Start the conda-channel server
 
 Start the webserver on the conda channel - it's important that you do this on St Barts. Doing it from your local machine isn't sufficient.
 
@@ -50,7 +70,7 @@ cd /mnt/conda-bld
 python3 -m http.server
 ```
 
-Check that the server is working by visiting <St Barts IP>:8000 (8000 is local host) and you should see the MF Conda Channel Index page. 
+Check that the server is working by visiting <St Barts IP>:8000 (8000 is local host) and you should see the MF Conda Channel Index page.
 St Barts IP should be 10.10.30.125.
 i.e. visit http://10.10.30.125:8000 to check that a temporary conda build server exists on the local host.
 
@@ -60,9 +80,9 @@ Then in your repo2docker repsitory binder/environment.yml add the reference to t
 
 ```bash
 channels:
-    - defaults
-    - conda-forge
-	  - http://10.10.30.125:8000
+  - defaults
+  - conda-forge
+  - http://10.10.30.125:8000
 dependencies:
   - my_really_cool_mf_conda_package
 ```
