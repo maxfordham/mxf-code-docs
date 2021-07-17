@@ -38,11 +38,6 @@ follow steps in this article:
 - https://mashtips.com/enable-virtualization-windows-10/
 and make sure Hyper-V is enabled.
 
-__Quick tips__:  
-_WK == windows key_
-
-- WK "hyper-v"
-- WK "windows features"
 
 ### Install WSL2
 
