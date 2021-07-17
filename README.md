@@ -35,3 +35,7 @@ call ghp-import -n -p -f book/_build/html
 cmd /k
 ```
 
+## Go to mfcode_docs website
+
+[https://gunstonej.github.io/mfcode_docs/](https://gunstonej.github.io/mfcode_docs)
+
