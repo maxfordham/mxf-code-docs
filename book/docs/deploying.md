@@ -12,12 +12,12 @@ for the repo developed by QuantStack that automates processes on the JupyterHub 
 
 SSH / Putty onto the StBarts server with the following credententials
 
-|           |                 |
-| --------- | --------------- |
-| host name | StBarts         |
-| port      | 22              |
-| u/n       | jg_admin        |
-| p/w       | JGa.StBarts_125 |
+|           |                                   |
+| --------- | --------------------------------- |
+| host name | {{ servers.jupyterhub.hostname }} |
+| port      | {{ servers.jupyterhub.port }}     |
+| username  | {{ servers.jupyterhub.username }} |
+| password  | {{ servers.jupyterhub.password }} |
 
 ### Check server performance
 
@@ -58,7 +58,7 @@ this only needs to be done after the server has been switched off, otherwise the
 
 ```bash
 mkdir /mnt/conda-bld
-sudo mount -t cifs -o user=j.gunstone,password=johnspassword '\\barbados\apps\conda\conda-bld' /mnt/conda-bld
+sudo mount -t cifs -o user={{ mf.user }},password={{ mf.password }} '\\barbados\apps\conda\conda-bld' /mnt/conda-bld
 ```
 
 ### Start the conda-channel server
@@ -89,7 +89,7 @@ dependencies:
 
 __note__. currently
 ​
-Then build the image in the conventional way. Once this has complete you can then kill the local server running in conda-bld since it is only used during the installation process. 
+Then build the image in the conventional way. Once this has complete you can then kill the local server running in conda-bld since it is only used during the installation process.
 
 **And finally**
 

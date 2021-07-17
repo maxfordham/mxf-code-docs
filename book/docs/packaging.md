@@ -34,7 +34,8 @@ example below for package called `mypackage`.
 mkdir /mnt/conda-bld
 sudo mount -t drvfs '\\barbados\apps\conda\conda-bld' /mnt/conda-bld
 
-# add conda mf conda channel if not already there... this allows mf internal pacakges to be included in the build
+# add conda mf conda channel if not already there... 
+# this allows mf internal pacakges to be included in the build
 conda config --add channels file:///mnt/conda-bld 
 
 # run command from local root dir of conda package (requires a conda.recipe folder in the dir)
@@ -47,7 +48,10 @@ conda build conda.recipe
 # `--croot /mnt/c/engDev/channel`
 
 # publish to mf conda channel
-# copy and paste the croot/linux-64 files `mypackage*.tar.bz2` from into `\\barbados\apps\conda\conda-bld\linux-64`
+# manually copy and paste from:
+# {{croot}}/linux-64/`mypackage*.tar.bz2`
+# --> 
+# `\\barbados\apps\conda\conda-bld\linux-64`
 # convert
 conda convert --platform all /mnt/conda-bld/linux-64/mypackage*.tar.bz2 --output-dir /mnt/conda-bld
 # update index
@@ -63,14 +67,14 @@ conda install -c file:///mnt/conda-bld mypackage
 
 to install conda packages into windows you need to expose the conda channel (again, in the future this will be done by mamba-boa).
 
-```{cmd}
+```bat
 :: navigate to Z:\conda\conda-bld
 :: create a python server of the directory on your local host
 Z:\conda\conda-bld> python -m http.server
 
 :: open a new cmd
 
-```cmd
+```bat
 mamba install mypackage -c http://localhost:8000/
 ```
 
@@ -82,7 +86,7 @@ In both Revit-pyRevit and IES-VEScripts a pip directory can be simply appended t
 
 pip packages can be created from conda packages as follows (ask Owen for help if req);
 
-```cmd
+```bat
 :: as before, expose conda channel on localhost
 Z:\conda\conda-bld> python -m http.server
 

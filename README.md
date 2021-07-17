@@ -1,15 +1,23 @@
-# Max Fordham Engineering Development Best Practice
+# mfcode_docs
 
-This documentation aims to provide high-level, non-verbose notes outlining Max Fordham's engineering software development infrastructure.
-Links to external sources and standards to describe the approach are preferred where possible.
-The intended audience are those contributing / maintaining internal development tools.
-Code snippets are encouraged.
+building mfcode high-level developer documentation into a jupyter-book website.
 
-## Table of Contents
+## create conda environment
 
-- [Introduction](./intro.md)
-- [Developing Code](./developing.md)
-  - [Object Models](./objectModels.md)
-- [Packaging Code](./packaging.md)
-- [Deploying internal tools](./deploying.md)
-- [Collating engineering data in databases](./databases.md)
+```bash
+mamba env create -f environment.yml
+conda activate mfcode_docs
+```
+## Create toc
+
+```bash
+jupyter-book toc from-project book\docs > book\_toc.yml
+```
+
+## Building a Jupyter Book
+
+```bash
+conda activate mfcode_docs
+jb build book/
+```
+

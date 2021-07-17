@@ -1,0 +1,13 @@
+name: mfcode_docs
+channels:
+  - default
+  - conda-forge
+dependencies:
+  - python=3.8
+  - sphinx
+  - pip
+  - pandas
+  - jupyter-book
+  - importlib_resources
+  - pyppeteer
+  - ghp-import

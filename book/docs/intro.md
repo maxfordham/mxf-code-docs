@@ -20,3 +20,19 @@ Code development within engineering generally falls into 1 of the 2 categories:
 2. software automation (i.e. pyRevit, IES VEscripts, Rhino + Grasshopper + Python)
 
 As a general rule, any tools that has potentially general use (i.e. outside of a specific software package) should be developed independently of our software tools. Software automation scripts can then be made to connect data to these independent tools (an example of this is scheduling: the schedules are generated from the JupyterHub, but can be supplied data from the Revit model).
+
+![mfengdev](images/mfengdev.png)
+
+```{admonition} Secret config data
+each individual user should have a file saved here:  
+```/mfcode_docs/book/docs/_secret_config.toml```
+that follows the same format as: 
+```/mfcode_docs/book/docs/_secret_config_template.toml```
+with their secret config details. _secret_config.toml should not be shared.
+in the docs jinja style pseudo-code is used to indicate what vars from the _secret_config.toml file should be used.
+```
+
+<div class="admonition note" name="html-admonition" style="background: lightgreen; padding: 10px">
+<p class="title">This is the **title**</p>
+<iframe src="pdf/BMSDataDrivenWaterfall_resize.pdf" width="100%" height="800px" frameBorder="0"> </iframe>
+</div>

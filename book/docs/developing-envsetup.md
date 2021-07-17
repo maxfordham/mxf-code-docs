@@ -28,7 +28,7 @@ it can be.
 
 __Notes__
 
-- SOFTWARE_REMOTE_FOL=\\barbados\setup\Software\Dev is where installer files for dev software is currently stored.
+- FDIR_SOFTWARE_REMOTE={{ servers.mffileserver.FDIR_SOFTWARE_REMOTE }} is where installer files for dev software is currently stored.
 - WK = Windows Key
 - install VSCode to the default install location
 
@@ -60,15 +60,15 @@ set SOFTWARE_FILENAME=wsl_update_x64.msi
 :: ||||||||||||||||||||||||||||||||||||||||||||||
 
 REM ----------SET-------------
-set SOFTWARE_REMOTE_FOL=\\barbados\setup\Software\Dev
-set SOFTWARE_LOCAL_FOL=%~dp0
-set SRC=%SOFTWARE_REMOTE_FOL%\%SOFTWARE_FILENAME%
-set DSTN=%SOFTWARE_LOCAL_FOL%\%SOFTWARE_FILENAME%
+set FDIR_SOFTWARE_REMOTE= {{ servers.mffileserver.FDIR_SOFTWARE_REMOTE }}
+set FDIR_SOFTWARE_LOCAL=%~dp0
+set SRC=%FDIR_SOFTWARE_REMOTE%\%SOFTWARE_FILENAME%
+set DSTN=%FDIR_SOFTWARE_LOCAL%\%SOFTWARE_FILENAME%
 :: ---------------------------
 
 echo ---------VERIFY-----------
-echo SOFTWARE_REMOTE_FOL: %SOFTWARE_REMOTE_FOL%
-echo SOFTWARE_LOCAL_FOL: %SOFTWARE_LOCAL_FOL%
+echo FDIR_SOFTWARE_REMOTE: %FDIR_SOFTWARE_REMOTE%
+echo FDIR_SOFTWARE_LOCAL: %FDIR_SOFTWARE_LOCAL%
 echo SOFTWARE_FILENAME: %SOFTWARE_FILENAME%
 echo SRC: %SRC%
 echo DSTN: %DSTN%
@@ -93,15 +93,15 @@ set SOFTWARE_FILENAME=Ubuntu_2004.2020.424.0_x64.appx
 :: ||||||||||||||||||||||||||||||||||||||||||||||
 
 REM ----------SET-------------
-set SOFTWARE_REMOTE_FOL=\\barbados\setup\Software\Dev
-set SOFTWARE_LOCAL_FOL=%~dp0
-set SRC=%SOFTWARE_REMOTE_FOL%\%SOFTWARE_FILENAME%
-set DSTN=%SOFTWARE_LOCAL_FOL%\%SOFTWARE_FILENAME%
+set FDIR_SOFTWARE_REMOTE={{ servers.mffileserver.FDIR_SOFTWARE_REMOTE }}
+set FDIR_SOFTWARE_LOCAL=%~dp0
+set SRC=%FDIR_SOFTWARE_REMOTE%\%SOFTWARE_FILENAME%
+set DSTN=%FDIR_SOFTWARE_LOCAL%\%SOFTWARE_FILENAME%
 :: ---------------------------
 
 echo ---------VERIFY-----------
-echo SOFTWARE_REMOTE_FOL: %SOFTWARE_REMOTE_FOL%
-echo SOFTWARE_LOCAL_FOL: %SOFTWARE_LOCAL_FOL%
+echo FDIR_SOFTWARE_REMOTE: %FDIR_SOFTWARE_REMOTE%
+echo FDIR_SOFTWARE_LOCAL: %FDIR_SOFTWARE_LOCAL%
 echo SOFTWARE_FILENAME: %SOFTWARE_FILENAME%
 echo SRC: %SRC%
 echo DSTN: %DSTN%
@@ -148,7 +148,7 @@ WK wsl
 ```bash
 
 mkdir /mnt/conda-bld
-sudo mount -t drvfs '\\barbados\apps\conda\conda-bld' /mnt/conda-bld
+sudo mount -t drvfs '{{ servers.mffileserver.FDIR_CONDA_BUILD }}' /mnt/conda-bld
 # ^ note. this currently doesnt persist between session so you have to do it everytime
 conda config --add channels file:///mnt/conda-bld
 conda config --add channels conda-forge
@@ -160,7 +160,7 @@ WK wsl
 
 ```bash
 mkdir /home/jovyan/jobs
-sudo mount -t drvfs '\\barbados\jobs' /home/jovyan/jobs
+sudo mount -t drvfs '{{ servers.mffileserver.FDIR_JDRIVE }}' /home/jovyan/jobs
 # ^ note. this currently doesnt persist between session so you have to do it everytime
 ```
 

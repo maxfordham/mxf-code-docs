@@ -1,0 +1,13 @@
+root: docs/index
+defaults:
+  numbered: true
+entries:
+- file: docs/intro
+- file: docs/developing
+- file: docs/developing-envsetup
+- file: docs/packaging
+- file: docs/deploying
+- file: docs/databases
+- file: docs/objectModels
+- file: docs/objectModels/projectschema
+
