@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. Developing &#8212; mfcode developer docs</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Standalone Development" href="developing-envsetup.html" />
+    <link rel="prev" title="1. Intro" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/mfcode.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">mfcode developer docs</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   mfcode_docs
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   1. Intro
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Developing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="developing-envsetup.html">
+   3. Standalone Development
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="packaging.html">
+   4. Packaging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="deploying.html">
+   5. Deploying
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="databases.html">
+   6. databases
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="objectModels.html">
+   7. Object Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="objectModels/projectschema.html">
+   8. Project
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/developing.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#intro">
+   2.1. Intro
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#standalone-development">
+   2.2. Standalone Development
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configure-development-environment">
+     2.2.1.
+     <span class="xref myst">
+      Configure development environment
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conda-mamba-for-managing-package-requirements">
+     2.2.2. Conda / Mamba for managing package requirements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#standard-development-libraries-for-different-tasks">
+     2.2.3. Standard development libraries for different tasks
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#user-interfaces-and-visual-experience">
+     2.2.4. User interfaces and visual experience
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessing-the-j-drive">
+     2.2.5. Accessing the J:\drive
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#software-automation">
+   2.3. Software Automation
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="developing">
+<h1><span class="section-number">2. </span>Developing<a class="headerlink" href="#developing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="intro">
+<h2><span class="section-number">2.1. </span>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h2>
+<p>there are 2no main strands of internal software development:</p>
+<ul class="simple">
+<li><p>Standalone Development</p>
+<ul>
+<li><p>Software that is developed independently of a piece of software. This software can interface
+the core MF software (by passing data between the apps) but does not have direct access to the software API’s.</p></li>
+<li><p>Typically runs on the jupyter server.</p>
+<ul>
+<li><p>Ad-hoc jupyter notebooks for a given job.</p></li>
+<li><p>Standalone Apps built using Voila and ipywidgets.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Software Automation</p>
+<ul>
+<li><p>pyRevit</p>
+<ul>
+<li><p>pyRevit is used to automate Revit processes. It is described as RAD (Rapid Application Development),
+making it fast to build utility scripts the Revit application.</p></li>
+</ul>
+</li>
+<li><p>IES VEscripts</p></li>
+<li><p>Rhino + Grasshopper + Python (currently Light and Air only)</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="standalone-development">
+<h2><span class="section-number">2.2. </span>Standalone Development<a class="headerlink" href="#standalone-development" title="Permalink to this headline">¶</a></h2>
+<p>Within this paradigm, apps and packages are developed on the developers machine and deployed to the practice on the
+JupyterHub server. Whilst packages can be developed anywhere, it is suggested to match the server deployment as
+closely as possible.</p>
+<div class="section" id="configure-development-environment">
+<h3><span class="section-number">2.2.1. </span><a class="reference internal" href="developing-envsetup.html"><span class="doc std std-doc">Configure development environment</span></a><a class="headerlink" href="#configure-development-environment" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="conda-mamba-for-managing-package-requirements">
+<h3><span class="section-number">2.2.2. </span>Conda / Mamba for managing package requirements<a class="headerlink" href="#conda-mamba-for-managing-package-requirements" title="Permalink to this headline">¶</a></h3>
+<p>covered in more detail in “packaging”.
+During development of an App it is typical to use an inflated conda environment that contains more than what is explicitly required for the app.
+See <a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">manage-environments</a>.
+Use “mamba” as a drop-in replacement for “conda” by installing in your base conda env:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate base
+conda install -c conda-forge mamba
+</pre></div>
+</div>
+<p>When packaging the app care is then taken to ensure only the packages that are required are listed as dependencies.</p>
+<p>Environment variables can also be specified within a conda environment.
+see <a class="reference external" href="https://anaconda-project.readthedocs.io/en/latest/user-guide/tasks/work-with-variables.html#adding-a-variable">work-with-variables</a>.</p>
+</div>
+<div class="section" id="standard-development-libraries-for-different-tasks">
+<h3><span class="section-number">2.2.3. </span>Standard development libraries for different tasks<a class="headerlink" href="#standard-development-libraries-for-different-tasks" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>task</p></th>
+<th class="head"><p>package</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>filepath operations</p></td>
+<td><p>pathlib</p></td>
+<td><p>always use pathlib for filepath operations. avoid using filepath strings. this ensure parity between linux and windows os.</p></td>
+</tr>
+<tr class="row-odd"><td><p>object models</p></td>
+<td><p>pydantic</p></td>
+<td><p><a class="reference internal" href="objectModels.html"><span class="doc std std-doc">objectModels</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>python sql orm</p></td>
+<td><p>sqlalchemy</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="user-interfaces-and-visual-experience">
+<h3><span class="section-number">2.2.4. </span>User interfaces and visual experience<a class="headerlink" href="#user-interfaces-and-visual-experience" title="Permalink to this headline">¶</a></h3>
+<p>The jupyter ecosystem has a rich selection of packages that can be used to make high-quality front-ends.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>package</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>voila</p></td>
+<td><p>converts a jupyter notebook (.ipynb) into a standalone app</p></td>
+</tr>
+<tr class="row-odd"><td><p>ipywidgets</p></td>
+<td><p>core widget library with common UI components</p></td>
+</tr>
+<tr class="row-even"><td><p>ipydatagrid</p></td>
+<td><p>fast, performant datagrid, featuring: filters, cell editing, cell rendering, etc.</p></td>
+</tr>
+<tr class="row-odd"><td><p>bqplot</p></td>
+<td><p>2D plotting library based on the “The Gramma of Graphics”. Facilitates customisable complex interactions.</p></td>
+</tr>
+<tr class="row-even"><td><p>altair</p></td>
+<td><p>2D plotting library based on the “The Gramma of Graphics”. Python binding of vegalite. Excellent for simple plotting.</p></td>
+</tr>
+<tr class="row-odd"><td><p>plotly</p></td>
+<td><p>Plotting library. Generally prefer the above, but plotly also very good! Supports 3D plotting.</p></td>
+</tr>
+<tr class="row-even"><td><p>ipycytoscape</p></td>
+<td><p>widget enabling interactive graph visualization</p></td>
+</tr>
+<tr class="row-odd"><td><p>ipygany</p></td>
+<td><p>3D visualisation widget</p></td>
+</tr>
+<tr class="row-even"><td><p>pydeck</p></td>
+<td><p>3D visualisation widget built using <a class="reference external" href="http://deck.gl">deck.gl</a></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="accessing-the-j-drive">
+<h3><span class="section-number">2.2.5. </span>Accessing the J:\drive<a class="headerlink" href="#accessing-the-j-drive" title="Permalink to this headline">¶</a></h3>
+<p>When using the JupyterHub server the a folder called /jobs is mounted onto the root repo.
+When developing on WSL, it is possible to replicate this as follows:</p>
+<p>i think there is a way to do ^ using wsl direct also.</p>
+</div>
+</div>
+<div class="section" id="software-automation">
+<h2><span class="section-number">2.3. </span>Software Automation<a class="headerlink" href="#software-automation" title="Permalink to this headline">¶</a></h2>
+<p>add brief description here</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page"><span class="section-number">1. </span>Intro</a>
+    <a class='right-next' id="next-link" href="developing-envsetup.html" title="next page"><span class="section-number">3. </span>Standalone Development</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By John Gunstone<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

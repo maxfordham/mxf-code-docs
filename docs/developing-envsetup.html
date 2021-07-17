@@ -1,0 +1,526 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. Standalone Development &#8212; mfcode developer docs</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. Packaging" href="packaging.html" />
+    <link rel="prev" title="2. Developing" href="developing.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/mfcode.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">mfcode developer docs</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   mfcode_docs
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   1. Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="developing.html">
+   2. Developing
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. Standalone Development
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="packaging.html">
+   4. Packaging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="deploying.html">
+   5. Deploying
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="databases.html">
+   6. databases
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="objectModels.html">
+   7. Object Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="objectModels/projectschema.html">
+   8. Project
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/developing-envsetup.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   3.1. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instructions">
+   3.2. Instructions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hardare-config">
+     3.2.1. Hardare Config
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-wsl2">
+     3.2.2. Install WSL2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-ubuntu2004">
+     3.2.3. Install Ubuntu2004
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-an-additional-linux-subsystem-if-required-in-future">
+     3.2.4. Install an additional Linux subsystem (if required in future)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-miniconda">
+     3.2.5. Install Miniconda
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mount-mf-internal-conda-channel">
+     3.2.6. Mount mf internal conda channel
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mount-j-drive-onto-linux-wsl">
+     3.2.7. Mount J:\drive onto Linux WSL
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-conda-envs">
+     3.2.8. create conda envs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#launch-a-juptyer-lab-session">
+     3.2.9. launch a juptyer lab session
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#launch-a-session-with-vs-code">
+     3.2.10. launch a session with VS Code
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="standalone-development">
+<h1><span class="section-number">3. </span>Standalone Development<a class="headerlink" href="#standalone-development" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="#standalone-development">Standalone Development</a></p>
+<ul>
+<li><p><a class="reference external" href="#introduction">Introduction</a></p></li>
+<li><p><a class="reference external" href="#instructions">Instructions</a></p>
+<ul>
+<li><p><a class="reference external" href="#hardare-config">Hardare Config</a></p></li>
+<li><p><a class="reference external" href="#install-wsl2">Install WSL2</a></p></li>
+<li><p><a class="reference external" href="#install-ubuntu2004">Install Ubuntu2004</a></p></li>
+<li><p><a class="reference external" href="#install-an-additional-linux-subsystem-if-required-in-future">Install an additional Linux subsystem (if required in future)</a></p></li>
+<li><p><a class="reference external" href="#install-miniconda">Install Miniconda</a></p></li>
+<li><p><a class="reference external" href="#mount-mf-internal-conda-channel">Mount mf internal conda channel</a></p></li>
+<li><p><a class="reference external" href="#mount-jdrive-onto-linux-wsl">Mount J:\drive onto Linux WSL</a></p></li>
+<li><p><a class="reference external" href="#create-conda-envs">create conda envs</a></p></li>
+<li><p><a class="reference external" href="#launch-a-juptyer-lab-session">launch a juptyer lab session</a></p></li>
+<li><p><a class="reference external" href="#launch-a-session-with-vs-code">launch a session with VS Code</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="introduction">
+<h2><span class="section-number">3.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Below are instructions about how to configure a development machine. Ideally they should
+be followed exactly, to ensure that tests etc. are reproducible across development team
+members.</p>
+<p>Given that the final resting place of standalone tools is the Linux JupyterHub server,
+we try to make the development environment on the users machine as close to this as
+it can be.</p>
+</div>
+<div class="section" id="instructions">
+<h2><span class="section-number">3.2. </span>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes</strong></p>
+<ul class="simple">
+<li><p>FDIR_SOFTWARE_REMOTE= is where installer files for dev software is currently stored.</p></li>
+<li><p>WK = Windows Key</p></li>
+<li><p>install VSCode to the default install location</p></li>
+</ul>
+<div class="section" id="hardare-config">
+<h3><span class="section-number">3.2.1. </span>Hardare Config<a class="headerlink" href="#hardare-config" title="Permalink to this headline">¶</a></h3>
+<p>follow steps in this article:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://mashtips.com/enable-virtualization-windows-10/">https://mashtips.com/enable-virtualization-windows-10/</a>
+and make sure Hyper-V is enabled.</p></li>
+</ul>
+<p><strong>Quick tips</strong>:<br />
+<em>WK == windows key</em></p>
+<ul class="simple">
+<li><p>WK “hyper-v”</p></li>
+<li><p>WK “windows features”</p></li>
+</ul>
+</div>
+<div class="section" id="install-wsl2">
+<h3><span class="section-number">3.2.2. </span>Install WSL2<a class="headerlink" href="#install-wsl2" title="Permalink to this headline">¶</a></h3>
+<p>Step4 from this guide:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps">https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps</a></p></li>
+</ul>
+<p>For the current install files use the following bat script:</p>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>@echo off
+
+:: EDIT 
+:: ||||||||||||||||||||||||||||||||||||||||||||||
+set SOFTWARE_FILENAME=wsl_update_x64.msi
+:: ||||||||||||||||||||||||||||||||||||||||||||||
+
+REM ----------SET-------------
+set FDIR_SOFTWARE_REMOTE= {{ servers.mffileserver.FDIR_SOFTWARE_REMOTE }}
+set FDIR_SOFTWARE_LOCAL=%~dp0
+set SRC=%FDIR_SOFTWARE_REMOTE%\%SOFTWARE_FILENAME%
+set DSTN=%FDIR_SOFTWARE_LOCAL%\%SOFTWARE_FILENAME%
+:: ---------------------------
+
+echo ---------VERIFY-----------
+echo FDIR_SOFTWARE_REMOTE: %FDIR_SOFTWARE_REMOTE%
+echo FDIR_SOFTWARE_LOCAL: %FDIR_SOFTWARE_LOCAL%
+echo SOFTWARE_FILENAME: %SOFTWARE_FILENAME%
+echo SRC: %SRC%
+echo DSTN: %DSTN%
+echo ---------------------------
+
+REM ----------RUN---------------
+if not exist %DSTN% call xcopy %SRC% %DSTN%*
+pause
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-ubuntu2004">
+<h3><span class="section-number">3.2.3. </span>Install Ubuntu2004<a class="headerlink" href="#install-ubuntu2004" title="Permalink to this headline">¶</a></h3>
+<p>Ubuntu_2004.2020.424.0_x64.appx</p>
+<p>For the current install files use the following bat script:</p>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>@echo off
+:: EDIT 
+:: ||||||||||||||||||||||||||||||||||||||||||||||
+set SOFTWARE_FILENAME=Ubuntu_2004.2020.424.0_x64.appx
+:: ||||||||||||||||||||||||||||||||||||||||||||||
+
+REM ----------SET-------------
+set FDIR_SOFTWARE_REMOTE={{ servers.mffileserver.FDIR_SOFTWARE_REMOTE }}
+set FDIR_SOFTWARE_LOCAL=%~dp0
+set SRC=%FDIR_SOFTWARE_REMOTE%\%SOFTWARE_FILENAME%
+set DSTN=%FDIR_SOFTWARE_LOCAL%\%SOFTWARE_FILENAME%
+:: ---------------------------
+
+echo ---------VERIFY-----------
+echo FDIR_SOFTWARE_REMOTE: %FDIR_SOFTWARE_REMOTE%
+echo FDIR_SOFTWARE_LOCAL: %FDIR_SOFTWARE_LOCAL%
+echo SOFTWARE_FILENAME: %SOFTWARE_FILENAME%
+echo SRC: %SRC%
+echo DSTN: %DSTN%
+echo ---------------------------
+
+REM ----------RUN---------------
+if not exist %DSTN% call xcopy %SRC% %DSTN%*
+pause
+</pre></div>
+</div>
+<p>unzip wtih 7zip (or rename .appx –&gt; .zip) and run the .exe inside.
+when asked to set-up a username, call it “jovyan” (jovyan being a resident of Jupyter!).
+This is the default username used by JupyterHub; and there the docker images that are built
+on the JupyterHub server, so using this username means that the filepaths are the same on the
+user environment as they are on the server.</p>
+</div>
+<div class="section" id="install-an-additional-linux-subsystem-if-required-in-future">
+<h3><span class="section-number">3.2.4. </span>Install an additional Linux subsystem (if required in future)<a class="headerlink" href="#install-an-additional-linux-subsystem-if-required-in-future" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>:: assumes unzipped Ubuntu installer is saved in C:\engDev
+set LINUX_IMAGE_DIR=C:\engDev
+set UBUNTU_INSTALLER_FPTH=C:\engDev\Ubuntu_2004.2020.424.0_x64\install.tar.gz
+wsl --import ubuntu_2004_jovyan %LINUX_IMAGE_DIR% %UBUNTU_INSTALLER_FPTH%
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-miniconda">
+<h3><span class="section-number">3.2.5. </span>Install Miniconda<a class="headerlink" href="#install-miniconda" title="Permalink to this headline">¶</a></h3>
+<p>WK wsl</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$cd</span> /home
+<span class="nv">$sudo</span> wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+<span class="nv">$chmod</span> +x Miniconda3-latest-Linux-x86_64.sh
+$./Miniconda3-latest-Linux-x86_64.sh
+<span class="c1"># note. should install here: /home/jovyan/miniconda3</span>
+<span class="c1"># note. when prompted: Do you wish the installer to initialize Miniconda3, by running conda init? [yes|no]</span>
+<span class="c1"># $yes</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mount-mf-internal-conda-channel">
+<h3><span class="section-number">3.2.6. </span>Mount mf internal conda channel<a class="headerlink" href="#mount-mf-internal-conda-channel" title="Permalink to this headline">¶</a></h3>
+<p>WK wsl</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir /mnt/conda-bld
+sudo mount -t drvfs <span class="s1">&#39;{{ servers.mffileserver.FDIR_CONDA_BUILD }}&#39;</span> /mnt/conda-bld
+<span class="c1"># ^ note. this currently doesnt persist between session so you have to do it everytime</span>
+conda config --add channels file:///mnt/conda-bld
+conda config --add channels conda-forge
+</pre></div>
+</div>
+</div>
+<div class="section" id="mount-j-drive-onto-linux-wsl">
+<h3><span class="section-number">3.2.7. </span>Mount J:\drive onto Linux WSL<a class="headerlink" href="#mount-j-drive-onto-linux-wsl" title="Permalink to this headline">¶</a></h3>
+<p>WK wsl</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir /home/jovyan/jobs
+sudo mount -t drvfs <span class="s1">&#39;{{ servers.mffileserver.FDIR_JDRIVE }}&#39;</span> /home/jovyan/jobs
+<span class="c1"># ^ note. this currently doesnt persist between session so you have to do it everytime</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-conda-envs">
+<h3><span class="section-number">3.2.8. </span>create conda envs<a class="headerlink" href="#create-conda-envs" title="Permalink to this headline">¶</a></h3>
+<p>WK wsl</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#  install mamba</span>
+conda install mamba -n base -c conda-forge -y
+<span class="c1">#  create env</span>
+mamba create -n mf_base -c conda-forge jupyterlab voila xeus-python pandas numpy markdown pydantic dacite ipysheet ipyfilechooser xmltodict plotly altair altair_saver halo pyyaml jupytext click nodejs openpyxl tabulate watchdog xlsxwriter pip xlsxtemplater mf_file_utilities mfom -y
+<span class="c1">#  activate </span>
+conda activate mf_base
+<span class="c1">#  add pip only installs</span>
+pip install ipyaggrid mydocstring pipreqs
+</pre></div>
+</div>
+</div>
+<div class="section" id="launch-a-juptyer-lab-session">
+<h3><span class="section-number">3.2.9. </span>launch a juptyer lab session<a class="headerlink" href="#launch-a-juptyer-lab-session" title="Permalink to this headline">¶</a></h3>
+<p>WK wsl</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /mnt/c/engDev/git_mf
+<span class="c1"># ^note. maybe should move over to the linux mount...</span>
+jupyter lab
+</pre></div>
+</div>
+<p>copy the ip into a browser for a Jupyter Lab session.</p>
+</div>
+<div class="section" id="launch-a-session-with-vs-code">
+<h3><span class="section-number">3.2.10. </span>launch a session with VS Code<a class="headerlink" href="#launch-a-session-with-vs-code" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="developing.html" title="previous page"><span class="section-number">2. </span>Developing</a>
+    <a class='right-next' id="next-link" href="packaging.html" title="next page"><span class="section-number">4. </span>Packaging</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By John Gunstone<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

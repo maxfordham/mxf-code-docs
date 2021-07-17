@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4. Packaging &#8212; mfcode developer docs</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Deploying" href="deploying.html" />
+    <link rel="prev" title="3. Standalone Development" href="developing-envsetup.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/mfcode.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">mfcode developer docs</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   mfcode_docs
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   1. Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="developing.html">
+   2. Developing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="developing-envsetup.html">
+   3. Standalone Development
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   4. Packaging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="deploying.html">
+   5. Deploying
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="databases.html">
+   6. databases
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="objectModels.html">
+   7. Object Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="objectModels/projectschema.html">
+   8. Project
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/packaging.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conda-build">
+   4.1. conda-build
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#folder-structure">
+     4.1.1. folder structure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#version-control">
+     4.1.2. Version Control
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conda-build-a-generic-example-from-wsl">
+     4.1.3. conda-build - a generic example from WSL
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-internal-conda-packages-windows">
+     4.1.4. Install internal conda packages - Windows
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pip">
+   4.2. pip
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#repo2docker">
+   4.3. Repo2Docker
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configuring-the-docker-image">
+     4.3.1. Configuring the docker image
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-the-j-drive">
+     4.3.2. Adding the J:\drive
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="packaging">
+<h1><span class="section-number">4. </span>Packaging<a class="headerlink" href="#packaging" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><strong>conda-bld</strong>: back-end code / repos are built into conda repositories that can be imported into various environments</p></li>
+<li><p><strong>pip</strong>: pip packages can be built from conda packages for use with VEScripts or pyRevit</p></li>
+<li><p><strong>repo2docker</strong>: repo2docker is used to build docker images of front-end repos for user-interface tools</p></li>
+</ul>
+<div class="section" id="conda-build">
+<h2><span class="section-number">4.1. </span>conda-build<a class="headerlink" href="#conda-build" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="folder-structure">
+<h3><span class="section-number">4.1.1. </span>folder structure<a class="headerlink" href="#folder-structure" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>refer to the following cookiecutters</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/michaelaye/cookiecutter-pypackage-conda">cookiecutter-pypackage-conda</a></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">J:\J4321\DigitalDesignTeam\CodeDev\cookiecutter_condapypackage</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">J:\J4321\DigitalDesignTeam\CodeDev\cookiecutter_condarecipe</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>refer to the following mf repos</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/gunstonej/xlsxtemplater">xlsxtemplater</a></p></li>
+<li><p><a class="reference external" href="https://github.com/buckettt/mffileutilities">mffileutilities</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="version-control">
+<h3><span class="section-number">4.1.2. </span>Version Control<a class="headerlink" href="#version-control" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Semantic versioning</strong> to be used for version control of ongoing development work.
+<a class="reference external" href="https://semver.org/">https://semver.org/</a></p></li>
+<li><p><strong>Git tags</strong> to be used to track Semantic Versioning.</p></li>
+<li><p>When tagging releases in a version control system, the tag for a version MUST be “vX.Y.Z” e.g. “v3.1.0”.
+<a class="reference external" href="https://stackoverflow.com/questions/2006265/is-there-a-standard-naming-convention-for-git-tags">ref</a></p></li>
+<li><p>use <a class="reference external" href="http://verioneer.py">verioneer.py</a> and _version.py found in the cookiecutter folder-structures and in <a class="reference external" href="https://github.com/gunstonej/xlsxtemplater">xlsxtemplater</a>. This will automatically make the version make with the git tag when building.</p></li>
+</ul>
+</div>
+<div class="section" id="conda-build-a-generic-example-from-wsl">
+<h3><span class="section-number">4.1.3. </span>conda-build - a generic example from WSL<a class="headerlink" href="#conda-build-a-generic-example-from-wsl" title="Permalink to this headline">¶</a></h3>
+<p>example below for package called <code class="docutils literal notranslate"><span class="pre">mypackage</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># mount the network location</span>
+mkdir /mnt/conda-bld
+sudo mount -t drvfs <span class="s1">&#39;\\barbados\apps\conda\conda-bld&#39;</span> /mnt/conda-bld
+
+<span class="c1"># add conda mf conda channel if not already there... </span>
+<span class="c1"># this allows mf internal pacakges to be included in the build</span>
+conda config --add channels file:///mnt/conda-bld 
+
+<span class="c1"># run command from local root dir of conda package (requires a conda.recipe folder in the dir)</span>
+conda activate base_mf  <span class="c1"># assuming base_mf env has conda build installed</span>
+conda build conda.recipe
+
+<span class="c1"># note. the cmd above builds into the default --croot</span>
+<span class="c1"># default = `\\wsl$\Ubuntu-20.04\home\gunstonej\miniconda3\envs\base_mf\conda-bld`</span>
+<span class="c1"># can specify a custom `croot` as follows:</span>
+<span class="c1"># `--croot /mnt/c/engDev/channel`</span>
+
+<span class="c1"># publish to mf conda channel</span>
+<span class="c1"># manually copy and paste from:</span>
+<span class="c1"># {{croot}}/linux-64/`mypackage*.tar.bz2`</span>
+<span class="c1"># --&gt; </span>
+<span class="c1"># `\\barbados\apps\conda\conda-bld\linux-64`</span>
+<span class="c1"># convert</span>
+conda convert --platform all /mnt/conda-bld/linux-64/mypackage*.tar.bz2 --output-dir /mnt/conda-bld
+<span class="c1"># update index</span>
+conda index /mnt/conda-bld
+
+<span class="c1"># install package into your conda env</span>
+conda install mypackage
+<span class="c1"># or </span>
+conda install -c file:///mnt/conda-bld mypackage
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-internal-conda-packages-windows">
+<h3><span class="section-number">4.1.4. </span>Install internal conda packages - Windows<a class="headerlink" href="#install-internal-conda-packages-windows" title="Permalink to this headline">¶</a></h3>
+<p>to install conda packages into windows you need to expose the conda channel (again, in the future this will be done by mamba-boa).</p>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="c1">: navigate to Z:\conda\conda-bld</span>
+<span class="p">:</span><span class="c1">: create a python server of the directory on your local host</span>
+Z<span class="p">:</span><span class="nl">\conda\conda-bld</span><span class="c1">&gt; python -m http.server</span>
+
+<span class="p">:</span><span class="c1">: open a new cmd</span>
+
+```bat
+mamba install mypackage -c http://localhost:8000/
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="pip">
+<h2><span class="section-number">4.2. </span>pip<a class="headerlink" href="#pip" title="Permalink to this headline">¶</a></h2>
+<p>simpler, pip packages can be built from conda packages.<br />
+this will be useful for shared packages between: Revit-pyRevit, IES-VEScripts and other python tools.
+In both Revit-pyRevit and IES-VEScripts a pip directory can be simply appended to the <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> to make external packages available to these scripts.</p>
+<p>pip packages can be created from conda packages as follows (ask Owen for help if req);</p>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="c1">: as before, expose conda channel on localhost</span>
+Z<span class="p">:</span><span class="nl">\conda\conda-bld</span><span class="c1">&gt; python -m http.server</span>
+
+pip install mypackage --target=Z:\pip --extra-index-url = http://localhost:8000/
+<span class="p">:</span><span class="c1">: --target = shared pip folder, this can be appended to `sys.path`</span>
+<span class="p">:</span><span class="c1">: --extra-index-url = where to look for mypackage</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="repo2docker">
+<h2><span class="section-number">4.3. </span><a class="reference external" href="https://repo2docker.readthedocs.io/en/latest/usage.html">Repo2Docker</a><a class="headerlink" href="#repo2docker" title="Permalink to this headline">¶</a></h2>
+<p>Repo2docker is a tool that builds a docker image (and associated environment) from a Git repository.
+Max Fordham’s jupyter hub server has the <a class="reference external" href="https://github.com/plasmabio/tljh-repo2docker">tljh-repo2docker</a> plugin installed
+and configured making it simple to add new environments / apps. It works in the same way as <a class="reference external" href="https://mybinder.org/">mybinder</a>.</p>
+<div class="section" id="configuring-the-docker-image">
+<h3><span class="section-number">4.3.1. </span>Configuring the docker image<a class="headerlink" href="#configuring-the-docker-image" title="Permalink to this headline">¶</a></h3>
+<p>The docker image is configured by the <a class="reference external" href="https://mybinder.readthedocs.io/en/latest/using/config_files.html">config_files</a>.
+In the simplest (most common) case, the only file that is required is “environment.yml” file to specify the conda environment.
+The “postbuild” can be used to add jupyter extensions.</p>
+<p>e.g. the config files for the TM59ArchetypeResultsViewer App
+<img alt="config_repo2docker" src="../_images/config_repo2docker.png" /></p>
+</div>
+<div class="section" id="adding-the-j-drive">
+<h3><span class="section-number">4.3.2. </span>Adding the J:\drive<a class="headerlink" href="#adding-the-j-drive" title="Permalink to this headline">¶</a></h3>
+<p>The Max Fordham TLJH has been configured to add a “jobs” folder to the root repository when a server or app is launched.
+This gives easy access to read and write files from the J:\drive.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="developing-envsetup.html" title="previous page"><span class="section-number">3. </span>Standalone Development</a>
+    <a class='right-next' id="next-link" href="deploying.html" title="next page"><span class="section-number">5. </span>Deploying</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By John Gunstone<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
