@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>8. Project &#8212; mfcode developer docs</title>
+    <title>Project &#8212; mfcode developer docs</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -51,7 +53,6 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="7. Object Models" href="../objectModels.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -88,7 +89,7 @@
   </a>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    1. Intro
@@ -124,9 +125,14 @@
    7. Object Models
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../objectModels-projectschema.html">
    8. Project
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../jb-rendering-demo.html">
+   9. Jupyter Book rendering demo
   </a>
  </li>
 </ul>
@@ -202,12 +208,12 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#properties">
-   8.1. Properties
+   Properties
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#definitions">
-   8.2. Definitions
+   Definitions
   </a>
  </li>
 </ul>
@@ -222,9 +228,9 @@
               <div>
                 
   <div class="section" id="project">
-<h1><span class="section-number">8. </span>Project<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h1>
+<h1>Project<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="properties">
-<h2><span class="section-number">8.1. </span>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">ProjectId</span></code></strong> <em>(string)</em></p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">IsPublic</span></code></strong> <em>(boolean)</em>: If the project’s data is publicly available for benchmarking and comparison.</p></li>
@@ -272,7 +278,7 @@
 </ul>
 </div>
 <div class="section" id="definitions">
-<h2><span class="section-number">8.2. </span>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h2>
+<h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">CarbonFactorUnit</span></code></strong> <em>(object)</em></p>
 <ul>
@@ -442,7 +448,6 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../objectModels.html" title="previous page"><span class="section-number">7. </span>Object Models</a>
 
         </div>
         

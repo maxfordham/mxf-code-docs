@@ -28,8 +28,9 @@ each individual user should have a file saved here:
 ```/mfcode_docs/book/docs/_secret_config.toml```  
 that follows the same format as:  
 ```/mfcode_docs/book/docs/_secret_config_template.toml```  
-with their secret config details. _secret_config.toml should not be shared.
-in the docs jinja style pseudo-code is used to indicate what vars from the _secret_config.toml file should be used.
+with their secret config details.  
+_secret_config.toml should not be shared.  
+jinja style pseudo-code is used to indicate what vars from the _secret_config.toml file should be used.
 ```
 
 <div class="admonition note" name="html-admonition" style="background: lightgreen; padding: 10px">

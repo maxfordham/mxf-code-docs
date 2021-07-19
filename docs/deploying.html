@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -126,8 +128,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="objectModels/projectschema.html">
+  <a class="reference internal" href="objectModels-projectschema.html">
    8. Project
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="jb-rendering-demo.html">
+   9. Jupyter Book rendering demo
   </a>
  </li>
 </ul>
@@ -271,7 +278,8 @@
 for the repo developed by QuantStack that automates processes on the JupyterHub server using ansible playbooks</p>
 <div class="section" id="accessing-the-server">
 <h3><span class="section-number">5.1.1. </span>Accessing the Server<a class="headerlink" href="#accessing-the-server" title="Permalink to this headline">¶</a></h3>
-<p>SSH / Putty onto the StBarts server with the following credententials</p>
+<p>install putty.</p>
+<p>you need the following credententials to SSH / Putty onto the StBarts server:</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
@@ -293,6 +301,7 @@ for the repo developed by QuantStack that automates processes on the JupyterHub 
 </tr>
 </tbody>
 </table>
+<p>these can be found in your secret _secret_config.toml file.</p>
 </div>
 <div class="section" id="check-server-performance">
 <h3><span class="section-number">5.1.2. </span>Check server performance<a class="headerlink" href="#check-server-performance" title="Permalink to this headline">¶</a></h3>
@@ -328,7 +337,7 @@ Instead the process is to start a local web server which the docker instances ca
 <h3><span class="section-number">5.2.2. </span>mount the conda-build folder on the server<a class="headerlink" href="#mount-the-conda-build-folder-on-the-server" title="Permalink to this headline">¶</a></h3>
 <p>this only needs to be done after the server has been switched off, otherwise the mount will persist.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir /mnt/conda-bld
-sudo mount -t cifs -o <span class="nv">user</span><span class="o">={{</span> mf.user <span class="o">}}</span>,password<span class="o">={{</span> mf.password <span class="o">}}</span> <span class="s1">&#39;\\barbados\apps\conda\conda-bld&#39;</span> /mnt/conda-bld
+sudo mount -t cifs -o <span class="nv">user</span><span class="o">={{</span> mf.user <span class="o">}}</span>,password<span class="o">={{</span> mf.password <span class="o">}}</span> servers.mffileserver.FDIR_CONDA_BUILD /mnt/conda-bld
 </pre></div>
 </div>
 </div>
@@ -339,9 +348,8 @@ sudo mount -t cifs -o <span class="nv">user</span><span class="o">={{</span> mf.
 python3 -m http.server
 </pre></div>
 </div>
-<p>Check that the server is working by visiting <St Barts IP>:8000 (8000 is local host) and you should see the MF Conda Channel Index page.
-St Barts IP should be 10.10.30.125.
-i.e. visit <a class="reference external" href="http://10.10.30.125:8000">http://10.10.30.125:8000</a> to check that a temporary conda build server exists on the local host.</p>
+<p>Check that the conda file-server is exposed by visiting:
+‘’’’’’ and you should see the MF Conda Channel Index page.</p>
 </div>
 <div class="section" id="build-the-repo2docker-image">
 <h3><span class="section-number">5.2.4. </span>Build the repo2docker image<a class="headerlink" href="#build-the-repo2docker-image" title="Permalink to this headline">¶</a></h3>
@@ -349,7 +357,7 @@ i.e. visit <a class="reference external" href="http://10.10.30.125:8000">http://
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>channels:
   - defaults
   - conda-forge
-  - http://10.10.30.125:8000
+  - <span class="o">{{</span> servers.mffileserver.IP_TEMP_CONDA_FILESERVER <span class="o">}}</span>
 dependencies:
   - my_really_cool_mf_conda_package
 </pre></div>
@@ -357,12 +365,6 @@ dependencies:
 <p><strong>note</strong>. currently
 ​
 Then build the image in the conventional way. Once this has complete you can then kill the local server running in conda-bld since it is only used during the installation process.</p>
-<p><strong>And finally</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Live</span>
-<span class="n">Laugh</span>
-<span class="n">Love</span>
-</pre></div>
-</div>
 </div>
 </div>
 </div>
