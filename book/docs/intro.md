@@ -28,11 +28,12 @@ each individual user should have a file saved here:
 ```/mfcode_docs/book/docs/_secret_config.toml```  
 that follows the same format as:  
 ```/mfcode_docs/book/docs/_secret_config_template.toml```  
-with their secret config details. _secret_config.toml should not be shared.
-in the docs jinja style pseudo-code is used to indicate what vars from the _secret_config.toml file should be used.
+with their secret config details.  
+_secret_config.toml should not be shared.  
+jinja style pseudo-code is used to indicate what vars from the _secret_config.toml file should be used.
 ```
 
 <div class="admonition note" name="html-admonition" style="background: lightgreen; padding: 10px">
-<p class="title">This is the **title**</p>
-<iframe src="../../../pdf/BMSDataDrivenWaterfall_resize.pdf" width="100%" height="800px" frameBorder="0"> </iframe>
+<p class="title">This is an example of an embedded pdf</p>
+<iframe src="https://github.com/gunstonej/mfcode_docs/blob/master/book/pdf/BMSDataDrivenWaterfall_resize.pdf" width="100%" height="800px" frameBorder="0"> </iframe>
 </div>

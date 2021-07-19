@@ -8,6 +8,8 @@ entries:
 - file: docs/packaging
 - file: docs/deploying
 - file: docs/databases
-- file: docs/objectModels
-- file: docs/objectModels/projectschema
+- glob: docs/objectModels*
+- file: docs/jb-rendering-demo
+
+
 

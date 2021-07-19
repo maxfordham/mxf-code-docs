@@ -1,1 +1,4 @@
 /book/docs/_secret_config.toml
+/book/_build
+/.ipynb_checkpoints
+/book/docs/.ipynb_checkpoints

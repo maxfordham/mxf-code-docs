@@ -1,0 +1,37 @@
+
+
+[packaging]  # category name
+description = ''' 
+The first newline is
+trimmed in raw strings.
+All other whitespace
+is preserved.
+''' # category description 
+
+
+
+# list of key technologies in category below
+[[packaging.tech]]  
+name = "conda-forge"
+link = "https://conda-forge.org/"
+description = "community maintained collection of opensource packages and template specifcation for new packages."
+local-link = "" #  refers to which page on the website to link to; if blank parser reverts to category name
+tags = []
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
+
+[[packaging.tech]]
+name = "conda-build"
+link = "https://docs.conda.io/en/latest/conda-build.html"
+description = "tool for building conda packages, maintained by anaconda."
+local-link = "" #  refers to which page on the website to link to; if blank parser reverts to category name
+tags = []
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
+
+[[packaging.tech]]
+name = "mamba"
+link = "https://docs.conda.io/en/latest/conda-build.html"
+description = "Mamba is a fast, robust, and cross-platform package manager; it is a reimplementation of the conda package manager in C++."
+local-link = "" #  refers to which page on the website to link to; if blank parser reverts to category name
+tags = []
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
+

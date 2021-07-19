@@ -10,7 +10,9 @@ for the repo developed by QuantStack that automates processes on the JupyterHub 
 
 ### Accessing the Server
 
-SSH / Putty onto the StBarts server with the following credententials
+install putty.
+
+you need the following credententials to SSH / Putty onto the StBarts server:
 
 |           |                                   |
 | --------- | --------------------------------- |
@@ -18,6 +20,8 @@ SSH / Putty onto the StBarts server with the following credententials
 | port      | {{ servers.jupyterhub.port }}     |
 | username  | {{ servers.jupyterhub.username }} |
 | password  | {{ servers.jupyterhub.password }} |
+
+these can be found in your secret _secret_config.toml file.
 
 ### Check server performance
 
@@ -58,7 +62,7 @@ this only needs to be done after the server has been switched off, otherwise the
 
 ```bash
 mkdir /mnt/conda-bld
-sudo mount -t cifs -o user={{ mf.user }},password={{ mf.password }} '\\barbados\apps\conda\conda-bld' /mnt/conda-bld
+sudo mount -t cifs -o user={{ mf.user }},password={{ mf.password }} servers.mffileserver.FDIR_CONDA_BUILD /mnt/conda-bld
 ```
 
 ### Start the conda-channel server
@@ -70,9 +74,8 @@ cd /mnt/conda-bld
 python3 -m http.server
 ```
 
-Check that the server is working by visiting <St Barts IP>:8000 (8000 is local host) and you should see the MF Conda Channel Index page.
-St Barts IP should be 10.10.30.125.
-i.e. visit http://10.10.30.125:8000 to check that a temporary conda build server exists on the local host.
+Check that the conda file-server is exposed by visiting:
+'''{{ servers.jupyterhub.ip }}''' and you should see the MF Conda Channel Index page.
 
 ### Build the repo2docker image
 
@@ -82,7 +85,7 @@ Then in your repo2docker repsitory binder/environment.yml add the reference to t
 channels:
   - defaults
   - conda-forge
-  - http://10.10.30.125:8000
+  - {{ servers.mffileserver.IP_TEMP_CONDA_FILESERVER }}
 dependencies:
   - my_really_cool_mf_conda_package
 ```
@@ -91,10 +94,3 @@ __note__. currently
 ​
 Then build the image in the conventional way. Once this has complete you can then kill the local server running in conda-bld since it is only used during the installation process.
 
-**And finally**
-
-```
-Live
-Laugh
-Love
-```

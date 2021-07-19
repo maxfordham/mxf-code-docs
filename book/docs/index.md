@@ -4,10 +4,12 @@
 
 This documentation aims to provide high-level, non-verbose notes outlining Max Fordham's engineering software development infrastructure.
 Links to external sources and standards to describe the approach are preferred where possible.
-The intended audience are those contributing / maintaining internal development tools, or external parties / collaborators interested in our approach.
+The intended audience are those contributing-to and maintaining internal development tools, or external parties and collaborators interested in our approach.
 Code snippets are encouraged.
 
-We stand on the shoulders of giants. See below for key packages on which we rely.
+**We stand on the shoulders of giants**. Our software is built on robust, high-quality opensource packages, and we are proud to share the work that we produce with the opensource community. 
+When writing code there are always many solutions a problem;
+we standardise the technologies we use for a given task to ensure a consistent approach across projects. See below for key technologies on which we rely.
 
 :::{panels}
 :container: +full-width text-center
@@ -17,13 +19,22 @@ We stand on the shoulders of giants. See below for key packages on which we rely
 **[packaging](packaging.md)**
 ^^^
 conda build used to build conda packages to conda-forge feedstock recipe.
-![conda-forge](images/conda-forge-icon.png)
+[![conda-forge](images/conda-forge-icon.png)](https://conda-forge.org/)
+[![conda](images/conda-icon.png)](https://docs.conda.io/en/latest/conda-build.html)
+[![mamba](images/mamba-icon.png)](https://medium.com/@QuantStack/open-software-packaging-for-science-61cecee7fc23)
 ---
 
+**[ide](developing.md)**
+^^^
+the ide (integrated development environment) is where we write code. All engineers have access to Jupyter Lab on the
+server, and members of the core development Team also use VS Code.
+[![ansible](images/ansible-icon.png)](https://docs.ansible.com/)
+
+---
 **[deploying](deploying.md)**
 ^^^
 the jupyterhub server is deployed to an internal server using ansible playbooks.
-![ansible](images/ansible-icon.png)
+[![ansible](images/ansible-icon.png)](https://docs.ansible.com/)
 
 ---
 **[jupyterhub](deploying.md)**
@@ -57,5 +68,14 @@ other MF automation tools without complex user installs.
 postgresSQL is the preferred database tool. SQLalchemy uses to manage python interface.
 ![postgresql](images/postgresql-icon.png)
 ![sqlalchemy](images/sqlalchemy-icon.png)
+
+---
+**[expert help](https://quantstack.net/)
+^^^
+**[quantstack](https://quantstack.net/)**  
+for help with the heavy lifting and deployment we call in the pros. 
+Quantstack and one of the core Jupyter developers and are very active members of the opensource community. 
+working with them means we can feel confident in our approach to software development, whilst concentrating on what we're best at: Engineering.
+<img src="https://github.com/QuantStack/design/blob/master/QuantStack/logo-baseline.svg" width=40 />
 
 :::
