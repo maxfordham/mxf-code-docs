@@ -42,8 +42,6 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -218,32 +216,57 @@ Links to external sources and standards to describe the approach are preferred w
 The intended audience are those contributing-to and maintaining internal development tools, or external parties and collaborators interested in our approach.
 Code snippets are encouraged.</p>
 <p><strong>We stand on the shoulders of giants</strong>. Our software is built on robust, high-quality opensource packages, and we are proud to share the work that we produce with the opensource community.
-When writing code there are always many solutions a problem;
+When writing code there are always many solutions to a problem;
 we standardise the technologies we use for a given task to ensure a consistent approach across projects. See below for key technologies on which we rely.</p>
 <div class="sphinx-bs container pb-4 full-width text-center docutils">
 <div class="row docutils">
 <div class="d-flex col-lg-4 px-2 py-2 docutils">
 <div class="card w-100 docutils">
 <div class="card-header docutils">
-<p class="card-text"><strong><a class="reference internal" href="packaging.html"><span class="doc std std-doc">packaging</span></a></strong></p>
+<p class="card-text"><strong><a class="reference internal" href="software-automation.html"><span class="doc std std-doc">software-automation</span></a></strong></p>
 </div>
 <div class="card-body docutils">
-<p class="card-text">conda build used to build conda packages to conda-forge feedstock recipe.
-<a class="reference external" href="https://conda-forge.org/"><img alt="conda-forge" src="../_images/conda-forge-icon.png" /></a>
-<a class="reference external" href="https://docs.conda.io/en/latest/conda-build.html"><img alt="conda" src="../_images/conda-icon.png" /></a>
-<a class="reference external" href="https://medium.com/&#64;QuantStack/open-software-packaging-for-science-61cecee7fc23"><img alt="mamba" src="../_images/mamba-icon.png" /></a></p>
+<p class="card-text">we develop scripts to automate tasks using the open APIs available within our core softwares.</p>
+<p class="card-text"><a class="reference external" href="https://www.notion.so/pyrevitlabs/pyRevit-bd907d6292ed4ce997c46e84b6ef67a0"><img alt="pyrevit" src="../_images/pyrevit-icon.png" /></a>
+<a class="reference external" href="https://www.food4rhino.com/en/app/ladybug-tools"><img alt="grasshopper+ladybug-tools" src="../_images/grasshopper+ladybug-tools-icon.png" /></a>
+<a class="reference external" href="https://www.iesve.com/software/python-scripting"><img alt="IES-vescripts" src="../_images/IES-vescripts-icon.png" /></a></p>
 </div>
 </div>
 </div>
 <div class="d-flex col-lg-4 px-2 py-2 docutils">
 <div class="card w-100 docutils">
 <div class="card-header docutils">
-<p class="card-text"><strong><a class="reference internal" href="developing.html"><span class="doc std std-doc">ide</span></a></strong></p>
+<p class="card-text"><strong><a class="reference internal" href="developing.html"><span class="doc std std-doc">developer-tools</span></a></strong></p>
 </div>
 <div class="card-body docutils">
-<p class="card-text">the ide (integrated development environment) is where we write code. All engineers have access to Jupyter Lab on the
-server, and members of the core development Team also use VS Code.
-<a class="reference external" href="https://docs.ansible.com/"><img alt="ansible" src="../_images/ansible-icon.png" /></a></p>
+<p class="card-text"><a class="reference external" href="https://jupyter.org/"><img alt="jupyter" src="../_images/jupyter-icon.png" /></a>
+<a class="reference external" href="https://code.visualstudio.com/"><img alt="vscode" src="../_images/vscode-icon.png" /></a></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 px-2 py-2 docutils">
+<div class="card w-100 docutils">
+<div class="card-header docutils">
+<p class="card-text"><strong><a class="reference internal" href="developing.html"><span class="doc std std-doc">frontend</span></a></strong></p>
+</div>
+<div class="card-body docutils">
+<p class="card-text"><a class="reference external" href="https://github.com/voila-dashboards/voila"><img alt="voila" src="../_images/voila-icon.png" /></a>
+<a class="reference external" href="https://plotly.com/python/getting-started/"><img alt="plotly" src="../_images/plotly-icon.png" /></a>
+<a class="reference external" href="https://altair-viz.github.io/"><img alt="altair" src="../_images/altair-icon.png" /></a>
+<a class="reference external" href="https://github.com/bqplot/bqplot"><img alt="bqplot" src="../_images/bqplot-icon.png" /></a></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 px-2 py-2 docutils">
+<div class="card w-100 docutils">
+<div class="card-header docutils">
+<p class="card-text"><strong><a class="reference internal" href="packaging.html"><span class="doc std std-doc">packaging</span></a></strong></p>
+</div>
+<div class="card-body docutils">
+<p class="card-text">The first newline is trimmed in raw strings. All other whitespace is preserved.</p>
+<p class="card-text"><a class="reference external" href="https://conda-forge.org/"><img alt="conda-forge" src="../_images/conda-forge-icon.png" /></a>
+<a class="reference external" href="https://docs.conda.io/en/latest/conda-build.html"><img alt="conda" src="../_images/conda-icon.png" /></a>
+<a class="reference external" href="https://docs.conda.io/en/latest/conda-build.html"><img alt="mamba" src="../_images/mamba-icon.png" /></a></p>
 </div>
 </div>
 </div>
@@ -253,54 +276,10 @@ server, and members of the core development Team also use VS Code.
 <p class="card-text"><strong><a class="reference internal" href="deploying.html"><span class="doc std std-doc">deploying</span></a></strong></p>
 </div>
 <div class="card-body docutils">
-<p class="card-text">the jupyterhub server is deployed to an internal server using ansible playbooks.
-<a class="reference external" href="https://docs.ansible.com/"><img alt="ansible" src="../_images/ansible-icon.png" /></a></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-4 px-2 py-2 docutils">
-<div class="card w-100 docutils">
-<div class="card-header docutils">
-<p class="card-text"><strong><a class="reference internal" href="deploying.html"><span class="doc std std-doc">jupyterhub</span></a></strong></p>
-</div>
-<div class="card-body docutils">
-<p class="card-text">a server hosted jupyterhub gives all Max Fordham users access to notebooks and apps. repo2docker creates docker images of apps and notebook environments.
-<img alt="jupyterhub" src="../_images/jupyterhub-icon.png" />
-<img alt="repo2docker" src="../_images/repo2docker-icon.png" /></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-4 px-2 py-2 docutils">
-<div class="card w-100 docutils">
-<div class="card-header docutils">
-<p class="card-text"><strong><a class="reference internal" href="developing.html"><span class="doc std std-doc">apps</span></a></strong></p>
-</div>
-<div class="card-body docutils">
-<p class="card-text">standalone apps are made from notebooks using voila. they are deployed to the server using repo2docker.
-<img alt="voila" src="../_images/voila-icon.png" /></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-4 px-2 py-2 docutils">
-<div class="card w-100 docutils">
-<div class="card-header docutils">
-<p class="card-text"><strong><a class="reference internal" href="developing.html"><span class="doc std std-doc">pyrevit</span></a></strong></p>
-</div>
-<div class="card-body docutils">
-<p class="card-text">Revit software is customised using pyRevit - a RapidApplicationDevelopment environment and python wrapper to the Revit API.
-<img alt="pyrevit" src="../_images/pyrevit-icon.png" /></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-4 px-2 py-2 docutils">
-<div class="card w-100 docutils">
-<div class="card-header docutils">
-<p class="card-text"><strong><a class="reference internal" href="developing.html"><span class="doc std std-doc">api</span></a></strong></p>
-</div>
-<div class="card-body docutils">
-<p class="card-text">FastAPI is used to create server hosted APIs. This templates interactions with databases and gives Revit or IES scripts access to
-other MF automation tools without complex user installs.
-<img alt="fastapi" src="../_images/fastapi-icon.png" /></p>
+<p class="card-text">a server hosted jupyterhub gives all Max Fordham users access to jupyter notebooks and apps.  the server is setup, deployed and updated using ansible. the jupyterhub repo2docker plugin creates docker images of apps and notebook environments. see <a class="reference external" href="https://github.com/gunstonej/jupyterhub-maxfordham">jupyterhub-maxfordham</a> for MF setup and configuration. the work was done by quantstack, and copies a previous set-up they configured <a class="reference external" href="https://docs.plasmabio.org/en/latest/overview/index.html">plasmabio</a>.</p>
+<p class="card-text"><a class="reference external" href="https://docs.ansible.com/"><img alt="ansible" src="../_images/ansible-icon.png" /></a>
+<a class="reference external" href="https://jupyterhub.readthedocs.io/en/stable/"><img alt="jupyterhub" src="../_images/jupyterhub-icon.png" /></a>
+<a class="reference external" href="https://repo2docker.readthedocs.io/en/latest/index.html"><img alt="repo2docker" src="../_images/repo2docker-icon.png" /></a></p>
 </div>
 </div>
 </div>
@@ -310,23 +289,37 @@ other MF automation tools without complex user installs.
 <p class="card-text"><strong><a class="reference internal" href="databases.html"><span class="doc std std-doc">databases</span></a></strong></p>
 </div>
 <div class="card-body docutils">
-<p class="card-text">postgresSQL is the preferred database tool. SQLalchemy uses to manage python interface.
-<img alt="postgresql" src="../_images/postgresql-icon.png" />
-<img alt="sqlalchemy" src="../_images/sqlalchemy-icon.png" /></p>
+<p class="card-text">insight can be extract from structured data. our automation tools create structured data that is passed to databases for global review and analysis.</p>
+<p class="card-text"><a class="reference external" href="https://www.postgresql.org/"><img alt="postgresql" src="../_images/postgresql-icon.png" /></a>
+<a class="reference external" href="https://www.sqlite.org/index.html"><img alt="sqlite" src="../_images/sqlite-icon.png" /></a></p>
 </div>
 </div>
 </div>
 <div class="d-flex col-lg-4 px-2 py-2 docutils">
 <div class="card w-100 docutils">
 <div class="card-header docutils">
-<p class="card-text">**<a class="reference external" href="https://quantstack.net/">expert help</a></p>
+<p class="card-text"><strong><a class="reference internal" href="developing.html"><span class="doc std std-doc">backend-tools</span></a></strong></p>
 </div>
 <div class="card-body docutils">
-<p class="card-text"><strong><a class="reference external" href="https://quantstack.net/">quantstack</a></strong><br />
-for help with the heavy lifting and deployment we call in the pros.
-Quantstack and one of the core Jupyter developers and are very active members of the opensource community.
-working with them means we can feel confident in our approach to software development, whilst concentrating on what we’re best at: Engineering.
-<img src="https://github.com/QuantStack/design/blob/master/QuantStack/logo-baseline.svg" width=40 /></p>
+<p class="card-text"><a class="reference external" href="https://www.sqlalchemy.org/"><img alt="sqlalchemy" src="../_images/sqlalchemy-icon.png" /></a>
+<a class="reference external" href="https://pydantic-docs.helpmanual.io/"><img alt="pydantic" src="../_images/pydantic-icon.png" /></a>
+<a class="reference external" href="https://fastapi.tiangolo.com/"><img alt="FastAPI" src="../_images/FastAPI-icon.png" /></a></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 px-2 py-2 docutils">
+<div class="card w-100 docutils">
+<div class="card-header docutils">
+<p class="card-text"><strong><span class="xref myst">external-experts</span></strong></p>
+</div>
+<div class="card-body docutils">
+<p class="card-text"><a class="reference external" href="https://quantstack.net/"><img alt="quantstack" src="../_images/quantstack-icon.png" /></a></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 px-2 py-2 docutils">
+<div class="card w-100 docutils">
+<div class="card-body docutils">
 </div>
 </div>
 </div>
