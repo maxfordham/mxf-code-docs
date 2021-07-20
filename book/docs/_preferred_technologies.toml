@@ -1,37 +1,280 @@
+# tags #########################################################################
+# give a description of the tags used. every tag should have a description
+[tags]
+packaging = """ \
+Perhaps the most important step to well structured ongoing development.\
+Code is packaged into conda packages allowing portability and simple version control.
+"""
+deploying = """ \
+A server hosted jupyterhub gives all Max Fordham users access to jupyter notebooks and apps.  \
+the server is setup, deployed and updated using ansible playbooks. \
+the work was done by Quantstack, and utilises a previous set-up they configured [plasmabio](https://docs.plasmabio.org/en/latest/overview/index.html)\
+see [jupyterhub-maxfordham](https://github.com/gunstonej/jupyterhub-maxfordham) for MF setup and configuration. \
+"""
+software-automation = """ \
+we develop scripts to automate tasks using the open APIs available within our core softwares."""
 
+authoring-tools = """ \
+The majority of our work can be done in Jupyter. All Engineers have access to managed common environments on the 
+JupyterHub server. 
+"""
+backend = """"""
 
-[packaging]  # category name
-description = ''' 
-The first newline is
-trimmed in raw strings.
-All other whitespace
-is preserved.
-''' # category description 
+backend-tools = """\
+Making object-models and defined datastructures is the basis of solid engineering tools. \
+Utilising FastAPI packages can be turned into server hosted APIs that are accessible to any machine with no install.\
+And SQLAlchemy handles creation and interations with SQL tables.\
+"""
 
+frontend = """\
+To simplify the number of tools our developers need to interact with, we produce the majority of frontend apps \
+using ipywidgets and the many visualisation libraries Jupyter supports. For Revit automation we also use WPF forms.\
+"""
 
+databases = """ \
+Insight can be extract from structured data. our automation tools create structured data that is passed to \
+databases for global review and analysis."""
 
+documentation = """ \
+Without clear documentation code risks becoming a black-box. \
+When writing python code we use the Google Style Guide: \
+[pyguide](https://google.github.io/styleguide/pyguide.html), \
+[mit-pyguide](https://drake.mit.edu/styleguide/pyguide.html), \
+[sphinx-example](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html).\
+this allows for autodocs using sphinx, or for more simple docs using [mydocstring](https://github.com/ooreilly/mydocstring).\
+Jupyter Book is used to pull it all together.\
+"""
+
+external-experts = """for help with the heavy lifting and deployment we call in the pros.\
+Quantstack are one of the core Jupyter developers and are active members of the opensource community.\
+Working with them gives us confidence in our approach to software development,\
+whilst concentrating on what we're best at: Engineering."""
+
+# technologies #################################################################
 # list of key technologies in category below
-[[packaging.tech]]  
+
+# packaging -------------------
+[[tech]]  
 name = "conda-forge"
-link = "https://conda-forge.org/"
+url = "https://conda-forge.org/"
 description = "community maintained collection of opensource packages and template specifcation for new packages."
-local-link = "" #  refers to which page on the website to link to; if blank parser reverts to category name
-tags = []
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag
+tags = ["packaging"]
 image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
 
-[[packaging.tech]]
-name = "conda-build"
-link = "https://docs.conda.io/en/latest/conda-build.html"
-description = "tool for building conda packages, maintained by anaconda."
-local-link = "" #  refers to which page on the website to link to; if blank parser reverts to category name
-tags = []
+[[tech]]
+name = "conda"
+url = "https://docs.conda.io/en/latest/conda-build.html"
+description = "tool for building conda packages, maintained by Anaconda."
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag
+tags = ["packaging"]
 image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
 
-[[packaging.tech]]
+[[tech]]
 name = "mamba"
-link = "https://docs.conda.io/en/latest/conda-build.html"
+url = "https://docs.conda.io/en/latest/conda-build.html"
 description = "Mamba is a fast, robust, and cross-platform package manager; it is a reimplementation of the conda package manager in C++."
-local-link = "" #  refers to which page on the website to link to; if blank parser reverts to category name
-tags = []
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag
+tags = ["packaging"]
 image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
 
+# deploying -------------------
+[[tech]]
+name = "ansible"
+url = "https://docs.ansible.com/"
+description = """ \
+Ansible playbooks are used to automate the setup, configuration and update \
+of remote servers from a local machine. This is used to deploy our JupyterHub server."""
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag
+tags = ["deploying"]
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
+
+[[tech]]
+name = "jupyterhub"
+url = "https://jupyterhub.readthedocs.io/en/stable/"
+description = """ \
+JupyterHub is the best way to serve Jupyter notebook for multiple users. \ 
+It can be used in a class of students, a corporate data science group or scientific research group. """
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag
+tags = ["deploying"]
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
+
+[[tech]]
+name = "repo2docker"
+url = "https://repo2docker.readthedocs.io/en/latest/index.html"
+description = """ \
+repo2docker fetches a repository (from GitHub, GitLab, Zenodo, Figshare, Dataverse installations, a Git repository or a local directory) \ 
+and builds a container image in which the code can be executed. \
+The image build process is based on the configuration files found in the repository."""
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag
+tags = ["deploying"]
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
+
+# development -------------------
+# authoring-tools -------------------
+[[tech]]  
+name = "jupyter"
+url = "https://jupyter.org/"
+description = "interactive coding and in-line report production"
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag
+tags = ["developing", "authoring-tools"]
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
+
+[[tech]]  
+name = "vscode"
+url = "https://code.visualstudio.com/"
+description = "state of the art IDE for software development"
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag
+tags = ["developing", "authoring-tools"]
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
+
+# software-automation -------------------
+[[tech]]
+name = "pyrevit"
+url = "https://www.notion.so/pyrevitlabs/pyRevit-bd907d6292ed4ce997c46e84b6ef67a0"
+description = """ \
+pyRevit (with lowercase py) is a Rapid Application Prototyping (RAD) environment for Autodesk Revit. \
+It helps you quickly sketch out your automation and add-on ideas, in whichever language that you are most comfortable with, \ 
+inside the Revit environment and using its APIs."""
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag
+tags = ["developing", "software-automation"]
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
+
+[[tech]]
+name = "grasshopper+ladybug-tools"
+url = "https://www.food4rhino.com/en/app/ladybug-tools"
+description = """ \
+visual coding and python scripting environment inside McNeel Rhino. \ 
+good for early-stage concept design development and analysis."""
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag
+tags = ["developing", "software-automation"]
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
+
+[[tech]]
+name = "IES-vescripts"
+url = "https://www.iesve.com/software/python-scripting"
+description = """ \
+You can use the VE Python API to create your own customised scripts to: \
+automate reports, data input, parametric simulations and many other tasks."""
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag
+tags = ["developing", "software-automation"]
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
+
+# frontend -------------------
+[[tech]]
+name = "voila"
+url = "https://github.com/voila-dashboards/voila"
+description = "Voilà turns Jupyter notebooks into standalone web applications."
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag
+tags = ["developing", "frontend"]
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
+
+[[tech]]
+name = "plotly"
+url = "https://plotly.com/python/getting-started/"
+description = "simple but powerful interactive web visualisation"
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag
+tags = ["developing", "frontend"]
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
+
+[[tech]]
+name = "altair"
+url = "https://altair-viz.github.io/"
+description = "declarative 2D plotting that wraps around vega d3 schemas"
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag
+tags = ["developing", "frontend"]
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
+
+[[tech]]
+name = "bqplot"
+url = "https://github.com/bqplot/bqplot"
+description = "plotting library build with jupyter widgets. allows for complex interactions with ipywidgets."
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag
+tags = ["developing", "frontend"]
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
+
+# backend -------------------
+[[tech]]
+name = "postgresql"
+url = "https://www.postgresql.org/"
+description = """ \
+PostgreSQL is a powerful, open source object-relational database system \
+with over 30 years of active development that has earned it a strong reputation for \
+reliability, feature robustness, and performance. \
+It is used for production-grade tools."""
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag
+tags = ["developing", "backend", "databases"]
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
+
+[[tech]]
+name = "sqlite"
+url = "https://www.sqlite.org/index.html"
+description = """ \
+SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. \ 
+It is used for some standalone apps and prototyping."""
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag
+tags = ["developing", "backend", "databases"]
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
+
+[[tech]]
+name = "sqlalchemy"
+url = "https://www.sqlalchemy.org/"
+description = """ \
+SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL. \
+Table definitions and relations are developed in SQL alchemy, as well as data-serialisation with pydantic."""
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag
+tags = ["developing", "backend", "backend-tools", "orm"]
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
+
+[[tech]]
+name = "pydantic"
+url = "https://pydantic-docs.helpmanual.io/"
+description = """\
+Define how data should be in pure, canonical python; validate it with pydantic.\
+Used to create object definitions that feed: databases, calculation tools and documentation."""
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag
+tags = ["developing", "backend", "backend-tools", "object-models"]
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
+
+[[tech]]
+name = "FastAPI"
+url = "https://fastapi.tiangolo.com/"
+description = """FastAPI framework, high performance, easy to learn, fast to code, ready for production.\
+It makes maintainence, upgrade and integration of production packages with software scripts simple as\
+the packages and environment is installed on the server."""
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag 
+tags = ["developing", "backend", "backend-tools", "object-models"]
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
+
+[[tech]]
+name = "quantstack"
+url = "https://quantstack.net/"
+description = """for help with the heavy lifting and deployment we call in the pros.\
+Quantstack are one of the core Jupyter developers and are active members of the opensource community.\
+Working with them gives us confidence in our approach to software development,\
+whilst concentrating on what we're best at: Engineering."""
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag
+tags = ["external-experts"]
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
+
+# documentation
+[[tech]]
+name = "jupyterbook"
+url = "https://jupyterbook.org/intro.html"
+description = """\
+Jupyter Book is an open source project for building beautiful, publication-quality books and documents from computational material.\
+"""
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag
+tags = ["developing", "documentation"]
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
+
+[[tech]]
+name = "sphinx"
+url = "https://www.sphinx-doc.org/en/master/"
+description = """\
+Jupyter book utilises sphinx for many of its functions. \
+Sphinx can also be used to auto-doc docstrings written in the Google Style Guide (MF standard).\
+"""
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag
+tags = ["developing", "documentation"]
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"

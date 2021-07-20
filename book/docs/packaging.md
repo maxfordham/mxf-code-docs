@@ -32,7 +32,7 @@ example below for package called `mypackage`.
 ```bash
 # mount the network location
 mkdir /mnt/conda-bld
-sudo mount -t drvfs '\\barbados\apps\conda\conda-bld' /mnt/conda-bld
+sudo mount -t drvfs '{{ servers.mffileserver.FDIR_CONDA_BUILD }}' /mnt/conda-bld
 
 # add conda mf conda channel if not already there... 
 # this allows mf internal pacakges to be included in the build
@@ -51,7 +51,7 @@ conda build conda.recipe
 # manually copy and paste from:
 # {{croot}}/linux-64/`mypackage*.tar.bz2`
 # --> 
-# `\\barbados\apps\conda\conda-bld\linux-64`
+# {{ servers.mffileserver.FDIR_CONDA_BUILD }}
 # convert
 conda convert --platform all /mnt/conda-bld/linux-64/mypackage*.tar.bz2 --output-dir /mnt/conda-bld
 # update index

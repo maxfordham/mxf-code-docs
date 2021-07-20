@@ -1,15 +1,23 @@
+format: jb-book
 root: docs/index
 defaults:
   numbered: true
-entries:
-- file: docs/intro
-- file: docs/developing
-- file: docs/developing-envsetup
-- file: docs/packaging
-- file: docs/deploying
-- file: docs/databases
-- glob: docs/objectModels*
-- file: docs/jb-rendering-demo
-
-
-
+parts:
+- caption: intro
+  chapters:
+  - file: docs/intro
+- caption: developing
+  chapters:
+  - file: docs/developing
+  - file: docs/developing-envsetup
+  - glob: docs/objectModels*
+  - file: docs/databases
+- caption: packaging
+  chapters:
+  - file: docs/packaging
+- caption: deploying
+  chapters:
+  - file: docs/deploying
+- caption: jb-rendering-demo
+  chapters:
+  - file: docs/jb-rendering-demo
