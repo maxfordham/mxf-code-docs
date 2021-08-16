@@ -44,7 +44,7 @@ and make sure Hyper-V is enabled.
 Step4 from this guide:
 - https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps
 
-For the current install files, create a folder `C:\\engDev\wsl_install`, and use the following bat script:
+For the current install files, create a folder `C:\engDev\wsl_install`, and use the following bat script:
 
 ```cmd
 @echo off
