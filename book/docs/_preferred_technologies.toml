@@ -72,7 +72,7 @@ image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
 
 [[tech]]
 name = "mamba"
-url = "https://docs.conda.io/en/latest/conda-build.html"
+url = "https://github.com/mamba-org/mamba"
 description = "Mamba is a fast, robust, and cross-platform package manager; it is a reimplementation of the conda package manager in C++."
 local_link = "" #  page to link to; if blank parser reverts to the last matching tag
 tags = ["packaging"]
