@@ -17,6 +17,12 @@ there are 2no main strands of internal software development:
       making it fast to build utility scripts the Revit application.
   - IES VEscripts
   - Rhino + Grasshopper + Python (currently Light and Air only)
+  
+## Genreal Best Practice
+
+### Comments
+
+https://stackoverflow.blog/2021/07/05/best-practices-for-writing-code-comments/
 
 ## Standalone Development
 
@@ -30,7 +36,7 @@ closely as possible.
 
 covered in more detail in "packaging".
 During development of an App it is typical to use an inflated conda environment that contains more than what is explicitly required for the app.
-See [manage-environments](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html). 
+See [manage-environments](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
 Use "mamba" as a drop-in replacement for "conda" by installing in your base conda env:
 
 ```bash
@@ -38,7 +44,7 @@ conda activate base
 conda install -c conda-forge mamba
 ```
 
-When packaging the app care is then taken to ensure only the packages that are required are listed as dependencies. 
+When packaging the app care is then taken to ensure only the packages that are required are listed as dependencies.
 
 Environment variables can also be specified within a conda environment. 
 see [work-with-variables](https://anaconda-project.readthedocs.io/en/latest/user-guide/tasks/work-with-variables.html#adding-a-variable).
@@ -78,3 +84,5 @@ i think there is a way to do ^ using wsl direct also.
 ## Software Automation
 
 add brief description here
+
+

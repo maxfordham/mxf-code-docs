@@ -112,7 +112,7 @@ for help with the heavy lifting and deployment we call in the pros.Quantstack ar
 ^^^
  Without clear documentation code risks becoming a black-box. When writing python code we use the Google Style Guide: [pyguide](https://google.github.io/styleguide/pyguide.html), [mit-pyguide](https://drake.mit.edu/styleguide/pyguide.html), [sphinx-example](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html).this allows for autodocs using sphinx, or for more simple docs using [mydocstring](https://github.com/ooreilly/mydocstring).Jupyter Book is used to pull it all together.
 
-[![jupyter-book](images/jupyter-book-icon.png)](https://jupyterbook.org/intro.html "Jupyter Book is an open source project for building beautiful, publication-quality books and documents from computational material.")
+[![jupyterbook](images/jupyterbook-icon.png)](https://jupyterbook.org/intro.html "Jupyter Book is an open source project for building beautiful, publication-quality books and documents from computational material.")
 [![sphinx](images/sphinx-icon.png)](https://www.sphinx-doc.org/en/master/ "Jupyter book utilises sphinx for many of its functions. Sphinx can also be used to auto-doc docstrings written in the Google Style Guide (MF standard).")
 
 ---
