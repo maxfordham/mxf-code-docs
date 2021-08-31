@@ -62,7 +62,7 @@ To simplify the number of tools our developers need to interact with, we produce
 
 [![conda-forge](images/conda-forge-icon.png)](https://conda-forge.org/ "community maintained collection of opensource packages and template specifcation for new packages.")
 [![conda](images/conda-icon.png)](https://docs.conda.io/en/latest/conda-build.html "tool for building conda packages, maintained by Anaconda.")
-[![mamba](images/mamba-icon.png)](https://docs.conda.io/en/latest/conda-build.html "Mamba is a fast, robust, and cross-platform package manager; it is a reimplementation of the conda package manager in C++.")
+[![mamba](images/mamba-icon.png)](https://github.com/mamba-org/mamba "Mamba is a fast, robust, and cross-platform package manager; it is a reimplementation of the conda package manager in C++.")
 
 ---
 

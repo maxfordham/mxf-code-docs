@@ -46,6 +46,9 @@ Step4 from this guide:
 
 For the current install files, create a folder `C:\engDev\wsl_install`, and use the following bat script:
 
+
+`wsl_update.bat`  
+
 ```cmd
 @echo off
 
@@ -79,6 +82,8 @@ pause
 Ubuntu_2004.2020.424.0_x64.appx
 
 For the current install files use the following bat script:
+
+`get_ubuntu.bat`  
 
 ```cmd
 @echo off
@@ -115,9 +120,11 @@ user environment as they are on the server.
 
 ### Install an additional Linux subsystem (if required in future)
 
+`build_ubuntu.bat`  
+
 ```cmd
-:: assumes unzipped Ubuntu installer is saved in C:\engDev
-set LINUX_IMAGE_DIR=C:\engDev
+:: assumes unzipped Ubuntu installer is saved in C:\engDev\wsl_install
+set LINUX_IMAGE_DIR=C:\engDev\wsl_install
 set UBUNTU_INSTALLER_FPTH=C:\engDev\Ubuntu_2004.2020.424.0_x64\install.tar.gz
 wsl --import ubuntu_2004_jovyan %LINUX_IMAGE_DIR% %UBUNTU_INSTALLER_FPTH%
 ```
@@ -141,7 +148,6 @@ $./Miniconda3-latest-Linux-x86_64.sh
 WK wsl
 
 ```bash
-
 mkdir /mnt/conda-bld
 sudo mount -t drvfs '{{ servers.mffileserver.FDIR_CONDA_BUILD }}' /mnt/conda-bld
 # ^ note. this currently doesnt persist between session so you have to do it everytime
