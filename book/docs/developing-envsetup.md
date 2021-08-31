@@ -125,7 +125,7 @@ user environment as they are on the server.
 ```cmd
 :: assumes unzipped Ubuntu installer is saved in C:\engDev\wsl_install
 set LINUX_IMAGE_DIR=C:\engDev\wsl_install
-set UBUNTU_INSTALLER_FPTH=C:\engDev\Ubuntu_2004.2020.424.0_x64\install.tar.gz
+set UBUNTU_INSTALLER_FPTH=C:\engDev\wsl_install\Ubuntu_2004.2020.424.0_x64\install.tar.gz
 wsl --import ubuntu_2004_jovyan %LINUX_IMAGE_DIR% %UBUNTU_INSTALLER_FPTH%
 ```
 
