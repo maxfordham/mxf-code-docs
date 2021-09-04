@@ -21,7 +21,7 @@
 - __Semantic versioning__ to be used for version control of ongoing development work.
 [https://semver.org/](https://semver.org/)
 - __Git tags__ to be used to track Semantic Versioning.
-- When tagging releases in a version control system, the tag for a version MUST be "vX.Y.Z" e.g. "v3.1.0". 
+- When tagging releases in a version control system, the tag for a version MUST be "X.Y.Z" e.g. "3.1.0". 
 [ref](https://stackoverflow.com/questions/2006265/is-there-a-standard-naming-convention-for-git-tags)
 - use verioneer.py and _version.py found in the cookiecutter folder-structures and in [xlsxtemplater](https://github.com/gunstonej/xlsxtemplater). This will automatically make the version make with the git tag when building.
 
