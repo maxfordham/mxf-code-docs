@@ -172,13 +172,22 @@ We don't want to have to mount these two directories each time we boot up our sy
 automatically on start up.
 
 1. Change directory to /etc/profile.d
+
+```bash
 cd /etc/profile.d
+```
 
 2. Create a shell file
+
+```bash
 sudo touch mount_folders.sh
+```
 
 3. Open up mount_folders.sh in the text editor 
+
+```bash
 sudo vi mount_folders.sh
+```
 
 4. Press the i key to enter "INSERT" mode. Now copy the code from below and paste into text editor by right clicking on the mouse.
 ```bash
