@@ -172,44 +172,37 @@ We don't want to have to mount these two directories each time we boot up our sy
 automatically on start up.
 
 1. Change directory to /etc/profile.d
-
-```bash
-cd /etc/profile.d
-```
-
+    ```bash
+    cd /etc/profile.d
+    ```
 2. Create a shell file
-
-```bash
-sudo touch mount_folders.sh
-```
-
+    ```bash
+    sudo touch mount_folders.sh
+    ```
 3. Open up mount_folders.sh in the text editor 
-
-```bash
-sudo vi mount_folders.sh
-```
-
+    ```bash
+    sudo vi mount_folders.sh
+    ```
 4. Press the i key to enter "INSERT" mode. Now copy the code from below and paste into text editor by right clicking on the mouse.
-```bash
-DIR_CONDA="/mnt/conda-bld/"
-FILE_CONDA="/mnt/conda-bld/linux-64"
+    ```bash
+    DIR_CONDA="/mnt/conda-bld/"
+    FILE_CONDA="/mnt/conda-bld/linux-64"
 
-DIR_JOBS="/home/jovyan/jobs"
-FILE_JOBS="/home/jovyan/jobs/J4321"
+    DIR_JOBS="/home/jovyan/jobs"
+    FILE_JOBS="/home/jovyan/jobs/J4321"
 
-if [ ! -d "$FILE_CONDA" ]; then
-  # Take action if $FILE_CONDA does not exist. #
-  sudo mount -t drvfs '\\barbados\apps\conda\conda-bld' /mnt/conda-bld
-  echo "Mounting ${DIR_CONDA}."
-fi
+    if [ ! -d "$FILE_CONDA" ]; then
+      # Take action if $FILE_CONDA does not exist. #
+      sudo mount -t drvfs '\\barbados\apps\conda\conda-bld' /mnt/conda-bld
+      echo "Mounting ${DIR_CONDA}."
+    fi
 
-if [ ! -d "$FILE_JOBS" ]; then
-  # Take action if $FILE_JOBS does not exist. # 
-  sudo mount -t drvfs '\\barbados\jobs' /home/jovyan/jobs
-  echo "Mounting ${DIR_JOBS}."
-fi
-```
-
+    if [ ! -d "$FILE_JOBS" ]; then
+      # Take action if $FILE_JOBS does not exist. # 
+      sudo mount -t drvfs '\\barbados\jobs' /home/jovyan/jobs
+      echo "Mounting ${DIR_JOBS}."
+    fi
+    ```
 5. Click escape twice to make sure we are back in command mode. Then type ":wq" to write to the file (mount_folders.sh) and quit the editor.
 Or, if you want, you can type ":w" to just write without quitting. To then quit type ":q".
 
