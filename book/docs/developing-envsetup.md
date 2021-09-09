@@ -10,7 +10,7 @@
     - [Install Miniconda](#install-miniconda)
     - [Mount mf internal conda channel](#mount-mf-internal-conda-channel)
     - [Mount J:\drive onto Linux WSL](#mount-jdrive-onto-linux-wsl)
-  - [Mounting MF internal conda channel and J:\drive on startup](#mounting-mf-internal-conda-channel-and-jdrive-on-startup)
+    - [Mounting MF internal conda channel and J:\drive on startup](#mounting-mf-internal-conda-channel-and-jdrive-on-startup)
     - [create conda envs](#create-conda-envs)
     - [launch a juptyer lab session](#launch-a-juptyer-lab-session)
     - [launch a session with VS Code](#launch-a-session-with-vs-code)
@@ -166,7 +166,7 @@ sudo mount -t drvfs '{{ servers.mffileserver.FDIR_JDRIVE }}' /home/jovyan/jobs
 # ^ note. this currently doesnt persist between session so you have to do it everytime
 ```
 
-## Mounting MF internal conda channel and J:\drive on startup
+### Mounting MF internal conda channel and J:\drive on startup
 
 We don't want to have to mount these two directories each time we boot up our system, so we will make it so these commands are run
 automatically on start up.
