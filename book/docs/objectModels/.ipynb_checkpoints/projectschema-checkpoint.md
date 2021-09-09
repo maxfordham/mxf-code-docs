@@ -1,0 +1,113 @@
+# Project
+
+## Properties
+
+- **`ProjectId`** *(string)*
+- **`IsPublic`** *(boolean)*: If the project's data is publicly available for benchmarking and comparison.
+- **`IsLocked`** *(boolean)*: If the project's data is locked, it can no longer be edited.
+- **`ClientName`** *(string)*: The client or common name for the project.
+- **`YourReferenceCode`** *(['string', 'null'])*: Your internal reference code for this project.
+- **`Aliases`** *(['array', 'null'])*: Your aliases for the project.
+  - **Items** *(['string', 'null'])*
+- **`Collaborators`** *(['array', 'null'])*: A list of contributors and viewers for this project.
+  - **Items**: Refer to *#/definitions/ProjectCollaboratorUnit*.
+- **`HandoverDate`** *(string)*
+- **`EnvironmentalStrategy`** *(['string', 'null'])*: See /Lookups/EnvironmentalStrategies.
+- **`GrossInternalFloorArea`** *(number)*: The GIA for the entire project footprint. Unit: m2.
+- **`Sessions`** *(array)*
+  - **Items**: Refer to *#/definitions/SessionUnit*.
+- **`Structures`** *(['array', 'null'])*: The individual buildings or structure groups that make up the project.
+  - **Items**: Refer to *#/definitions/StructureUnit*.
+- **`Sectors`** *(array)*: Based on CIBSE Guide F. See /Lookups/Sectors.
+  - **Items** *(['string', 'null'])*
+- **`Types`** *(array)*: Based on CIBSE Guide F. See /Lookups/Types. Types that do not belong to the sectors selected will not be displayed.
+  - **Items** *(['string', 'null'])*
+- **`Tags`** *(['array', 'null'])*: All the tags applied to this project.
+  - **Items** *(['string', 'null'])*
+## Definitions
+
+- **`CarbonFactorUnit`** *(object)*
+  - **`ElectricityCarbonFactor`** *(number)*
+  - **`ElectricityMethodology`** *(string)*: Default is derived from SAP10.1 for the session year.
+  - **`GasCarbonFactor`** *(number)*
+  - **`GasMethodology`** *(string)*: Default is derived from SAP10.1 for the session year.
+  - **`OilCarbonFactor`** *(number)*
+  - **`OilMethodology`** *(string)*: Default is derived from SAP10.1 for the session year.
+  - **`BiodieselFromBiomassCarbonFactor`** *(number)*
+  - **`BiodieselMethodology`** *(string)*: Default is derived from SAP10.1 for the session year.
+  - **`CoalCarbonFactor`** *(number)*
+  - **`CoalMethodology`** *(string)*: Default is derived from SAP10.1 for the session year.
+  - **`BiomassCarbonFactor`** *(number)*
+  - **`BiomassMethodology`** *(string)*: Default is derived from SAP10.1 for the session year.
+  - **`BiogasCarbonFactor`** *(number)*
+  - **`BiogasMethodology`** *(string)*: Default is derived from SAP10.1 for the session year.
+- **`EmbodiedCarbonBreakdown`** *(['object', 'null'])*
+  - **`SectionName`** *(string)*
+  - **`AllowsCustomComponents`** *(boolean)*: You can only add custom components to sections where this is true.
+  - **`Components`** *(['array', 'null'])*
+    - **Items**: Refer to *#/definitions/EmbodiedCarbonComponent*.
+- **`EmbodiedCarbonComponent`** *(['object', 'null'])*
+  - **`ComponentName`** *(string)*
+  - **`Units`**: Refer to *#/definitions/Unit*.
+  - **`ComponentValue`** *(number)*
+  - **`SequestersCarbon`** *(boolean)*
+- **`Fuel`** *(['object', 'null'])*
+  - **`FuelName`** *(string)*
+  - **`PercentageOfTotal`** *(number)*
+- **`OperationalEnergyBreakdown`** *(['object', 'null'])*
+  - **`Sections`** *(['array', 'null'])*
+    - **Items**: Refer to *#/definitions/OperationalEnergySection*.
+- **`OperationalEnergyComponent`** *(['object', 'null'])*
+  - **`ComponentName`** *(string)*
+  - **`Units`**: Refer to *#/definitions/Unit*.
+  - **`ComponentValue`** *(number)*
+  - **`GeneratesPower`** *(boolean)*
+  - **`FuelMix`** *(['array', 'null'])*: Optional. See /lookups/FuelTypes. The mix total must equal 100%.
+    - **Items**: Refer to *#/definitions/Fuel*.
+- **`OperationalEnergySection`** *(['object', 'null'])*
+  - **`SectionName`** *(['string', 'null'])*
+  - **`AllowsCustomComponents`** *(boolean)*: Custom components are only valid in sections where this is true.
+  - **`Components`** *(['array', 'null'])*
+    - **Items**: Refer to *#/definitions/OperationalEnergyComponent*.
+- **`ProjectCollaboratorUnit`** *(['object', 'null'])*
+  - **`CollaboratorId`** *(string)*: The id for the user or company collaborating on the project.
+  - **`CollaboratorName`** *(string)*
+  - **`CollaboratorType`** *(string)*: The type of collaborator. See /lookups/collaboratorTypes.
+  - **`RoleOnProject`** *(string)*: The role of the collaborator. See /lookups/collaboratorRoles.
+  - **`CollaboratorReferenceForProject`** *(['string', 'null'])*
+  - **`AddedOn`** *(string)*
+  - **`BaseAccessLevel`** *(string)*: The maximum level of access this collaborator has to the project. See /security for more details.
+  - **`IsCreator`** *(boolean)*
+- **`SessionUnit`** *(['object', 'null'])*
+  - **`SessionId`** *(string)*
+  - **`SessionDate`** *(string)*
+  - **`GrossInternalFloorArea`** *(number)*: Overriden by structure GIA, if supplied.
+  - **`Occupancy`** *(number)*: Estimated or actual building occupancy.
+  - **`StructureId`** *(['string', 'null'])*: If supplied, provides occupancy and GIA.
+  - **`Methodology`** *(string)*: See /lookups/ReadingMethodologies.
+  - **`Workstage`** *(string)*: See /lookups/Workstages.
+  - **`CalculationSoftware`** *(['string', 'null'])*
+  - **`Notes`** *(['string', 'null'])*
+  - **`TotalAnnualElectricityUse`** *(number)*: Unit: kWh/m2.y.
+  - **`TotalNonElectricEnergyUse`** *(number)*: Unit: kWh/m2.y.
+  - **`TotalRenewableContribution`** *(number)*: Unit: kWh/m2.y.
+  - **`OperationalEnergyTotal`** *(number)*: Unit: kWh/m2.y.
+  - **`OperationalEnergyCarbon`** *(number)*: Unit: kgCO2e.
+  - **`OperationalEnergyBreakdown`**: Refer to *#/definitions/OperationalEnergyBreakdown*.
+  - **`TotalEmbodiedCarbon`** *(number)*: Unit: kgCO2e.
+  - **`EmbodiedCarbonBreakdown`**: Refer to *#/definitions/EmbodiedCarbonBreakdown*.
+  - **`PotableWaterUse`** *(number)*: Unit: m3.
+  - **`CarbonFactors`**: Refer to *#/definitions/CarbonFactorUnit*.
+- **`StructureUnit`** *(['object', 'null'])*
+  - **`StructureId`** *(string)*
+  - **`StructureName`** *(string)*
+  - **`StructureGIA`** *(number)*: The Gross Internal Area for this structure.
+  - **`Occupancy`** *(integer)*: Occupancy.
+  - **`Sectors`** *(['array', 'null'])*: Based on CIBSE Guide F. See /Lookups/Sectors.
+    - **Items** *(['string', 'null'])*
+  - **`Types`** *(['array', 'null'])*: Based on CIBSE Guide F. See /Lookups/Types. Types that do not belong to the sectors selected will not be displayed.
+    - **Items** *(['string', 'null'])*
+  - **`Tags`** *(['array', 'null'])*: All the tags applied to this structure.
+    - **Items** *(['string', 'null'])*
+- **`Unit`** *(object)*
+  - **`UnitString`** *(string)*

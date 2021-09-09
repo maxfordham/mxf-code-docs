@@ -201,7 +201,7 @@ if [ ! -d "$FILE_JOBS" ]; then
 fi
 ```
 
-1. Click escape twice to make sure we are back in command mode. Then type ":wq" to write to the file (mount_folders.sh) and quit the editor.
+5. Click escape twice to make sure we are back in command mode. Then type ":wq" to write to the file (mount_folders.sh) and quit the editor.
 Or, if you want, you can type ":w" to just write without quitting. To then quit type ":q".
 
 That's it! Now when you open WSL on start-up, it will prompt you for your password to mount both conda-bld and jobs.
