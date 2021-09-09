@@ -173,7 +173,7 @@ WK wsl
 #  install mamba
 conda install mamba -n base -c conda-forge -y
 #  create env
-mamba create -n mf_base -c conda-forge jupyterlab voila xeus-python pandas numpy markdown pydantic dacite ipysheet ipyfilechooser xmltodict plotly altair altair_saver halo pyyaml jupytext click nodejs openpyxl tabulate watchdog xlsxwriter pip xlsxtemplater mf_file_utilities mfom -y
+mamba create -n mf_base -c conda-forge jupyterlab voila xeus-python pandas numpy markdown pydantic dacite ipysheet ipyfilechooser xmltodict plotly altair altair_saver halo pyyaml jupytext click nodejs openpyxl tabulate watchdog xlsxwriter pip xlsxtemplater mf_file_utilities mfom cookiecutter -y
 #  activate 
 conda activate mf_base
 #  add pip only installs
