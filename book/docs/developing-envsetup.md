@@ -10,6 +10,7 @@
     - [Install Miniconda](#install-miniconda)
     - [Mount mf internal conda channel](#mount-mf-internal-conda-channel)
     - [Mount J:\drive onto Linux WSL](#mount-jdrive-onto-linux-wsl)
+    - [Mounting MF internal conda channel and J:\drive on startup](#mounting-mf-internal-conda-channel-and-jdrive-on-startup)
     - [create conda envs](#create-conda-envs)
     - [launch a juptyer lab session](#launch-a-juptyer-lab-session)
     - [launch a session with VS Code](#launch-a-session-with-vs-code)
@@ -164,6 +165,48 @@ mkdir /home/jovyan/jobs
 sudo mount -t drvfs '{{ servers.mffileserver.FDIR_JDRIVE }}' /home/jovyan/jobs
 # ^ note. this currently doesnt persist between session so you have to do it everytime
 ```
+
+### Mounting MF internal conda channel and J:\drive on startup
+
+We don't want to have to mount these two directories each time we boot up our system, so we will make it so these commands are run
+automatically on start up.
+
+1. Change directory to /etc/profile.d
+    ```bash
+    cd /etc/profile.d
+    ```
+2. Create a shell file
+    ```bash
+    sudo touch mount_folders.sh
+    ```
+3. Open up mount_folders.sh in the text editor 
+    ```bash
+    sudo vi mount_folders.sh
+    ```
+4. Press the i key to enter "INSERT" mode. Now copy the code from below and paste into text editor by right clicking on the mouse.
+    ```bash
+    DIR_CONDA="/mnt/conda-bld/"
+    FILE_CONDA="/mnt/conda-bld/linux-64"
+
+    DIR_JOBS="/home/jovyan/jobs"
+    FILE_JOBS="/home/jovyan/jobs/J4321"
+
+    if [ ! -d "$FILE_CONDA" ]; then
+      # Take action if $FILE_CONDA does not exist. #
+      sudo mount -t drvfs '\\barbados\apps\conda\conda-bld' /mnt/conda-bld
+      echo "Mounting ${DIR_CONDA}."
+    fi
+
+    if [ ! -d "$FILE_JOBS" ]; then
+      # Take action if $FILE_JOBS does not exist. # 
+      sudo mount -t drvfs '\\barbados\jobs' /home/jovyan/jobs
+      echo "Mounting ${DIR_JOBS}."
+    fi
+    ```
+5. Click escape twice to make sure we are back in command mode. Then type ":wq" to write to the file (mount_folders.sh) and quit the editor.
+Or, if you want, you can type ":w" to just write without quitting. To then quit type ":q".
+
+That's it! Now when you open WSL on start-up, it will prompt you for your password to mount both conda-bld and jobs.
 
 ### create conda envs
 
