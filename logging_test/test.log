@@ -1,2 +1,4 @@
 16-Sep-21 18:37:31 - sampleLogger - DEBUG - This is a debug message
 16-Sep-21 18:37:44 - sampleLogger - DEBUG - This is a debug message
+17-Sep-21 11:37:14 - sampleFileLogger - DEBUG - This is a debug message
+17-Sep-21 12:08:32 - sampleFileLogger - DEBUG - This is a debug message

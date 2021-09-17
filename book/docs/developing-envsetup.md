@@ -202,8 +202,10 @@ automatically on start up.
 	  sudo mount -t drvfs '\\barbados\jobs' /home/jovyan/jobs
 	  echo "Mounting ${DIR_JOBS}."
 	fi
+
+  cd /mnt/c/engDev
     ```
-5. Save and exit nano editor. 
+5. Press CTRL - X and you will be prompted with whether you want to save. Press Y to save and exit nano editor. 
 
 That's it! Now when you open WSL on start-up, it will prompt you for your password to mount both conda-bld and jobs.
 
