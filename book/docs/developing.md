@@ -24,6 +24,17 @@ there are 2no main strands of internal software development:
 
 https://stackoverflow.blog/2021/07/05/best-practices-for-writing-code-comments/
 
+### Docstrings
+
+Use google style guide format. 
+
+- https://google.github.io/styleguide/pyguide.html
+- https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html
+
+Use Python Docstring Generator if using VS Code. 
+
+- https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring
+
 ## Standalone Development
 
 Within this paradigm, apps and packages are developed on the developers machine and deployed to the practice on the

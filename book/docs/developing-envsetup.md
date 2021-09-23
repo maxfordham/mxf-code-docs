@@ -203,7 +203,7 @@ automatically on start up.
 	  echo "Mounting ${DIR_JOBS}."
 	fi
 
-  cd /mnt/c/engDev
+	cd /mnt/c/engDev
     ```
 5. Press CTRL - X and you will be prompted with whether you want to save. Press Y to save and exit nano editor. 
 
