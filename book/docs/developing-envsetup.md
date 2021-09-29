@@ -127,8 +127,72 @@ user environment as they are on the server.
 :: assumes unzipped Ubuntu installer is saved in C:\engDev\wsl_install
 set LINUX_IMAGE_DIR=C:\engDev\wsl_install
 set UBUNTU_INSTALLER_FPTH=C:\engDev\wsl_install\Ubuntu_2004.2020.424.0_x64\install.tar.gz
-wsl --import ubuntu_2004_jovyan %LINUX_IMAGE_DIR% %UBUNTU_INSTALLER_FPTH%
+wsl --import ubuntu_2004_jovyan %LINUX_IMAGE_DIR% %UBUNTU_INSTALLER_FPTH% --version 2
 ```
+
+#### Set new distribution (ubuntu_2004_jovyan) as default distribution
+
+To set ubuntu_2004_jovyan as the default distribution when launching wsl, run this command:
+
+```cmd
+wsl -s ubuntu_2004_jovyan
+```
+
+Note that we can check this by listing the existing distributions:
+
+```cmd
+wsl -l
+```
+
+
+#### Creating new user in the distribution
+
+Firstly, we must run the specified distribution using:
+
+```cmd
+wsl -d ubuntu_2004_jovyan
+```
+
+We are now in the distribution as the user "root".
+
+To add a user we will run:
+
+```bash
+adduser jovyan
+```
+
+Go through the steps of adding a password and any information you wish (can leave it blank if you want). 
+Then say that the information is correct... well if it is correct.
+
+Now we need to enable sudoer privileges for our new user, jovyan:
+
+```bash
+adduser jovyan sudo
+```
+
+When we launch wsl, we want to have jovyan as the default user. We do this by adding the default to the wsl config file:
+
+```bash
+tee /etc/wsl.conf <<_EOF
+[user]
+default=jovyan
+_EOF
+```
+
+Finally, logout of wsl with the bash:
+
+```bash
+logout
+```
+
+And then use the wsl shutdown command so that the changes take effect:
+
+```cmd
+wsl --shutdown ubuntu_2004_jovyan
+```
+
+That's it! Next time wsl is launched, the ubuntu_2004_jovyan distribution should be the default distribution, 
+and jovyan should be the default user with all the required permissions.
 
 ### Install Miniconda
 
