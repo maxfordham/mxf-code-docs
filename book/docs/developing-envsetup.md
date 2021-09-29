@@ -201,7 +201,7 @@ WK wsl
 ```bash
 $cd /home
 $sudo wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-$chmod +x Miniconda3-latest-Linux-x86_64.sh
+$sudo chmod +x Miniconda3-latest-Linux-x86_64.sh
 $./Miniconda3-latest-Linux-x86_64.sh
 # note. should install here: /home/jovyan/miniconda3
 # note. when prompted: Do you wish the installer to initialize Miniconda3, by running conda init? [yes|no]
