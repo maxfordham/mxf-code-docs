@@ -293,7 +293,7 @@ mamba create -n mf_base -c conda-forge jupyterlab voila xeus-python pandas numpy
 #  activate 
 conda activate mf_base
 #  add pip only installs
-pip install ipyaggrid mydocstring pipreqs
+pip install ipydatagrid mydocstring pipreqs
 ```
 
 ### launch a juptyer lab session
