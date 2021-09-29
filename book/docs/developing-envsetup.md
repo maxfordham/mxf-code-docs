@@ -208,14 +208,20 @@ $./Miniconda3-latest-Linux-x86_64.sh
 # $yes
 ```
 
+Restart wsl for the miniconda installation to take effect.
+
 ### Mount mf internal conda channel
 
 WK wsl
 
 ```bash
-mkdir /mnt/conda-bld
-sudo mount -t drvfs '{{ servers.mffileserver.FDIR_CONDA_BUILD }}' /mnt/conda-bld
-# ^ note. this currently doesnt persist between session so you have to do it everytime
+sudo mkdir /mnt/conda-bld
+sudo mount -t drvfs '\\barbados\apps\conda\conda-bld' /mnt/conda-bld
+```
+
+Adding channels:
+
+```bash
 conda config --add channels file:///mnt/conda-bld
 conda config --add channels conda-forge
 ```
@@ -225,10 +231,11 @@ conda config --add channels conda-forge
 WK wsl
 
 ```bash
-mkdir /home/jovyan/jobs
-sudo mount -t drvfs '{{ servers.mffileserver.FDIR_JDRIVE }}' /home/jovyan/jobs
-# ^ note. this currently doesnt persist between session so you have to do it everytime
+sudo mkdir /home/jovyan/jobs
+sudo mount -t drvfs '\\barbados\jobs' /home/jovyan/jobs
 ```
+
+Note that the mounting will have to be performed each time on startup so we will add a mounting script in the next step.
 
 ### Mounting MF internal conda channel and J:\drive on startup
 
@@ -269,9 +276,10 @@ automatically on start up.
 
 	cd /mnt/c/engDev
     ```
-5. Press CTRL - X and you will be prompted with whether you want to save. Press Y to save and exit nano editor. 
+5. Press CTRL - X and you will be prompted with whether you want to save. Press Y to save and then click enter to confirm the file name to save as. 
+Then this will exit out of the nano editor. 
 
-That's it! Now when you open WSL on start-up, it will prompt you for your password to mount both conda-bld and jobs.
+That's it! Now when you open WSL on start-up, it will prompt you for your password to mount both conda-bld and jobs (if they are not already mounted).
 
 ### create conda envs
 
