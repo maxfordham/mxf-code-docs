@@ -12,6 +12,7 @@ parts:
   - file: docs/developing-envsetup
   - glob: docs/objectModels*
   - file: docs/databases
+  - file: docs/git
 - caption: packaging
   chapters:
   - file: docs/packaging
