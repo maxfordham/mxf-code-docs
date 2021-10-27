@@ -127,8 +127,72 @@ user environment as they are on the server.
 :: assumes unzipped Ubuntu installer is saved in C:\engDev\wsl_install
 set LINUX_IMAGE_DIR=C:\engDev\wsl_install
 set UBUNTU_INSTALLER_FPTH=C:\engDev\wsl_install\Ubuntu_2004.2020.424.0_x64\install.tar.gz
-wsl --import ubuntu_2004_jovyan %LINUX_IMAGE_DIR% %UBUNTU_INSTALLER_FPTH%
+wsl --import ubuntu_2004_jovyan %LINUX_IMAGE_DIR% %UBUNTU_INSTALLER_FPTH% --version 2
 ```
+
+#### Set new distribution (ubuntu_2004_jovyan) as default distribution
+
+To set ubuntu_2004_jovyan as the default distribution when launching wsl, run this command:
+
+```cmd
+wsl -s ubuntu_2004_jovyan
+```
+
+Note that we can check this by listing the existing distributions:
+
+```cmd
+wsl -l
+```
+
+
+#### Creating new user in the distribution
+
+Firstly, we must run the specified distribution using:
+
+```cmd
+wsl -d ubuntu_2004_jovyan
+```
+
+We are now in the distribution as the user "root".
+
+To add a user we will run:
+
+```bash
+adduser jovyan
+```
+
+Go through the steps of adding a password and any information you wish (can leave it blank if you want). 
+Then say that the information is correct... well if it is correct.
+
+Now we need to enable sudoer privileges for our new user, jovyan:
+
+```bash
+adduser jovyan sudo
+```
+
+When we launch wsl, we want to have jovyan as the default user. We do this by adding the default to the wsl config file:
+
+```bash
+tee /etc/wsl.conf <<_EOF
+[user]
+default=jovyan
+_EOF
+```
+
+Finally, logout of wsl with the bash:
+
+```bash
+logout
+```
+
+And then use the wsl shutdown command so that the changes take effect:
+
+```cmd
+wsl --shutdown ubuntu_2004_jovyan
+```
+
+That's it! Next time wsl is launched, the ubuntu_2004_jovyan distribution should be the default distribution, 
+and jovyan should be the default user with all the required permissions.
 
 ### Install Miniconda
 
@@ -137,21 +201,27 @@ WK wsl
 ```bash
 $cd /home
 $sudo wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-$chmod +x Miniconda3-latest-Linux-x86_64.sh
+$sudo chmod +x Miniconda3-latest-Linux-x86_64.sh
 $./Miniconda3-latest-Linux-x86_64.sh
 # note. should install here: /home/jovyan/miniconda3
 # note. when prompted: Do you wish the installer to initialize Miniconda3, by running conda init? [yes|no]
 # $yes
 ```
 
+Restart wsl for the miniconda installation to take effect.
+
 ### Mount mf internal conda channel
 
 WK wsl
 
 ```bash
-mkdir /mnt/conda-bld
-sudo mount -t drvfs '{{ servers.mffileserver.FDIR_CONDA_BUILD }}' /mnt/conda-bld
-# ^ note. this currently doesnt persist between session so you have to do it everytime
+sudo mkdir /mnt/conda-bld
+sudo mount -t drvfs '\\barbados\apps\conda\conda-bld' /mnt/conda-bld
+```
+
+Adding channels:
+
+```bash
 conda config --add channels file:///mnt/conda-bld
 conda config --add channels conda-forge
 ```
@@ -161,10 +231,11 @@ conda config --add channels conda-forge
 WK wsl
 
 ```bash
-mkdir /home/jovyan/jobs
-sudo mount -t drvfs '{{ servers.mffileserver.FDIR_JDRIVE }}' /home/jovyan/jobs
-# ^ note. this currently doesnt persist between session so you have to do it everytime
+sudo mkdir /home/jovyan/jobs
+sudo mount -t drvfs '\\barbados\jobs' /home/jovyan/jobs
 ```
+
+Note that the mounting will have to be performed each time on startup so we will add a mounting script in the next step.
 
 ### Mounting MF internal conda channel and J:\drive on startup
 
@@ -205,9 +276,10 @@ automatically on start up.
 
 	cd /mnt/c/engDev
     ```
-5. Press CTRL - X and you will be prompted with whether you want to save. Press Y to save and exit nano editor. 
+5. Press CTRL - X and you will be prompted with whether you want to save. Press Y to save and then click enter to confirm the file name to save as. 
+Then this will exit out of the nano editor. 
 
-That's it! Now when you open WSL on start-up, it will prompt you for your password to mount both conda-bld and jobs.
+That's it! Now when you open WSL on start-up, it will prompt you for your password to mount both conda-bld and jobs (if they are not already mounted).
 
 ### create conda envs
 
@@ -221,7 +293,7 @@ mamba create -n mf_base -c conda-forge jupyterlab voila xeus-python pandas numpy
 #  activate 
 conda activate mf_base
 #  add pip only installs
-pip install ipyaggrid mydocstring pipreqs
+pip install ipydatagrid mydocstring pipreqs
 ```
 
 ### launch a juptyer lab session
