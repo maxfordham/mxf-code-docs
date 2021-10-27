@@ -35,6 +35,11 @@ Use Python Docstring Generator if using VS Code.
 
 - https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring
 
+### Managing defaults, optional and required variables
+
+- something should be a default if in production the value is normally fixed / should have default behaviour
+- minimum required dependent variables should normally be non-default args / params to indicate to the user that these values are required to be set
+
 ## Standalone Development
 
 Within this paradigm, apps and packages are developed on the developers machine and deployed to the practice on the
@@ -91,6 +96,33 @@ When using the JupyterHub server the a folder called /jobs is mounted onto the r
 When developing on WSL, it is possible to replicate this as follows:
 
 i think there is a way to do ^ using wsl direct also.
+
+###  Jinja for templating 
+
+```python
+
+from jinja2 import Template
+
+template = """{
+    "hostname": "{{ hostname }}",
+    "name_server_pri": "{{ name_server_pri }}",
+    "name_server_sec": "{{ name_server_sec }}",
+    "ntp_server_pri": "{{ ntp_server_pri }}",
+    "ntp_server_sec": "{{ ntp_server_sec }}",
+}"""
+
+data = {
+    "hostname": "core-sw-waw-01",
+    "name_server_pri": "1.1.1.1",
+    "name_server_sec": "8.8.8.8",
+    "ntp_server_pri": "0.pool.ntp.org",
+    "ntp_server_sec": "1.pool.ntp.org",
+}
+
+j2_template = Template(template)
+
+print(j2_template.render(data))
+```
 
 ## Software Automation
 
