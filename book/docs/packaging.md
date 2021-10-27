@@ -27,6 +27,13 @@
 
 ### conda-build - a generic example from WSL
 
+create a conda build environment: 
+
+```bash
+conda create --name base_mf --clone base
+mamnba install conda-build
+```
+
 example below for package called `mypackage`.
 
 ```bash
