@@ -25,7 +25,7 @@ def load_test_constants():
     return test_constants
 ```
 
-_mainpackage/script.py_
+_mainpackage/main.py_
 ```python
 if __name__ == "__main__":
     if __debug__:
