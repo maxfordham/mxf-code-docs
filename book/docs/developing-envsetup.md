@@ -274,7 +274,7 @@ automatically on start up.
 	  echo "Mounting ${DIR_JOBS}."
 	fi
 
-	cd /mnt/c/engDev
+	cd /mnt/c/engDev/git_mf
     ```
 5. Press CTRL - X and you will be prompted with whether you want to save. Press Y to save and then click enter to confirm the file name to save as. 
 Then this will exit out of the nano editor. 

@@ -13,6 +13,7 @@ parts:
   - file: docs/testing
   - glob: docs/objectModels*
   - file: docs/databases
+  - file: docs/git
 - caption: packaging
   chapters:
   - file: docs/packaging

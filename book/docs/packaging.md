@@ -27,6 +27,13 @@
 
 ### conda-build - a generic example from WSL
 
+create a conda build environment: 
+
+```bash
+conda create --name base_mf --clone base
+mamnba install conda-build
+```
+
 example below for package called `mypackage`.
 
 ```bash
@@ -114,3 +121,18 @@ e.g. the config files for the TM59ArchetypeResultsViewer App
 
 The Max Fordham TLJH has been configured to add a "jobs" folder to the root repository when a server or app is launched.
 This gives easy access to read and write files from the J:\drive.
+
+## Troubleshooting
+
+config_build_config.yml:
+
+```yaml 
+python:
+  - 3.9
+  - 3.8
+
+numpy:
+  - 1.19
+```
+
+Noting issue when building mfschedule. Numpy 1.16 was causing issues when building from conda.recipe. When removed, build was successful.
