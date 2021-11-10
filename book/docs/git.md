@@ -5,7 +5,7 @@
 This shows our git workflow which we believe to be the best practice when working on
 new functionality in code repositories.
 
-![Git workflow](images/git/git_workflow.png)
+![Git workflow](images/git_workflow.png)
 
 ## Merging branches
 

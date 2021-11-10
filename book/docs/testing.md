@@ -7,11 +7,11 @@ All built packages should have testing.
 Keeping track of the data that is used for debugging and testing can create lots of confusion! 
 It is suggested that the convention outlined in the image below is employed:
 
-![managing_test_data](images/managing_test_data.md)
+![managing test data](images/managing_test_data.png)
 
-copy and pastable code snippets from those shown abbove are:
+copy and pastable code snippets from those shown above are:
 
-_load_test_constants_
+_mainpackage/constants.py_
 ```python
 def load_test_constants():
     """only in use for debugging within the package. not used in production code.
@@ -25,7 +25,7 @@ def load_test_constants():
     return test_constants
 ```
 
-_debugging script boilerplate_
+_mainpackage/script.py_
 ```python
 if __name__ == "__main__":
     if __debug__:
