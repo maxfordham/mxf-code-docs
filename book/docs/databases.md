@@ -12,7 +12,7 @@ There are many ORMs, but this seems like the best, it can interact with many dif
 
 ### Useful Links
 
-- https://sparrigan.github.io/sql/sqla/2016/01/03/dynamic-tables.html
+- https://sparrigan.github.io/sql/sqla/2016/01/03/dyxnamic-tables.html
 - https://medium.com/analytics-vidhya/postgresql-integration-with-jupyter-notebook-deb97579a38d
 - https://github.com/mjhea0/awesome-fastapi
 
@@ -23,6 +23,7 @@ Historically accounts / admin use MySQL. This is soon to be DEPRECATED.
 ## Postgres SQL databases
 
 Accounts / admin are moving to Postgres. New databases to be built like this.
+
 ## SQLlite
 
 For lightweight apps and prototyping, SQLlite is great.

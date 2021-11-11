@@ -4,7 +4,10 @@ All built packages should have testing.
 
 ## Managing Test Data
 
+__References__: [^1][^2][^3]
+
 Keeping track of the data that is used for debugging and testing can create lots of confusion! 
+There must also be sufficient separation for your tests from the main package.
 It is suggested that the convention outlined in the image below is employed:
 
 ![managing test data](images/managing_test_data.png)
@@ -33,3 +36,14 @@ if __name__ == "__main__":
         test_constants = load_test_constants()
         #  access constants like this: test_constants.PATH_OUTPUT_DOCX
 ```
+
+_mainpackage/setup.cfg_
+```
+# Define setup.py command aliases here
+[aliases]
+test =  python -m pytest
+```
+
+[^1]: https://docs.pytest.org/en/6.2.x/goodpractices.html
+[^2]: https://blog.ionelmc.ro/2014/05/25/python-packaging/
+[^3]: https://hynek.me/articles/testing-packaging/
