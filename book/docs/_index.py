@@ -205,35 +205,57 @@ def create_panel(tu_tech_grps: List[TechGroup]) -> str:
     
     return output
 
-#import os
-#os.chdir(os.path.dirname(__file__))
-path_tech = Path('_preferred_technologies.toml')
-path_docs = Path('.')
+def create_panels(df):
+    tags = list(set(flatten_list(df.tags.tolist())))
+    tags = [
+    'software-automation',
+    'authoring-tools',
+    'frontend',
+    'packaging',
+    'deploying',
+    'databases',
+    'backend-tools',
+    'external-experts',
+    'documentation',
+    #'developing',
+    ]
+    tag_des = tech['tags']
+    tu_tech_grps = create_tech_groups(df, tags, tag_des)
+    md_panels = create_panel(tu_tech_grps)
+    return md_panels
 
-tech = toml.load(path_tech)
-create_img_fpth(tech)
-paths_map = get_jb_files(path_docs)
-create_local_link(tech, paths_map)
+def create_table(df):
+    df1 = df.copy()
+    df1['technology'] = "[!["+df['name']+"]("+df['image']+")  "+df['name']+"]("+df['url']+")"  # { width=150px }
+    cols = ['technology', 'description']
+    df1 = df1[cols] 
+    return df1.to_markdown()
 
-df = pd.DataFrame.from_dict(tech['tech'])
-tags = list(set(flatten_list(df.tags.tolist())))
-tags = [
- 'software-automation',
- 'authoring-tools',
- 'frontend',
- 'packaging',
- 'deploying',
- 'databases',
- 'backend-tools',
- 'external-experts',
- 'documentation',
- #'developing',
-]
-tag_des = tech['tags']
-tu_tech_grps = create_tech_groups(df, tags, tag_des)
-md_panels = create_panel(tu_tech_grps)
+if __name__ == "__main__":
+    if __debug__:
+        pdf = True  #False #True
+    else:
+        import sys
+        try:
+            pdf = sys.argv[1]
+        except:
+            pdf = False
 
-md_header = """
+
+    os.chdir(os.path.dirname(__file__))
+    path_tech = Path('_preferred_technologies.toml')
+    path_docs = Path('.')
+    tech = toml.load(path_tech)
+    create_img_fpth(tech)
+    paths_map = get_jb_files(path_docs)
+    create_local_link(tech, paths_map)
+    df = pd.DataFrame.from_dict(tech['tech'])
+    if pdf: 
+        md_body = create_table(df)
+    else:
+        md_body = create_panels(df)
+
+    md_header = """
 # mfcode_docs
 
 **Max Fordham Engineering Development Best Practice**
@@ -248,7 +270,7 @@ When writing code there are always many solutions to a problem;
 we standardise the technologies we use for a given task to ensure a consistent approach across projects. See below for key technologies on which we rely.
 
 """
-md = md_header + md_panels 
-file = codecs.open("index.md", "w", "utf-8")
-file.write(md)
-file.close()
+    md = md_header + md_body 
+    file = codecs.open("index.md", "w", "utf-8")
+    file.write(md)
+    file.close()

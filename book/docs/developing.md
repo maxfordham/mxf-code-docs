@@ -20,6 +20,14 @@ there are 2no main strands of internal software development:
   
 ## Genreal Best Practice
 
+### Python formatting style - use [__Black__](https://github.com/psf/black)
+
+- [install black](https://anaconda.org/conda-forge/black): `mamba install -c conda-forge black`
+- in jupyterlab use [nb_black](https://github.com/dnanhkhoa/nb_black)
+  - [install nb_black](https://anaconda.org/conda-forge/nb_black): `mamba install -c conda-forge nb_black`
+  - add to 1st cell `%load_ext lab_black`
+- in vscode format on save as per this article: [setting-up-python-black-on-visual-studio-code](https://marcobelo.medium.com/setting-up-python-black-on-visual-studio-code-5318eba4cd00)
+
 ### Comments
 
 https://stackoverflow.blog/2021/07/05/best-practices-for-writing-code-comments/

@@ -15,8 +15,7 @@ repository:
   url                         : https://github.com/gunstonej/mfcode_docs
   path_to_book                : "book"
 
-sphinx:
-  config:
-    latex_elements:
-        preamble: |
-          \usepackage{longtable}
+latex:
+  latex_elements:
+    preamble: |
+        \usepackage{longtable}
