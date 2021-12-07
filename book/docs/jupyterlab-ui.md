@@ -8,3 +8,4 @@
 - jupyterlab-spellchecker
 - jupyterlab-lsp
 - jupyterlab-tabular-data-editor
+- jupytext
