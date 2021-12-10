@@ -18,7 +18,7 @@ there are 2no main strands of internal software development:
   - IES VEscripts
   - Rhino + Grasshopper + Python (currently Light and Air only)
   
-## Genreal Best Practice
+## General Best Practice
 
 ### Python formatting style - use [__Black__](https://github.com/psf/black)
 
@@ -27,6 +27,8 @@ there are 2no main strands of internal software development:
   - [install nb_black](https://anaconda.org/conda-forge/nb_black): `mamba install -c conda-forge nb_black`
   - add to 1st cell `%load_ext lab_black`
 - in vscode format on save as per this article: [setting-up-python-black-on-visual-studio-code](https://marcobelo.medium.com/setting-up-python-black-on-visual-studio-code-5318eba4cd00)
+
+annoyingly it will need configuring for every conda environment. 
 
 ### Comments
 

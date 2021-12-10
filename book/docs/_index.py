@@ -240,9 +240,10 @@ if __name__ == "__main__":
             pdf = sys.argv[1]
         except:
             pdf = False
-
-
-    os.chdir(os.path.dirname(__file__))
+    # print(os.path.dirname(__file__))
+    # pdf = False
+    dirname = os.path.dirname(__file__) or '.'
+    os.chdir(dirname)
     path_tech = Path('_preferred_technologies.toml')
     path_docs = Path('.')
     tech = toml.load(path_tech)
