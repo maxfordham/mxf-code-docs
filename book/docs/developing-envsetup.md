@@ -33,7 +33,7 @@ __Notes__
 - WK = Windows Key
 - install VSCode to the default install location
 
-### Hardare Config
+### Hardware Config
 
 follow steps in this article:
 - https://mashtips.com/enable-virtualization-windows-10/
