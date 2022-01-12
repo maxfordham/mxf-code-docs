@@ -283,17 +283,25 @@ That's it! Now when you open WSL on start-up, it will prompt you for your passwo
 
 ### create conda envs
 
+best practice is that every package / repo should have an environment file that defines its own requirements. 
+environments should be as small as they can be. 
+
+As a default env, it is suggested to setup "jlaunch" below - this is a lightweight jupyter environement that has nb_conda_kernels
+installed, allowing any other conda environment to run from a single jupyter instance. Any jupyter extension that contains built code 
+must be installed into the jlaunch environment. 
+
 WK wsl
 
 ```bash
 #  install mamba
 conda install mamba -n base -c conda-forge -y
-#  create env
-mamba create -n mf_base -c conda-forge jupyterlab voila xeus-python pandas numpy markdown pydantic dacite ipysheet ipyfilechooser xmltodict plotly altair altair_saver halo pyyaml jupytext click nodejs openpyxl tabulate watchdog xlsxwriter pip xlsxtemplater mf_file_utilities mfom cookiecutter -y
+#  create env for launching jupyterlab. 
+#  install anything that requires a built jupyterlab extension into this environment
+mamba create -n jlaunch -c conda-forge "python>3.8,<3.10" "jupyterlab>3.1" ipywidgets ipydatagrid plotly nb_black
+conda activate
+mamba install -n jlaunch nb_conda_kernels #  this allows any conda env to be run from jlaunch
 #  activate 
-conda activate mf_base
-#  add pip only installs
-pip install ipydatagrid mydocstring pipreqs
+conda activate jlaunch
 ```
 
 ### launch a juptyer lab session

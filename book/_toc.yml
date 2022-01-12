@@ -9,11 +9,15 @@ parts:
 - caption: developing
   chapters:
   - file: docs/developing-envsetup
+  - file: jupyterlab-ui.md
   - file: docs/developing
+  - file: docs/git
   - file: docs/testing
   - glob: docs/objectModels*
   - file: docs/databases
-  - file: docs/git
+  - file: docs/api-testing
+  - file: docs/output-generation.md
+  - file: docs/workflow_orchestration.md
 - caption: packaging
   chapters:
   - file: docs/packaging
