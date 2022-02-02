@@ -30,6 +30,31 @@ there are 2no main strands of internal software development:
 
 annoyingly it will need configuring for every conda environment. 
 
+#### How to use underscores
+
+[the-special-meaning-of-underscores-in-python](https://betterprogramming.pub/the-special-meaning-of-underscores-in-python-9ceaaeb41007)
+
+In classes i think this is particularly pertinent... underscores can denote methods that we expect the user to call or not e.g. 
+
+```
+class MyClass:
+	def __init__(self, ...):
+		pass
+		
+	def _init_class(self):
+		self._privatemethod()
+	
+	def usermethod(self, ...):
+		pass
+		
+	def _privatemethod(self, ...):
+		pass
+		
+obj = MyClass()
+obj.usermethod(x) #  this encouraged
+obj._privatemethod(x) #  this discouraged
+```
+
 ### Comments
 
 https://stackoverflow.blog/2021/07/05/best-practices-for-writing-code-comments/

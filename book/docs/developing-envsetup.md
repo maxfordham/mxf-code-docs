@@ -297,7 +297,7 @@ WK wsl
 conda install mamba -n base -c conda-forge -y
 #  create env for launching jupyterlab. 
 #  install anything that requires a built jupyterlab extension into this environment
-mamba create -n jlaunch -c conda-forge "python>3.8,<3.10" "jupyterlab>3.1" ipywidgets ipydatagrid plotly nb_black
+mamba create -n jlaunch -c conda-forge "python>3.8,<3.10" "jupyterlab>3.1" jupyterlab-spellchecker voila ipywidgets ipydatagrid ipyvuetify watchdog plotly matplotlib altair nb_black jupytext jupyterlab-lsp python-lsp-server
 conda activate
 mamba install -n jlaunch nb_conda_kernels #  this allows any conda env to be run from jlaunch
 #  activate 
