@@ -87,6 +87,42 @@ mamba install mypackage -c http://localhost:8000/
 
 ## pip
 
+To build from pip, make sure your directory is set up with the necessary configuration files. 
+
+You will need a __setup.cfg__ for static metadata and potentially a __<span>setup.py</span>__ for dynamic metadata. 
+
+You can also define a __requirements.txt__ to state the packages required. 
+
+Please note that a __<span>MANIFEST.in</span>__ will be needed to state any files that need to be included in the build. For example, we will need to add "include requirements.txt" so that this file can be read from the build location.
+
+Now, check pip is installed in the current environment. If not, install using mamba. We can use the environment base_mf for this.
+
+Then perform updates: 
+
+```
+python3 -m pip install --upgrade build pip setuptools wheel
+```
+
+After this, go to the directory where the repository lives and run:
+
+```
+python3 -m build
+``` 
+
+The package (filetype tar.gz) will be dumped in the "dist" folder which will be created within the directory of repository.
+
+To check the the package we can try install it by running:
+
+```
+pip install FPATH
+```
+
+where FPATH is the path to the tar.gz file.
+
+Reference: https://packaging.python.org/en/latest/tutorials/packaging-projects/
+
+### pip from conda package
+
 simpler, pip packages can be built from conda packages.  
 this will be useful for shared packages between: Revit-pyRevit, IES-VEScripts and other python tools.
 In both Revit-pyRevit and IES-VEScripts a pip directory can be simply appended to the `sys.path` to make external packages available to these scripts.
