@@ -210,6 +210,13 @@ $./Miniconda3-latest-Linux-x86_64.sh
 
 Restart wsl for the miniconda installation to take effect.
 
+### Install some handy CLI tools
+
+```bash
+python -m pip install rich-cli
+sudo apt-get install ripgrep
+```
+
 ### Mount mf internal conda channel
 
 WK wsl
@@ -279,6 +286,14 @@ automatically on start up.
 5. Press CTRL - X and you will be prompted with whether you want to save. Press Y to save and then click enter to confirm the file name to save as. 
 Then this will exit out of the nano editor. 
 
+6. Add windows explorer to your linux bash_aliases (this means you can `start fnm.txt` to open a file or `start .` to open the folder in explorer.
+    ```bash
+    sudo nano ~/.bash_aliases
+	alias start='/mnt/c/windows/explorer.exe'
+    ```
+
+
+
 That's it! Now when you open WSL on start-up, it will prompt you for your password to mount both conda-bld and jobs (if they are not already mounted).
 
 ### create conda envs
@@ -297,7 +312,7 @@ WK wsl
 conda install mamba -n base -c conda-forge -y
 #  create env for launching jupyterlab. 
 #  install anything that requires a built jupyterlab extension into this environment
-mamba create -n jlaunch -c conda-forge "python>3.8,<3.10" "jupyterlab>3.1" jupyterlab-spellchecker voila ipywidgets ipydatagrid ipyvuetify watchdog plotly matplotlib altair nb_black jupytext jupyterlab-lsp python-lsp-server
+mamba create -n jlaunch -c conda-forge "python>3.8,<3.10" "jupyterlab>3.1" jupyterlab-spellchecker voila ipywidgets ipydatagrid ipyvuetify watchdog plotly matplotlib altair nb_black jupytext jupyterlab-lsp python-lsp-server theme-darcula
 conda activate
 mamba install -n jlaunch nb_conda_kernels #  this allows any conda env to be run from jlaunch
 #  activate 
