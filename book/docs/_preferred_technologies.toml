@@ -247,6 +247,16 @@ tags = ["developing", "backend", "backend-tools", "object-models"]
 image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
 
 [[tech]]
+name = "pytest"
+url = "https://docs.pytest.org/en/7.0.x/contents.html"
+description = """FastAPI framework, high performance, easy to learn, fast to code, ready for production.\
+It makes maintainence, upgrade and integration of production packages with software scripts simple as\
+the packages and environment is installed on the server."""
+local_link = "" #  page to link to; if blank parser reverts to the last matching tag 
+tags = ["developing", "backend", "backend-tools", "testing"]
+image = "" #  if blank, inherits from name, i.e.: "{{ name }}-icon.png"
+
+[[tech]]
 name = "quantstack"
 url = "https://quantstack.net/"
 description = """for help with the heavy lifting and deployment we call in the pros.\
