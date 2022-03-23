@@ -94,3 +94,32 @@ __note__. currently
 ​
 Then build the image in the conventional way. Once this has complete you can then kill the local server running in conda-bld since it is only used during the installation process.
 
+### Deploying onto conda-forge using conda-feedstocks
+
+We can deploy any package onto conda-forge using the staged-recipes repository.
+
+1. Firstly, fork this repository: https://github.com/conda-forge/staged-recipes/
+2. Git clone the newly forked repository onto your local PC.
+3. Create a new folder with the exact name of the repository we want to add to conda-forge within the recipes folder.
+4. Then create a meta.yaml file using the python package: https://github.com/conda-incubator/grayskull OR use this website https://www.marcelotrevisani.com/grayskull
+	```{note}
+	Use the meta.yaml file within the example folder as guidance.
+	```
+5. Once you feel the meta.yaml file has been configured appropriately, commit the changes and push onto your fork.
+6. Create a pull request with the source repository on github. Following that, github actions will attempt to build the repo you wish to add. 
+You will see this happening within the pulll request.
+7. If the package is built successfully then all there is left to do is wait for a maintainer of the repo "staged-recipes" to merge your pull request.
+You can ping then within the pull request if they are taking a while to merge the pull request.
+When the pull request is accepted, a new github repo will be created with "-feedstock" appended onto the original name of the package.
+E.g. If we were adding the python package "jsonschema2md", the new repo is called "jsonschema2md-feedstock".
+8. And that is it! The package should now be available on the conda-forge channel to be installed.
+    
+As an example, here is a package we added to conda-forge:
+- Pull Request: https://github.com/conda-forge/staged-recipes/pull/18359
+- Official Repo: https://github.com/RalfG/jsonschema2md
+- Feedstock Repo: https://github.com/conda-forge/jsonschema2md-feedstock
+	
+Useful links:
+- https://github.com/conda-forge/staged-recipes/
+- https://github.com/conda-incubator/grayskull
+- https://conda-forge.org/docs/maintainer/adding_pkgs.html
