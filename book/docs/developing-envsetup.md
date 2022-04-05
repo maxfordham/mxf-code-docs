@@ -1,3 +1,4 @@
+
 # Standalone Development
 
 - [Standalone Development](#standalone-development)
@@ -215,6 +216,7 @@ Restart wsl for the miniconda installation to take effect.
 ```bash
 python -m pip install rich-cli
 sudo apt-get install ripgrep
+sudo apt install tree
 ```
 
 ### Mount mf internal conda channel

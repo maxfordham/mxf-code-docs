@@ -16,8 +16,11 @@ parts:
   - glob: docs/objectModels*
   - file: docs/databases
   - file: docs/api-testing
-  - file: docs/output-generation.md
   - file: docs/workflow_orchestration.md
+- caption: documentation
+  chapters:
+  - file: docs/output-generation.md
+  - file: docs/referencing-and-citations.md
 - caption: packaging
   chapters:
   - file: docs/packaging

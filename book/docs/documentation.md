@@ -35,3 +35,12 @@ https://github.com/Edditoria/markdown-plus-plus
 	npx markdown-plus-plus default
 	```
 7. Finally, open notepad++ and click on the "Language" tab. Then select "Markdown (Default)". 
+
+## Format toml files in Notepad++
+
+https://github.com/Theodor-Lindberg/NPP-TOML-Syntax
+
+
+## Sphinx Extensions
+
+- [nbsphinx-link](https://nbsphinx-link.readthedocs.io/_/downloads/en/stable/pdf/)

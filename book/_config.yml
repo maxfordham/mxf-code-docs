@@ -9,6 +9,8 @@ description: >-
 execute:
   execute_notebooks           : cache
 
+bibtex_bibfiles:
+  - references.bib
 
 # Launch button settings
 repository:
@@ -20,3 +22,4 @@ sphinx:
     latex_elements:
         preamble: |
           \usepackage{longtable}
+    bibtex_reference_style: author_year
