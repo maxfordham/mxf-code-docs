@@ -17,6 +17,7 @@ parts:
   - file: docs/databases
   - file: docs/api-testing
   - file: docs/workflow_orchestration.md
+  - file: docs/software-architecture.md
 - caption: documentation
   chapters:
   - file: docs/output-generation.md
@@ -30,3 +31,8 @@ parts:
 - caption: jb-rendering-demo
   chapters:
   - file: docs/jb-rendering-demo
+- caption: code-snippets
+  chapters:
+  - file: docs/code-snippets.md
+    sections:
+    - glob: docs/code_snippets/*
