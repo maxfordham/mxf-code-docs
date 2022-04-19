@@ -95,6 +95,7 @@ Making object-models and defined datastructures is the basis of solid engineerin
 [![sqlalchemy](images/sqlalchemy-icon.png)](https://www.sqlalchemy.org/ " SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL. Table definitions and relations are developed in SQL alchemy, as well as data-serialisation with pydantic.")
 [![pydantic](images/pydantic-icon.png)](https://pydantic-docs.helpmanual.io/ "Define how data should be in pure, canonical python; validate it with pydantic.Used to create object definitions that feed: databases, calculation tools and documentation.")
 [![FastAPI](images/FastAPI-icon.png)](https://fastapi.tiangolo.com/ "FastAPI framework, high performance, easy to learn, fast to code, ready for production.It makes maintainence, upgrade and integration of production packages with software scripts simple asthe packages and environment is installed on the server.")
+[![pytest](images/pytest-icon.png)](https://docs.pytest.org/en/7.0.x/contents.html "FastAPI framework, high performance, easy to learn, fast to code, ready for production.It makes maintainence, upgrade and integration of production packages with software scripts simple asthe packages and environment is installed on the server.")
 
 ---
 

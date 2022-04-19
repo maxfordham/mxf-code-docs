@@ -10,6 +10,10 @@ for enhanced functionality or collated, reviewd and summarised by Engineering St
 SQLAlchemy is a python toolkit and object relational mapper (ORM) for handling SQL databases in python.
 There are many ORMs, but this seems like the best, it can interact with many different types of SQL database.
 
+### Make Entity Relationship Diagram (ERD) from SQLAlchemy models
+
+https://pypi.org/project/ERAlchemy/
+
 ### Useful Links
 
 - https://sparrigan.github.io/sql/sqla/2016/01/03/dyxnamic-tables.html

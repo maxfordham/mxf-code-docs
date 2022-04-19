@@ -159,6 +159,12 @@ j2_template = Template(template)
 print(j2_template.render(data))
 ```
 
+### Functools
+
+functools is awesome. 
+
+functools.partial useful for quickly wrapping a function with known args and kwargs. you loose the __name__ property though. if thats problematic do similar with functools.wraps.
+
 ## Software Automation
 
 add brief description here

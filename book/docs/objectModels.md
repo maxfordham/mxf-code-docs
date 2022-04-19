@@ -121,3 +121,29 @@ def func(obj: myobj) -> newobj:
     newobj = from_dict(data=asdict(myobj),data_class=newobj)
     return newobj
 ```
+
+## [Erdantic](https://erdantic.drivendata.org/stable/) - making Entity Relationship Diagrams from pydantic models
+
+### Install
+
+```mamba install erdantic -c conda-forge```
+
+### Example
+
+```python
+import erdantic as erd
+from erdantic.examples.pydantic import Party
+
+# Easy one-liner
+erd.draw(Party, out="diagram.png")
+
+# Or create a diagram object that you can inspect and do stuff with
+diagram = erd.create(Party)
+diagram.models
+#> [PydanticModel(Adventurer), PydanticModel(Party), PydanticModel(Quest), PydanticModel(QuestGiver)]
+diagram.draw("diagram.png")
+```
+
+
+
+

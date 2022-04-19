@@ -16,8 +16,12 @@ parts:
   - glob: docs/objectModels*
   - file: docs/databases
   - file: docs/api-testing
-  - file: docs/output-generation.md
   - file: docs/workflow_orchestration.md
+  - file: docs/software-architecture.md
+- caption: documentation
+  chapters:
+  - file: docs/output-generation.md
+  - file: docs/referencing-and-citations.md
 - caption: packaging
   chapters:
   - file: docs/packaging
@@ -27,3 +31,8 @@ parts:
 - caption: jb-rendering-demo
   chapters:
   - file: docs/jb-rendering-demo
+- caption: code-snippets
+  chapters:
+  - file: docs/code-snippets.md
+    sections:
+    - glob: docs/code_snippets/*
