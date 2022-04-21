@@ -58,3 +58,12 @@ After this, the Revit object will be correctly mapped to the IFC file.
 
 Note: Under File -> Export -> Options -> Ifc Options we can also assign Ifc Classes, however, anything selections in here will be overwritten
 if we define the Ifc class within the family using the "IfcExportAs" and "IfcExportType" parameters.
+
+
+## Shared Parameter File
+
+https://resources.imaginit.com/building-solutions-blog/investigating-revits-shared-parameter-file
+https://knowledge.autodesk.com/support/revit/troubleshooting/caas/sfdcarticles/sfdcarticles/Why-the-DATACATEGORY-column-is-empty-in-shared-parameter-txt-file.html
+
+- "GROUP" is used only to make the SharedParameter file editor in Revit easier to navigate
+- "DATACATEGORY" is used only when the "DATATYPE" == <familytype>. At MF this is rarely (never!?) used.
