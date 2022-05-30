@@ -1,0 +1,36 @@
+{
+  "$id": "AnalyticSession.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AnalyticSession",
+  "type": "object",
+  "properties": {
+    "sessionDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "readingType": {
+      "type": "string",
+      "nullable": true
+    },
+    "electricUse": {
+      "type": "number",
+      "format": "double"
+    },
+    "nonElectricUse": {
+      "type": "number",
+      "format": "double"
+    },
+    "renewableUse": {
+      "type": "number",
+      "format": "double"
+    },
+    "calculatedEnergyCarbon": {
+      "type": "number",
+      "format": "double"
+    },
+    "isSelectedSession": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

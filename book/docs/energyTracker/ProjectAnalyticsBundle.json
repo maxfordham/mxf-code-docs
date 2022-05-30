@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "analyticsSessions": {
+            "type": "array",
+            "items": {
+                "$ref": "#/components/schemas/AnalyticSession"
+            },
+            "nullable": true
+        }
+    },
+    "additionalProperties": false
+}
