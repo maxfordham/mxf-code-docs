@@ -1,0 +1,1 @@
+- https://github.com/jupyter-widgets/ipywidgets/blob/f8758accc22f2be97582e1cec0f8c445d0055b1c/packages/schema/jupyterwidgetmodels.v7-5.md#checkboxmodel-jupyter-widgetscontrols-150-checkboxview-jupyter-widgetscontrols-150

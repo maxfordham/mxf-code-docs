@@ -1,4 +1,6 @@
 import ipywidgets as widgets
+from markdown import markdown
+
 
 def _markdown(value="_Markdown_", **kwargs):
     """
@@ -9,7 +11,8 @@ def _markdown(value="_Markdown_", **kwargs):
     _kwargs["value"] = markdown(value)  # required field
     _kwargs.update(kwargs)  # user overides
     return widgets.HTML(**_kwargs)
-    
+
+
 def display_button_styles():
     """displays default ipywidget button styles"""
     styles = ["primary", "success", "info", "warning", "danger"]
@@ -21,5 +24,6 @@ def display_button_styles():
             )
         )
         display(widgets.HBox([b, t]))
-        
-display_button_styles()
+
+
+display_button_styles() 
