@@ -15,6 +15,7 @@ dependencies:
   - numpy
   - seaborn
   - plotly=5.1.0
+  - toml
   - pip:
     - PyGEL3D
     - honeybee-energy[standards]
