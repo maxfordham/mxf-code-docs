@@ -23,7 +23,8 @@
 - __Git tags__ to be used to track Semantic Versioning.
 - When tagging releases in a version control system, the tag for a version MUST be "X.Y.Z" e.g. "3.1.0". 
 [ref](https://stackoverflow.com/questions/2006265/is-there-a-standard-naming-convention-for-git-tags)
-- use verioneer.py and _version.py found in the cookiecutter folder-structures and in [xlsxtemplater](https://github.com/gunstonej/xlsxtemplater). This will automatically make the version make with the git tag when building.
+- use verioneer.py and _version.py found in the cookiecutter folder-structures and in [xlsxtemplater]
+(https://github.com/gunstonej/xlsxtemplater). This will automatically make the version make with the git tag when building.
 
 ### conda-build - a generic example from WSL
 
@@ -76,19 +77,40 @@ We can deploy any package onto conda-forge using the staged-recipes repository.
 
 1. Firstly, fork this repository: https://github.com/conda-forge/staged-recipes/
 2. Git clone the newly forked repository onto your local PC.
-3. Create a new folder with the exact name of the repository we want to add to conda-forge within the recipes folder.
-4. Then create a meta.yaml file using the python package: https://github.com/conda-incubator/grayskull OR use this website https://www.marcelotrevisani.com/grayskull
+3. Then create a meta.yaml file using the python package: 
+https://github.com/conda-incubator/grayskull.
+	
+	1. Firstly install grayskull.
+	```bash
+	mamba install grayskull
+	```
+	2. Change directory (wherever you cloned "staged-recipes")
+	```bash
+	cd staged-recipes/recipes
+	```
+	2. Then 	
+	```bash
+	grayskull pypi https://github.com/<username>/<packagename>
+	```
+	
 	```{note}
 	Use the meta.yaml file within the example folder as guidance.
 	```
-5. Once you feel the meta.yaml file has been configured appropriately, commit the changes and push onto your fork.
-6. Create a pull request with the source repository on github. Following that, github actions will attempt to build the repo you wish to add. 
-You will see this happening within the pulll request.
-7. If the package is built successfully then all there is left to do is wait for a maintainer of the repo "staged-recipes" to merge your pull request.
-You can ping then within the pull request if they are taking a while to merge the pull request.
-When the pull request is accepted, a new github repo will be created with "-feedstock" appended onto the original name of the package.
-E.g. If we were adding the python package "jsonschema2md", the new repo is called "jsonschema2md-feedstock".
-8. And that is it! The package should now be available on the conda-forge channel to be installed.
+4. Once you feel the meta.yaml file has been configured appropriately, 
+commit the changes and push onto your fork.
+5. Create a pull request with the source repository on github. 
+Following that, github actions will attempt to build the package you wish to add. 
+You will see this happening within the pull request.
+6. If the package is built successfully then all there is left to do is wait for 
+a maintainer of the repo "staged-recipes" to merge your pull request.
+You can ping then within the pull request if they are taking a while to 
+merge the pull request.
+When the pull request is accepted, a new github repo will be created with "-feedstock" 
+appended onto the original name of the package.
+E.g. If we were adding the python package "jsonschema2md", the new repo is called 
+"jsonschema2md-feedstock".
+7. And that is it! You may have to wait a little while before it appears on the conda-forge channel.
+As soon as it appears, the package can then be installed in a conda environment.
     
 As an example, here is a package we added to conda-forge:
 - Pull Request: https://github.com/conda-forge/staged-recipes/pull/18359
