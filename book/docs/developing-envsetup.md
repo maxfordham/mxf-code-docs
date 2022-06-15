@@ -197,13 +197,30 @@ and jovyan should be the default user with all the required permissions.
 
 ### Install Miniconda
 
-WK wsl
+Run WSL again
 
 ```bash
-$cd /home
-$sudo wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-$sudo chmod +x Miniconda3-latest-Linux-x86_64.sh
-$./Miniconda3-latest-Linux-x86_64.sh
+wsl
+```
+
+cd to home
+```bash
+cd /home
+```
+
+Get Miniconda shell script
+```bash
+sudo wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+```
+
+Change access permissions to shell script so we can install.
+```bash
+sudo chmod +x Miniconda3-latest-Linux-x86_64.sh
+```
+
+Install Miniconda
+```bash
+./Miniconda3-latest-Linux-x86_64.sh
 # note. should install here: /home/jovyan/miniconda3
 # note. when prompted: Do you wish the installer to initialize Miniconda3, by running conda init? [yes|no]
 # $yes
