@@ -2,3 +2,4 @@
 /book/_build
 /.ipynb_checkpoints
 /book/docs/.ipynb_checkpoints
+/book/docs/energyTracker/energytracker-hosts.toml

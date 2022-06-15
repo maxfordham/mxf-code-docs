@@ -174,10 +174,10 @@ adduser jovyan sudo
 When we launch wsl, we want to have jovyan as the default user. We do this by adding the default to the wsl config file:
 
 ```bash
-tee /etc/wsl.conf <<_EOF
+cd /etc
+touch wsl.conf
 [user]
 default=jovyan
-_EOF
 ```
 
 Finally, logout of wsl with the bash:
@@ -265,25 +265,25 @@ automatically on start up.
     ```
 4. Now copy the code from below and paste into text editor by right clicking on the mouse.
     ```bash
-	DIR_CONDA="/mnt/conda-bld/"
-	FILE_CONDA="/mnt/conda-bld/linux-64"
+DIR_CONDA="/mnt/conda-bld/"
+FILE_CONDA="/mnt/conda-bld/linux-64"
 
-	DIR_JOBS="/home/jovyan/jobs"
-	FILE_JOBS="/home/jovyan/jobs/J4321"
+DIR_JOBS="/home/jovyan/jobs"
+FILE_JOBS="/home/jovyan/jobs/J4321"
 
-	if [ ! -d "$FILE_CONDA" ]; then
-	  # Take action if $FILE_CONDA does not exist. #
-	  sudo mount -t drvfs '\\barbados\apps\conda\conda-bld' /mnt/conda-bld
-	  echo "Mounting ${DIR_CONDA}."
-	fi
+if [ ! -d "$FILE_CONDA" ]; then
+  # Take action if $FILE_CONDA does not exist. #
+  sudo mount -t drvfs '\\barbados\apps\conda\conda-bld' /mnt/conda-bld
+  echo "Mounting ${DIR_CONDA}."
+fi
 
-	if [ ! -d "$FILE_JOBS" ]; then
-	  # Take action if $FILE_JOBS does not exist. # 
-	  sudo mount -t drvfs '\\barbados\jobs' /home/jovyan/jobs
-	  echo "Mounting ${DIR_JOBS}."
-	fi
+if [ ! -d "$FILE_JOBS" ]; then
+  # Take action if $FILE_JOBS does not exist. # 
+  sudo mount -t drvfs '\\barbados\jobs' /home/jovyan/jobs
+  echo "Mounting ${DIR_JOBS}."
+fi
 
-	cd /mnt/c/engDev/git_mf
+cd /mnt/c/engDev/git_mf
     ```
 5. Press CTRL - X and you will be prompted with whether you want to save. Press Y to save and then click enter to confirm the file name to save as. 
 Then this will exit out of the nano editor. 
