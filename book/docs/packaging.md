@@ -1,8 +1,11 @@
 # Packaging
 
-- __conda-bld__: back-end code / repos are built into conda repositories that can be imported into various environments
-- __pip__: pip packages can be built from conda packages for use with VEScripts or pyRevit
-- __repo2docker__: repo2docker is used to build docker images of front-end repos for user-interface tools
+- __conda-bld__: back-end code / repos are built into conda 
+repositories that can be imported into various environments
+- __pip__: pip packages can be built from conda packages for 
+use with VEScripts or pyRevit
+- __repo2docker__: repo2docker is used to build docker images of front-end 
+repos for user-interface tools
 
 ## conda-build
 
@@ -23,8 +26,10 @@
 - __Git tags__ to be used to track Semantic Versioning.
 - When tagging releases in a version control system, the tag for a version MUST be "X.Y.Z" e.g. "3.1.0". 
 [ref](https://stackoverflow.com/questions/2006265/is-there-a-standard-naming-convention-for-git-tags)
-- use verioneer.py and _version.py found in the cookiecutter folder-structures and in [xlsxtemplater]
-(https://github.com/gunstonej/xlsxtemplater). This will automatically make the version make with the git tag when building.
+- use verioneer.py and _version.py found in the cookiecutter 
+folder-structures and in [xlsxtemplater]
+(https://github.com/gunstonej/xlsxtemplater). This will automatically 
+make the version make with the git tag when building.
 
 ### conda-build - a generic example from WSL
 
@@ -80,15 +85,15 @@ We can deploy any package onto conda-forge using the staged-recipes repository.
 3. Then create a meta.yaml file using the python package: 
 https://github.com/conda-incubator/grayskull.
 	
-	1. Firstly install grayskull.
+	- Firstly install grayskull.
 	```bash
 	mamba install grayskull
 	```
-	2. Change directory (wherever you cloned "staged-recipes")
+	- Change directory (wherever you cloned "staged-recipes")
 	```bash
 	cd staged-recipes/recipes
 	```
-	2. Then 	
+	- Then produce the folder containing the meta.yaml file.
 	```bash
 	grayskull pypi https://github.com/<username>/<packagename>
 	```
@@ -109,7 +114,8 @@ When the pull request is accepted, a new github repo will be created with "-feed
 appended onto the original name of the package.
 E.g. If we were adding the python package "jsonschema2md", the new repo is called 
 "jsonschema2md-feedstock".
-7. And that is it! You may have to wait a little while before it appears on the conda-forge channel.
+7. And that is it! You may have to wait a little while before it appears on 
+the conda-forge channel.
 As soon as it appears, the package can then be installed in a conda environment.
     
 As an example, here is a package we added to conda-forge:
@@ -125,7 +131,8 @@ Useful links:
 
 ### Install internal conda packages - Windows
 
-to install conda packages into windows you need to expose the conda channel (again, in the future this will be done by mamba-boa).
+to install conda packages into windows you need to expose the conda channel 
+(again, in the future this will be done by mamba-boa).
 
 ```bat
 :: navigate to Z:\conda\conda-bld
@@ -143,13 +150,17 @@ mamba install mypackage -c http://localhost:8000/
 
 To build from pip, make sure your directory is set up with the necessary configuration files. 
 
-You will need a __setup.cfg__ for static metadata and potentially a __<span>setup.py</span>__ for dynamic metadata. 
+You will need a __setup.cfg__ for static metadata and potentially a 
+__<span>setup.py</span>__ for dynamic metadata. 
 
 You can also define a __requirements.txt__ to state the packages required. 
 
-Please note that a __<span>MANIFEST.in</span>__ will be needed to state any files that need to be included in the build. For example, we will need to add "include requirements.txt" so that this file can be read from the build location.
+Please note that a __<span>MANIFEST.in</span>__ will be needed to state any 
+files that need to be included in the build. For example, we will need to add 
+"include requirements.txt" so that this file can be read from the build location.
 
-Now, check pip is installed in the current environment. If not, install using mamba. We can use the environment base_mf for this.
+Now, check pip is installed in the current environment. If not, install using mamba. 
+We can use the environment base_mf for this.
 
 Then perform updates: 
 
@@ -163,7 +174,8 @@ After this, go to the directory where the repository lives and run:
 python3 -m build
 ``` 
 
-The package (filetype tar.gz) will be dumped in the "dist" folder which will be created within the directory of repository.
+The package (filetype tar.gz) will be dumped in the "dist" folder which 
+will be created within the directory of repository.
 
 To check the the package we can try install it by running:
 
@@ -178,8 +190,10 @@ Reference: https://packaging.python.org/en/latest/tutorials/packaging-projects/
 ### pip from conda package
 
 simpler, pip packages can be built from conda packages.  
-this will be useful for shared packages between: Revit-pyRevit, IES-VEScripts and other python tools.
-In both Revit-pyRevit and IES-VEScripts a pip directory can be simply appended to the `sys.path` to make external packages available to these scripts.
+this will be useful for shared packages between: Revit-pyRevit, 
+IES-VEScripts and other python tools.
+In both Revit-pyRevit and IES-VEScripts a pip directory can be simply 
+appended to the `sys.path` to make external packages available to these scripts.
 
 pip packages can be created from conda packages as follows (ask Owen for help if req);
 
@@ -194,14 +208,19 @@ pip install mypackage --target=Z:\pip --extra-index-url = http://localhost:8000/
 
 ## [Repo2Docker](https://repo2docker.readthedocs.io/en/latest/usage.html)
 
-Repo2docker is a tool that builds a docker image (and associated environment) from a Git repository.
-Max Fordham's jupyter hub server has the [tljh-repo2docker](https://github.com/plasmabio/tljh-repo2docker) plugin installed
-and configured making it simple to add new environments / apps. It works in the same way as [mybinder](https://mybinder.org/).
+Repo2docker is a tool that builds a docker image (and associated environment) 
+from a Git repository.
+Max Fordham's jupyter hub server has the [tljh-repo2docker](https://github.com/plasmabio/tljh-repo2docker) 
+plugin installed
+and configured making it simple to add new environments / apps. 
+It works in the same way as [mybinder](https://mybinder.org/).
 
 ### Configuring the docker image
 
-The docker image is configured by the [config_files](https://mybinder.readthedocs.io/en/latest/using/config_files.html).
-In the simplest (most common) case, the only file that is required is "environment.yml" file to specify the conda environment.
+The docker image is configured by the 
+[config_files](https://mybinder.readthedocs.io/en/latest/using/config_files.html).
+In the simplest (most common) case, the only file that is required is 
+"environment.yml" file to specify the conda environment.
 The "postbuild" can be used to add jupyter extensions.
 
 e.g. the config files for the TM59ArchetypeResultsViewer App
@@ -209,7 +228,8 @@ e.g. the config files for the TM59ArchetypeResultsViewer App
 
 ### Adding the J:\drive
 
-The Max Fordham TLJH has been configured to add a "jobs" folder to the root repository when a server or app is launched.
+The Max Fordham TLJH has been configured to add a "jobs" folder to the 
+root repository when a server or app is launched.
 This gives easy access to read and write files from the J:\drive.
 
 ## Troubleshooting
@@ -225,4 +245,5 @@ numpy:
   - 1.19
 ```
 
-Noting issue when building mfschedule. Numpy 1.16 was causing issues when building from conda.recipe. When removed, build was successful.
+Noting issue when building mfschedule. Numpy 1.16 was causing issues when 
+building from conda.recipe. When removed, build was successful.
