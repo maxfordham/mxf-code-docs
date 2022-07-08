@@ -310,6 +310,11 @@ Then this will exit out of the nano editor.
     sudo nano ~/.bash_aliases
 	alias start='/mnt/c/windows/explorer.exe'
     ```
+	
+7. Also, install tree which is useful for viewing directory structures in linux.
+	```bash
+	sudo apt install tree
+	```
 
 
 
