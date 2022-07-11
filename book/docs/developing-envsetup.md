@@ -228,20 +228,15 @@ Install Miniconda
 
 Restart wsl for the miniconda installation to take effect.
 
-### Install some handy CLI tools
-
-```bash
-python -m pip install rich-cli
-sudo apt-get install ripgrep
-sudo apt install tree
-```
-
 ### Mount mf internal conda channel
 
 WK wsl
 
 ```bash
 sudo mkdir /mnt/conda-bld
+```
+
+```bash
 sudo mount -t drvfs '\\barbados\apps\conda\conda-bld' /mnt/conda-bld
 ```
 
@@ -249,6 +244,9 @@ Adding channels:
 
 ```bash
 conda config --add channels file:///mnt/conda-bld
+```
+
+```bash
 conda config --add channels conda-forge
 ```
 
@@ -258,6 +256,9 @@ WK wsl
 
 ```bash
 sudo mkdir /home/jovyan/jobs
+```
+
+```bash
 sudo mount -t drvfs '\\barbados\jobs' /home/jovyan/jobs
 ```
 
@@ -310,13 +311,6 @@ Then this will exit out of the nano editor.
     sudo nano ~/.bash_aliases
 	alias start='/mnt/c/windows/explorer.exe'
     ```
-	
-7. Also, install tree which is useful for viewing directory structures in linux.
-	```bash
-	sudo apt install tree
-	```
-
-
 
 That's it! Now when you open WSL on start-up, it will prompt you for your password to mount both conda-bld and jobs (if they are not already mounted).
 
@@ -342,6 +336,16 @@ mamba install -n jlaunch nb_conda_kernels #  this allows any conda env to be run
 #  activate 
 conda activate jlaunch
 ```
+
+### Install some handy CLI tools
+
+```bash
+python -m pip install rich-cli
+sudo apt-get install ripgrep
+sudo apt install tree
+```
+
+tree is useful for viewing directory structures in linux.
 
 ### launch a juptyer lab session
 
