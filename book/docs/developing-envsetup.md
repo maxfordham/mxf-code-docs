@@ -339,13 +339,23 @@ conda activate jlaunch
 
 ### Install some handy CLI tools
 
+Firstly, update the repository cache.
+
+```bash
+sudo apt update
+```
+
+Then run install commands
+
 ```bash
 python -m pip install rich-cli
 sudo apt-get install ripgrep
 sudo apt install tree
 ```
 
+```{note}
 tree is useful for viewing directory structures in linux.
+```
 
 ### launch a juptyer lab session
 
