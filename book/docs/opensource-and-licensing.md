@@ -2,9 +2,12 @@
 
 At Max Fordham the majority of our internal software-development projects utilise external opensource software. 
 As a result, we believe that where possible, we should contribute back to the opensource community by 
-making the code that we create and use publicly available. We also believe that openness and transparency
+making the code that we create publicly available. We also believe that openness and transparency
 within Science and Engineering is good for society and encourages collaboration and innovation; this it put best by the 
 non-profit [Numfocus](https://numfocus.org/): _"Open Code = Better Science"_.
+
+In doing so we are placing ourselves in the same class as other industry leaders who are taking a similar approach, and
+we are actively saying to other practioners that we are keen to share and learn, collaboratively.  
 
 The decision to opensource a project is considered on a case by case basis; considering the benefit to the 
 practice and the wider-industry. That said, precendents exist and can help guide future decisions.
@@ -18,8 +21,9 @@ the licensing follows the category:
 
 **suggested licence**: _By default, use a **BSD license**. This is the most permissive licence and imposes no restrictions
 on use by others. We feel this is appropriate as the code is not related to our income stream and we want others to use 
-it and develop it without any restriction. It often refers to projects that fit within an ecosystem of other BSD licensed
-projects (e.g. Jupyter) and therefore fits within that ecosystem without confusion._
+it and develop it without any restriction. The tools that we make often fit within an ecosystem of other BSD licensed
+projects (e.g. Jupyter); by adopting the same license we are taking a collaborative and collegiate approach to the others
+who operate in that ecosystem to build and share tools for others to use without restriction._
 
 ## engineering tools
 
@@ -31,6 +35,7 @@ might make to the source code, and declare theese changes publicly. In this case
 We want to encourage collaborators and competitors in the industry to use this code, but we want to restrict them from
 building client-facing products and services from it without declaring associated developments back to the core codebase._
  
+what don't we share?
  
 ```{note}
 Both licences suggested above have clauses that remove liability from the author
