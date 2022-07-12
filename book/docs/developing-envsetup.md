@@ -174,10 +174,10 @@ adduser jovyan sudo
 When we launch wsl, we want to have jovyan as the default user. We do this by adding the default to the wsl config file:
 
 ```bash
-cd /etc
-touch wsl.conf
+tee /etc/wsl.conf <<_EOF
 [user]
 default=jovyan
+_EOF
 ```
 
 Finally, logout of wsl with the bash:
@@ -228,20 +228,15 @@ Install Miniconda
 
 Restart wsl for the miniconda installation to take effect.
 
-### Install some handy CLI tools
-
-```bash
-python -m pip install rich-cli
-sudo apt-get install ripgrep
-sudo apt install tree
-```
-
 ### Mount mf internal conda channel
 
 WK wsl
 
 ```bash
 sudo mkdir /mnt/conda-bld
+```
+
+```bash
 sudo mount -t drvfs '\\barbados\apps\conda\conda-bld' /mnt/conda-bld
 ```
 
@@ -249,6 +244,9 @@ Adding channels:
 
 ```bash
 conda config --add channels file:///mnt/conda-bld
+```
+
+```bash
 conda config --add channels conda-forge
 ```
 
@@ -258,6 +256,9 @@ WK wsl
 
 ```bash
 sudo mkdir /home/jovyan/jobs
+```
+
+```bash
 sudo mount -t drvfs '\\barbados\jobs' /home/jovyan/jobs
 ```
 
@@ -282,25 +283,25 @@ automatically on start up.
     ```
 4. Now copy the code from below and paste into text editor by right clicking on the mouse.
     ```bash
-DIR_CONDA="/mnt/conda-bld/"
-FILE_CONDA="/mnt/conda-bld/linux-64"
+	DIR_CONDA="/mnt/conda-bld/"
+	FILE_CONDA="/mnt/conda-bld/linux-64"
 
-DIR_JOBS="/home/jovyan/jobs"
-FILE_JOBS="/home/jovyan/jobs/J4321"
+	DIR_JOBS="/home/jovyan/jobs"
+	FILE_JOBS="/home/jovyan/jobs/J4321"
 
-if [ ! -d "$FILE_CONDA" ]; then
-  # Take action if $FILE_CONDA does not exist. #
-  sudo mount -t drvfs '\\barbados\apps\conda\conda-bld' /mnt/conda-bld
-  echo "Mounting ${DIR_CONDA}."
-fi
+	if [ ! -d "$FILE_CONDA" ]; then
+	  # Take action if $FILE_CONDA does not exist. #
+	  sudo mount -t drvfs '\\barbados\apps\conda\conda-bld' /mnt/conda-bld
+	  echo "Mounting ${DIR_CONDA}."
+	fi
 
-if [ ! -d "$FILE_JOBS" ]; then
-  # Take action if $FILE_JOBS does not exist. # 
-  sudo mount -t drvfs '\\barbados\jobs' /home/jovyan/jobs
-  echo "Mounting ${DIR_JOBS}."
-fi
+	if [ ! -d "$FILE_JOBS" ]; then
+	  # Take action if $FILE_JOBS does not exist. # 
+	  sudo mount -t drvfs '\\barbados\jobs' /home/jovyan/jobs
+	  echo "Mounting ${DIR_JOBS}."
+	fi
 
-cd /mnt/c/engDev/git_mf
+	cd /mnt/c/engDev/git_mf
     ```
 5. Press CTRL - X and you will be prompted with whether you want to save. Press Y to save and then click enter to confirm the file name to save as. 
 Then this will exit out of the nano editor. 
@@ -310,8 +311,6 @@ Then this will exit out of the nano editor.
     sudo nano ~/.bash_aliases
 	alias start='/mnt/c/windows/explorer.exe'
     ```
-
-
 
 That's it! Now when you open WSL on start-up, it will prompt you for your password to mount both conda-bld and jobs (if they are not already mounted).
 
@@ -336,6 +335,26 @@ conda activate
 mamba install -n jlaunch nb_conda_kernels #  this allows any conda env to be run from jlaunch
 #  activate 
 conda activate jlaunch
+```
+
+### Install some handy CLI tools
+
+Firstly, update the repository cache.
+
+```bash
+sudo apt update
+```
+
+Then run install commands
+
+```bash
+python -m pip install rich-cli
+sudo apt-get install ripgrep
+sudo apt install tree
+```
+
+```{note}
+tree is useful for viewing directory structures in linux.
 ```
 
 ### launch a juptyer lab session
