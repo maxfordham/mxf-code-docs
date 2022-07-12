@@ -1,6 +1,6 @@
 # Packaging
 
-- __conda-bld__: back-end code / repos are built into conda 
+- __conda-build__: back-end code / repos are built into conda 
 repositories that can be imported into various environments
 - __pip__: pip packages can be built from conda packages for 
 use with VEScripts or pyRevit
@@ -98,7 +98,9 @@ https://github.com/conda-incubator/grayskull.
 	- Then produce the folder containing the meta.yaml file.
 	```bash
 	grayskull pypi https://github.com/<username>/<packagename>
+	# e.g. grayskull pypi https://github.com/maxfordham/ipyautoui
 	```
+	
 	
 	```{note}
 	Use the meta.yaml file within the example folder as guidance.
@@ -157,6 +159,8 @@ mamba install mypackage -c http://localhost:8000/
 ```
 
 ## pip
+
+https://setuptools.pypa.io/en/latest/userguide/quickstart.html#
 
 To build from pip, make sure your directory is set up with the necessary configuration files. 
 
