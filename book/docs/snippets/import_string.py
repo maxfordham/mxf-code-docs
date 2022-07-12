@@ -1,19 +1,3 @@
-# ---
-# jupyter:
-#   jupytext:
-#     formats: py:light
-#     text_representation:
-#       extension: .py
-#       format_name: light
-#       format_version: '1.5'
-#       jupytext_version: 1.13.6
-#   kernelspec:
-#     display_name: Python [conda env:ipyautoui]
-#     language: python
-#     name: conda-env-ipyautoui-xpython
-# ---
-
-# + [markdown] tags=[]
 # # import strings 
 #
 # the functions defined below can be used to define the import location of a python object as a string.  
@@ -26,9 +10,6 @@
 # - lambda functions have the generic `__name__ == '<lambda>'`
 #     - the `__name__` of a lambda function can be explicitly defined
 # -
-
-import sys
-sys.path.append('/mnt/c/engDev/git_mf/ipyautoui/src')
 
 # +
 import importlib.util
@@ -85,4 +66,4 @@ def obj_from_importstr(importstr: str) -> typing.Type:
 # -
 
 # eg
-obj_from_importstr('ipyautoui.AutoUi')
+obj_from_importstr('pathlib.Path')
