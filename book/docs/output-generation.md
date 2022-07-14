@@ -1,5 +1,7 @@
 # Creating formatted outputs
 
+![schedules-format-design-brief](images/schedules-format-design-brief.png)
+
 ## Word docx
 
 use pandoc to convert markdown to docx using a reference docx for template styling. this is how we're currently doing it.

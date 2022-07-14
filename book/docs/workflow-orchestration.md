@@ -7,6 +7,7 @@
 - Prefect: _advertised as Airflow next-gen. fully featured. opensource core. large, feature-rich. maybe._
 - Snakemake: _simpler than ^. more academic. based on file inputs and outputs. linux only 😢. maybe._
 - Pollination Queenbee: _workflow language that creates Luigi pipelines from yaml's. looks great. yaml --> luigi converter is closed source. only to be used with Pollination Cloud_
+- [aiida](https://github.com/aiidateam/aiida-core)
 
 ## Snakemake
 
