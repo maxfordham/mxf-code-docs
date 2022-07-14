@@ -1,11 +1,31 @@
-import stringcase
+# ---
+# jupyter:
+#   jupytext:
+#     cell_metadata_filter: -all
+#     formats: ipynb,py:light
+#     text_representation:
+#       extension: .py
+#       format_name: light
+#       format_version: '1.5'
+#       jupytext_version: 1.11.5
+#   kernelspec:
+#     display_name: Python 3 (ipykernel)
+#     language: python
+#     name: python3
+# ---
+
+# # Remove invalid characters from String
+
+# +
+
 FILENAME_FORBIDDEN_CHARACTERS = {"<", ">", ":", '"', "/", "\\", "|", "?", "*"}
 
+# +
 def modify_string(s, 
                   remove_forbidden_chars=True, 
-                  remove_spaces=True, 
-                  fn_on_string=stringcase.pascalcase,
-                  max_length=None
+                  remove_spaces=False, 
+                  fn_on_string=None,
+                  max_length=None,
                   min_length=None):
     """
     
@@ -22,7 +42,12 @@ def modify_string(s,
     if min_length is not None:
         if len(s) < min_length:
             s = s + "-"*(min_length-len(s))
-    if min_length is not None:
+    if max_length is not None:
         if len(s) > max_length:
             s = s[0:max_length]
     return s
+
+modify_string('<this> is a string with max length',max_length=30)
+# -
+
+

@@ -1,3 +1,21 @@
+# ---
+# jupyter:
+#   jupytext:
+#     cell_metadata_filter: -all
+#     formats: ipynb,py:light
+#     text_representation:
+#       extension: .py
+#       format_name: light
+#       format_version: '1.5'
+#       jupytext_version: 1.11.5
+#   kernelspec:
+#     display_name: Python 3 (ipykernel)
+#     language: python
+#     name: python3
+# ---
+
+# # Vega
+
 from IPython.display import display
 
 def Vega(spec):
@@ -8,7 +26,7 @@ def Vega(spec):
     bundle = {}
     bundle['application/vnd.vega.v5+json'] = spec
     display(bundle, raw=True);
-    
+
 vg = {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "A basic bar chart example, with value labels shown upon mouse hover.",
@@ -106,4 +124,6 @@ vg = {
   ]
 }
 
-display(Vega(vg));
+Vega(vg)
+
+
