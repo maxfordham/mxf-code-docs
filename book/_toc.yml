@@ -1,38 +1,40 @@
 format: jb-book
 root: docs/index
-defaults:
-  numbered: true
 parts:
-- caption: intro
-  chapters:
-  - file: docs/intro
 - caption: developing
   chapters:
-  - file: docs/developing-envsetup
-  - file: jupyterlab-ui.md
+  - file: docs/technologies
+  - file: docs/opensource-and-licensing
+  - file: docs/development-infrastructure
+    sections:
+    - file: docs/developing-envsetup
+    - file: docs/jupyterlab-ui
+    - file: docs/vscode
+    - file: docs/git
+    - file: docs/testing
+    - file: docs/api-testing
+    - file: docs/chocolatey
+    - file: docs/software-architecture.md
+    - file: docs/packaging
+    - file: docs/deploying
   - file: docs/developing
-  - file: docs/git
-  - file: docs/testing
-  - glob: docs/objectModels*
-  - file: docs/databases
-  - file: docs/api-testing
-  - file: docs/workflow_orchestration.md
-  - file: docs/software-architecture.md
+    sections:
+    - glob: docs/objectModels*
+    - file: docs/databases
+    - file: docs/workflow-orchestration.md
+    - file: docs/code-snippets.md
+      sections:
+      - glob: docs/snippets/*
+  
 - caption: documentation
   chapters:
   - file: docs/output-generation.md
   - file: docs/referencing-and-citations.md
-- caption: packaging
-  chapters:
-  - file: docs/packaging
-- caption: deploying
-  chapters:
-  - file: docs/deploying
-- caption: jb-rendering-demo
-  chapters:
   - file: docs/jb-rendering-demo
-- caption: code-snippets
+  
+- caption: Revit
   chapters:
-  - file: docs/code-snippets.md
-    sections:
-    - glob: docs/code_snippets/*
+  - file: docs/pyRevit.md
+  - file: docs/revit-resources.md
+
+
