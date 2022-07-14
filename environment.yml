@@ -8,6 +8,9 @@ dependencies:
   - sphinx
   - pip
   - pandas
+  - tabulate
+  - markdown
+  - jupyterlab
   - jupyter-book
   - importlib_resources
   - pyppeteer
@@ -15,6 +18,7 @@ dependencies:
   - numpy
   - seaborn
   - plotly=5.1.0
+  - palettable
   - toml
   - pip:
     - PyGEL3D
