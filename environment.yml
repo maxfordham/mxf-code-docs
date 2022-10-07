@@ -19,6 +19,9 @@ dependencies:
   - seaborn
   - plotly=5.1.0
   - palettable
+  - xmltodict
+  - xlsxtemplater
+  - openpyxl
   - toml
   - pip:
     - PyGEL3D
