@@ -6,6 +6,17 @@ repositories that can be imported into various environments
 use with VEScripts or pyRevit
 - __repo2docker__: repo2docker is used to build docker images of front-end 
 repos for user-interface tools
+- __hatch__: new python tool for packaging and env management
+
+## Executive Summary
+
+- use `hatch` to define package for pip 
+- use `grayskull` to create a conda-feedstock recipe for the package (genenerate from pyproject.toml)
+	- have a separate `<package-name>-feedstock` repo 
+- build local using `conda build` or `hatch` as required
+- or, if a public package build using Github actions
+
+^ document more completely once an example is complete!
 
 ## conda-build
 
