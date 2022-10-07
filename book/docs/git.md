@@ -15,13 +15,6 @@ new functionality in code repositories.
 
 ![Git workflow](images/git_workflow.png)
 
-## Merging branches
+## Branching
 
-Let's say that we have been working on a branch called "Adding Tests", then we merge this to dev by doing:
-
-- in local dev repo
-- switch/checkout to Adding Tests branch
-- pull changes
-- switch/checkout to dev branch 
-  - select merge changes to Adding Tests branch
-- push dev to git server (git dev now up-to-date)
+## Tags and Releases
