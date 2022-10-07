@@ -7,12 +7,13 @@ exporting to IFC
 
 ## Exporting to IFC with Units
 
-- [](https://standards.buildingsmart.org/IFC/RELEASE/IFC4/ADD2_TC1/HTML/link/project-units.htm)
-- [](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/annex/annex-e/basic-unit-declaration.htm)
-- [](https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/HTML/schema/ifcmeasureresource/content.htm)
+- [project-units](https://standards.buildingsmart.org/IFC/RELEASE/IFC4/ADD2_TC1/HTML/link/project-units.htm)
+- [basic-unit-declaration](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/annex/annex-e/basic-unit-declaration.htm)
+- [ifcmeasureresource](https://standards.buildingsmart.org/IFC/RELEASE/IFC4/FINAL/HTML/schema/ifcmeasureresource/content.htm)
 
 
 ## Adding conversion to a unit
+
 - [](https://standards.buildingsmart.org/IFC/RELEASE/IFC2x/ADD1/HTML/ifcmeasureresource/IFC_R2X_UnitsMeasures_Examples.htm)
 
 ## Custom PropertySets vs Extending PropertySets
@@ -42,9 +43,8 @@ Maybe it would be best to create user-defined property sets based off of the IFC
 
 ## Export to IFC with correct IFC classifcations
 
-![Exporting to IFC correctly](https://knowledge.autodesk.com/support/revit/learn-explore/caas/CloudHelp/cloudhelp/2020/ENU/Revit-DocumentPresent/files/GUID-7119A8C3-A0EE-4568-8C35-750410D867C9-htm.html)
-
-![Useful Tutorial on exporting to Ifc](https://www.youtube.com/watch?v=UemlqhPmcW4)
+- [Exporting to IFC correctly](https://knowledge.autodesk.com/support/revit/learn-explore/caas/CloudHelp/cloudhelp/2020/ENU/Revit-DocumentPresent/files/GUID-7119A8C3-A0EE-4568-8C35-750410D867C9-htm.html)
+- [Useful Tutorial on exporting to Ifc](https://www.youtube.com/watch?v=UemlqhPmcW4)
 
 Firstly, add "IfcExportAs" and "IfcExportType" to the Shared Parameters file. 
 
