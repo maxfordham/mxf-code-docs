@@ -195,6 +195,32 @@ wsl --shutdown ubuntu_2004_jovyan
 That's it! Next time wsl is launched, the ubuntu_2004_jovyan distribution should be the default distribution, 
 and jovyan should be the default user with all the required permissions.
 
+### Setting Up SSH To Access Repositories on Max Fordham GitHub
+
+1. Run
+
+	```bash
+	ssh-keygen
+	```
+	
+	This will create a public (id_rsa.pub) and private key (id_rsa) in `/home/jovyan/.ssh'
+	
+2. Copy the public key onto GitHub user's SSH keys
+
+	Run
+	
+	```bash
+	cat /home/jovyan/.ssh/id_rsa.pub
+	```
+	
+	to show the public key. Copy it from the command window.
+
+	- Then go to GitHub and click on your personal account. 
+	- Under the "Access" section there is "SSH and GPG keys".
+	- Click on that, add a name for the key, paste in the public key, and save.
+
+You should now be able to access the repositories on Max Fordham LLP, assuming that you are a member of the organisation.
+
 ### Install Miniconda
 
 Run WSL again
