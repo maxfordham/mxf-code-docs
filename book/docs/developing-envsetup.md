@@ -219,6 +219,24 @@ and jovyan should be the default user with all the required permissions.
 	- Under the "Access" section there is "SSH and GPG keys".
 	- Click on that, add a name for the key, paste in the public key, and save.
 
+3. Permanently add SSH key to user agent
+
+	```bash
+	nano ~/.ssh/config
+	Host github.com
+		IdentityFile ~/.ssh/id_rsa
+	```
+
+4. Finally set up the git config by filling in email and name:
+
+	```bash
+	git config --global user.email "you@example.com"
+	```
+	
+	```bash
+	git config --global user.name "Your Name"
+	```
+
 You should now be able to access the repositories on Max Fordham LLP, assuming that you are a member of the organisation.
 
 ### Install Miniconda
