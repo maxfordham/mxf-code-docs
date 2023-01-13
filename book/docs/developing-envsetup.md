@@ -195,35 +195,13 @@ wsl --shutdown ubuntu_2004_jovyan
 That's it! Next time wsl is launched, the ubuntu_2004_jovyan distribution should be the default distribution, 
 and jovyan should be the default user with all the required permissions.
 
-### Install Miniconda
+### Install Mambaforge
 
-Run WSL again
+https://github.com/conda-forge/miniforge#mambaforge
 
-```bash
-wsl
-```
-
-cd to home
-```bash
-cd /home
-```
-
-Get Miniconda shell script
-```bash
-sudo wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-```
-
-Change access permissions to shell script so we can install.
-```bash
-sudo chmod +x Miniconda3-latest-Linux-x86_64.sh
-```
-
-Install Miniconda
-```bash
-./Miniconda3-latest-Linux-x86_64.sh
-# note. should install here: /home/jovyan/miniconda3
-# note. when prompted: Do you wish the installer to initialize Miniconda3, by running conda init? [yes|no]
-# $yes
+```sh
+curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
+bash Mambaforge-$(uname)-$(uname -m).sh
 ```
 
 Restart wsl for the miniconda installation to take effect.
