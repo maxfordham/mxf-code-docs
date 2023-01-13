@@ -11,6 +11,7 @@ parts:
     - file: docs/jupyterlab-ui
     - file: docs/vscode
     - file: docs/git
+    - file: docs/linux-netextender
     - file: docs/testing
     - file: docs/api-testing
     - file: docs/chocolatey

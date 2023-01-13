@@ -20,9 +20,9 @@ dependencies:
   - plotly=5.1.0
   - palettable
   - xmltodict
-  - xlsxtemplater
   - openpyxl
   - toml
   - pip:
     - PyGEL3D
     - honeybee-energy[standards]
+    - git+https://git@github.com/maxfordham/xlsxtemplater@v0.1.6
