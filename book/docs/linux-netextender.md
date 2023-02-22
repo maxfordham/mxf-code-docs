@@ -1,65 +1,67 @@
-# Install NetExtender on Linux
+# NetExtender on Linux
 
-REF: https://www.sonicwall.com/support/knowledge-base/how-can-i-download-and-install-netextender-on-linux/180105195559153/
+This document will show you how to install and run NetExtender on Linux.
 
-1. Install pptpd
+## Install NetExtender on Linux
 
-	```bash
-	sudo apt install pptpd
-	```
+REF: <https://www.sonicwall.com/support/knowledge-base/how-can-i-download-and-install-netextender-on-linux/180105195559153/>
 
-2. Download linux .tgz file for either 32-bit or 64-bit: https://www.sonicwall.com/products/remote-access/vpn-clients/
+### Install pptpd
 
-	You can check which version you are by running:
+```bash
+sudo apt install pptpd
+```
 
-	```bash
-	uname -m
-	```
+### Download linux .tgz file for either 32-bit or 64-bit: <https://www.sonicwall.com/products/remote-access/vpn-clients/>
 
-3. Extract .tgz
+You can check which version you are by running:
 
-	```bash
-	tar xzvf NetExtender.Linux-10.2.845.x86_64.tgz
-	```
+```bash
+uname -m
+```
 
-4. Change directory
+### Extract .tgz
 
-	```bash
-	cd netExtenderClient
-	```
+```bash
+tar xzvf NetExtender.Linux-10.2.845.x86_64.tgz
+```
 
-5. Install
+### Change directory
 
-	```bash
-	sudo ./install
-	```
+```bash
+cd netExtenderClient
+```
 
-# Running NetExtender on Linux
+### Install
 
-1. Disconnect from NetExtender VPN on Windows and restart WSL.
+```bash
+sudo ./install
+```
 
-2. Run NetExtender on WSL
+## Running NetExtender on Linux
 
-	```bash
-	netExtender
-	```
+### Disconnect from NetExtender VPN on Windows and restart WSL
 
-3. Fill in fields:
+### Run NetExtender on WSL
 
-	```bash
-	SSL VPN Server: vpn.maxfordham.com
-	User: your.user
-	Password: YourPassword
-	Domain: LocalDomain
-	```
+```bash
+netExtender
+```
 
-4. This should now connect successfully.
+### Fill in fields
 
-5. To test that the connection has worked, we can ping the servers:
+```bash
+SSL VPN Server: vpn.maxfordham.com
+User: your.user
+Password: YourPassword
+Domain: LocalDomain
+```
 
-	```bash
-	ansible all -m ping
-	```
+### To test that the connection has worked, we can ping the servers
+
+```bash
+ansible all -m ping
+```
 
 ```{note}
 Running both NetExtender on Windows and Linux seems to have its issues.
