@@ -11,7 +11,7 @@ handlers:
     class: logging.FileHandler
     level: WARNING
     formatter: standard
-    filename: experiments/logging_test/test_1.log
+    filename: test_1.log
   console_handler:
     class: logging.StreamHandler
     level: INFO

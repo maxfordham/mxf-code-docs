@@ -1,0 +1,126 @@
+6323 - 14-Feb-23 12:04:07 - myadd - WARNING - ADD: a=0, b=0
+6323 - 14-Feb-23 12:04:07 - myminus - WARNING - MINUS: a=0, b=0
+6323 - 14-Feb-23 12:04:07 - __main__ - ERROR - Exception occurred
+Traceback (most recent call last):
+  File "/tmp/ipykernel_6323/3712377591.py", line 30, in div
+    c = a / b
+ZeroDivisionError: division by zero
+6323 - 14-Feb-23 12:12:19 - myadd - WARNING - ADD: a=0, b=0
+6323 - 14-Feb-23 12:12:19 - myminus - WARNING - MINUS: a=0, b=0
+6323 - 14-Feb-23 12:12:19 - __main__ - ERROR - Exception occurred
+Traceback (most recent call last):
+  File "/tmp/ipykernel_6323/1812973343.py", line 30, in div
+    c = a / b
+ZeroDivisionError: division by zero
+6323 - 14-Feb-23 12:12:32 - myadd - WARNING - ADD: a=0, b=0
+6323 - 14-Feb-23 12:12:32 - myminus - WARNING - MINUS: a=0, b=0
+6323 - 14-Feb-23 12:12:32 - __main__ - ERROR - Exception occurred
+Traceback (most recent call last):
+  File "/tmp/ipykernel_6323/1812973343.py", line 30, in div
+    c = a / b
+ZeroDivisionError: division by zero
+7321 - 14-Feb-23 12:23:57 - myadd - WARNING - ADD: a=0, b=0
+7321 - 14-Feb-23 12:23:57 - myminus - WARNING - MINUS: a=0, b=0
+7321 - 14-Feb-23 12:23:57 - __main__ - ERROR - Exception occurred
+Traceback (most recent call last):
+  File "/tmp/ipykernel_7321/1812973343.py", line 30, in div
+    c = a / b
+ZeroDivisionError: division by zero
+7321 - 14-Feb-23 12:28:47 - myadd - WARNING - ADD: a=0, b=0
+7321 - 14-Feb-23 12:28:47 - myminus - WARNING - MINUS: a=0, b=0
+7321 - 14-Feb-23 12:28:47 - __main__ - ERROR - Exception occurred
+Traceback (most recent call last):
+  File "/tmp/ipykernel_7321/2242574240.py", line 30, in div
+    c = a / b
+ZeroDivisionError: division by zero
+7321 - 14-Feb-23 12:28:59 - myadd - WARNING - ADD: a=0, b=0
+7321 - 14-Feb-23 12:28:59 - myminus - WARNING - MINUS: a=0, b=0
+7321 - 14-Feb-23 12:28:59 - __main__ - ERROR - Exception occurred
+Traceback (most recent call last):
+  File "/tmp/ipykernel_7321/2242574240.py", line 30, in div
+    c = a / b
+ZeroDivisionError: division by zero
+7321 - 14-Feb-23 12:29:01 - myadd - WARNING - ADD: a=0, b=0
+7321 - 14-Feb-23 12:29:01 - myminus - WARNING - MINUS: a=0, b=0
+7321 - 14-Feb-23 12:29:01 - __main__ - ERROR - Exception occurred
+Traceback (most recent call last):
+  File "/tmp/ipykernel_7321/2242574240.py", line 30, in div
+    c = a / b
+ZeroDivisionError: division by zero
+7321 - 14-Feb-23 12:29:19 - myadd - WARNING - ADD: a=0, b=0
+7321 - 14-Feb-23 12:29:19 - myminus - WARNING - MINUS: a=0, b=0
+7321 - 14-Feb-23 12:29:19 - __main__ - ERROR - Exception occurred
+Traceback (most recent call last):
+  File "/tmp/ipykernel_7321/3602994430.py", line 30, in div
+    c = a / b
+ZeroDivisionError: division by zero
+7321 - 14-Feb-23 12:29:38 - myadd - WARNING - ADD: a=0, b=0
+7321 - 14-Feb-23 12:29:38 - myminus - WARNING - MINUS: a=0, b=0
+7321 - 14-Feb-23 12:29:39 - __main__ - ERROR - Exception occurred
+Traceback (most recent call last):
+  File "/tmp/ipykernel_7321/1958827189.py", line 30, in div
+    c = a / b
+ZeroDivisionError: division by zero
+7321 - 14-Feb-23 12:31:48 - myadd - WARNING - ADD: a=0, b=0
+7321 - 14-Feb-23 12:31:48 - myminus - WARNING - MINUS: a=0, b=0
+7321 - 14-Feb-23 12:31:48 - __main__ - ERROR - Exception occurred
+Traceback (most recent call last):
+  File "/tmp/ipykernel_7321/1300014412.py", line 30, in div
+    c = a / b
+ZeroDivisionError: division by zero
+7321 - 14-Feb-23 12:32:27 - myadd - WARNING - ADD: a=0, b=0
+7321 - 14-Feb-23 12:32:27 - myminus - WARNING - MINUS: a=0, b=0
+7321 - 14-Feb-23 12:32:27 - __main__ - ERROR - Exception occurred
+Traceback (most recent call last):
+  File "/tmp/ipykernel_7321/1958827189.py", line 30, in div
+    c = a / b
+ZeroDivisionError: division by zero
+8084 - 14-Feb-23 12:38:31 - myadd - WARNING - ADD: a=0, b=0
+8084 - 14-Feb-23 12:38:31 - myminus - WARNING - MINUS: a=0, b=0
+8084 - 14-Feb-23 12:38:31 - __main__ - ERROR - Exception occurred
+Traceback (most recent call last):
+  File "/tmp/ipykernel_8084/1019329985.py", line 30, in div
+    c = a / b
+ZeroDivisionError: division by zero
+8084 - 14-Feb-23 12:38:49 - myadd - WARNING - ADD: a=0, b=0
+8084 - 14-Feb-23 12:38:49 - myminus - WARNING - MINUS: a=0, b=0
+8084 - 14-Feb-23 12:38:49 - __main__ - ERROR - Exception occurred
+Traceback (most recent call last):
+  File "/tmp/ipykernel_8084/1019329985.py", line 30, in div
+    c = a / b
+ZeroDivisionError: division by zero
+8084 - 14-Feb-23 12:38:54 - myadd - WARNING - ADD: a=0, b=0
+8084 - 14-Feb-23 12:38:54 - myminus - WARNING - MINUS: a=0, b=0
+8084 - 14-Feb-23 12:38:54 - __main__ - ERROR - Exception occurred
+Traceback (most recent call last):
+  File "/tmp/ipykernel_8084/1019329985.py", line 30, in div
+    c = a / b
+ZeroDivisionError: division by zero
+8084 - 14-Feb-23 12:39:01 - myadd - WARNING - ADD: a=0, b=0
+8084 - 14-Feb-23 12:39:01 - myminus - WARNING - MINUS: a=0, b=0
+8084 - 14-Feb-23 12:39:01 - __main__ - ERROR - Exception occurred
+Traceback (most recent call last):
+  File "/tmp/ipykernel_8084/1019329985.py", line 30, in div
+    c = a / b
+ZeroDivisionError: division by zero
+8084 - 14-Feb-23 12:42:49 - myadd - WARNING - ADD: a=0, b=0
+8084 - 14-Feb-23 12:42:49 - myminus - WARNING - MINUS: a=0, b=0
+8084 - 14-Feb-23 12:42:49 - __main__ - ERROR - Exception occurred
+Traceback (most recent call last):
+  File "/tmp/ipykernel_8084/1019329985.py", line 30, in div
+    c = a / b
+ZeroDivisionError: division by zero
+8084 - 14-Feb-23 12:54:53 - myadd - WARNING - ADD: a=0, b=0
+8084 - 14-Feb-23 12:54:53 - myminus - WARNING - MINUS: a=0, b=0
+8084 - 14-Feb-23 12:54:53 - __main__ - ERROR - Exception occurred
+Traceback (most recent call last):
+  File "/tmp/ipykernel_8084/1279367357.py", line 28, in div
+    c = a / b
+ZeroDivisionError: division by zero
+8084 - 14-Feb-23 12:56:00 - myadd - WARNING - ADD: a=0, b=0
+8084 - 14-Feb-23 12:56:00 - myminus - WARNING - MINUS: a=0, b=0
+8084 - 14-Feb-23 12:56:00 - __main__ - ERROR - Exception occurred
+Traceback (most recent call last):
+  File "/tmp/ipykernel_8084/1902698103.py", line 28, in div
+    c = a / b
+ZeroDivisionError: division by zero
