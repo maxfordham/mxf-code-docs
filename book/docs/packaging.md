@@ -10,7 +10,7 @@ repos for user-interface tools
 
 ## Executive Summary
 
-- use `hatch` to define package for pip 
+- default to `src-layout` defined in this [blogpost on python-packaging](https://blog.ionelmc.ro/2014/05/25/python-packaging/)
 - use `grayskull` to create a conda-feedstock recipe for the package (genenerate from pyproject.toml)
 	- have a separate `<package-name>-feedstock` repo 
 - build local using `conda build` or `hatch` as required
