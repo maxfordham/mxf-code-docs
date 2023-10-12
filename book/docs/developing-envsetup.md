@@ -45,6 +45,7 @@ and make sure Hyper-V is enabled. you don't have to mess with the BIOS settings.
 
 ```cmd
 wsl --help  # view help
+wsl --update  # as of 2023-10-12 the image has wsl-v1 not 2. UPDATE!  
 wsl --install -d Ubuntu  # install command
 ```
 
