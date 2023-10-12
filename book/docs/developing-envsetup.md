@@ -38,162 +38,19 @@ __Notes__
 
 follow steps in this article:
 - https://mashtips.com/enable-virtualization-windows-10/
-and make sure Hyper-V is enabled.
+and make sure Hyper-V is enabled. you don't have to mess with the BIOS settings.
 
 
-### Install WSL2
-
-Step4 from this guide:
-- https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps
-
-For the current install files, create a folder `C:\engDev\wsl_install`, and use the following bat script:
-
-
-`wsl_update.bat`  
+### Install Ubuntu on wsl
 
 ```cmd
-@echo off
-
-:: EDIT 
-:: ||||||||||||||||||||||||||||||||||||||||||||||
-set SOFTWARE_FILENAME=wsl_update_x64.msi
-:: ||||||||||||||||||||||||||||||||||||||||||||||
-
-REM ----------SET-------------
-set FDIR_SOFTWARE_REMOTE= {{ servers.mffileserver.FDIR_SOFTWARE_REMOTE }}
-set FDIR_SOFTWARE_LOCAL=%~dp0
-set SRC=%FDIR_SOFTWARE_REMOTE%\%SOFTWARE_FILENAME%
-set DSTN=%FDIR_SOFTWARE_LOCAL%\%SOFTWARE_FILENAME%
-:: ---------------------------
-
-echo ---------VERIFY-----------
-echo FDIR_SOFTWARE_REMOTE: %FDIR_SOFTWARE_REMOTE%
-echo FDIR_SOFTWARE_LOCAL: %FDIR_SOFTWARE_LOCAL%
-echo SOFTWARE_FILENAME: %SOFTWARE_FILENAME%
-echo SRC: %SRC%
-echo DSTN: %DSTN%
-echo ---------------------------
-
-REM ----------RUN---------------
-if not exist %DSTN% call xcopy %SRC% %DSTN%*
-pause
+wsl --help  # view help
+wsl --install -d Ubuntu  # install command
 ```
-
-### Install Ubuntu2004
-
-Ubuntu_2004.2020.424.0_x64.appx
-
-For the current install files use the following bat script:
-
-`get_ubuntu.bat`  
-
-```cmd
-@echo off
-:: EDIT 
-:: ||||||||||||||||||||||||||||||||||||||||||||||
-set SOFTWARE_FILENAME=Ubuntu_2004.2020.424.0_x64.appx
-:: ||||||||||||||||||||||||||||||||||||||||||||||
-
-REM ----------SET-------------
-set FDIR_SOFTWARE_REMOTE={{ servers.mffileserver.FDIR_SOFTWARE_REMOTE }}
-set FDIR_SOFTWARE_LOCAL=%~dp0
-set SRC=%FDIR_SOFTWARE_REMOTE%\%SOFTWARE_FILENAME%
-set DSTN=%FDIR_SOFTWARE_LOCAL%\%SOFTWARE_FILENAME%
-:: ---------------------------
-
-echo ---------VERIFY-----------
-echo FDIR_SOFTWARE_REMOTE: %FDIR_SOFTWARE_REMOTE%
-echo FDIR_SOFTWARE_LOCAL: %FDIR_SOFTWARE_LOCAL%
-echo SOFTWARE_FILENAME: %SOFTWARE_FILENAME%
-echo SRC: %SRC%
-echo DSTN: %DSTN%
-echo ---------------------------
-
-REM ----------RUN---------------
-if not exist %DSTN% call xcopy %SRC% %DSTN%*
-pause
-```
-
-unzip wtih 7zip (or rename .appx --> .zip) and run the .exe inside.
-when asked to set-up a username, call it "jovyan" (jovyan being a resident of Jupyter!).
-This is the default username used by JupyterHub; and there the docker images that are built
-on the JupyterHub server, so using this username means that the filepaths are the same on the
-user environment as they are on the server.
-
-### Install an additional Linux subsystem (if required in future)
-
-`build_ubuntu.bat`  
-
-```cmd
-:: assumes unzipped Ubuntu installer is saved in C:\engDev\wsl_install
-set LINUX_IMAGE_DIR=C:\engDev\wsl_install
-set UBUNTU_INSTALLER_FPTH=C:\engDev\wsl_install\Ubuntu_2004.2020.424.0_x64\install.tar.gz
-wsl --import ubuntu_2004_jovyan %LINUX_IMAGE_DIR% %UBUNTU_INSTALLER_FPTH% --version 2
-```
-
-#### Set new distribution (ubuntu_2004_jovyan) as default distribution
-
-To set ubuntu_2004_jovyan as the default distribution when launching wsl, run this command:
-
-```cmd
-wsl -s ubuntu_2004_jovyan
-```
-
-Note that we can check this by listing the existing distributions:
-
-```cmd
-wsl -l
-```
-
 
 #### Creating new user in the distribution
 
-Firstly, we must run the specified distribution using:
-
-```cmd
-wsl -d ubuntu_2004_jovyan
-```
-
-We are now in the distribution as the user "root".
-
-To add a user we will run:
-
-```bash
-adduser jovyan
-```
-
-Go through the steps of adding a password and any information you wish (can leave it blank if you want). 
-Then say that the information is correct... well if it is correct.
-
-Now we need to enable sudoer privileges for our new user, jovyan:
-
-```bash
-adduser jovyan sudo
-```
-
-When we launch wsl, we want to have jovyan as the default user. We do this by adding the default to the wsl config file:
-
-```bash
-tee /etc/wsl.conf <<_EOF
-[user]
-default=jovyan
-_EOF
-```
-
-Finally, logout of wsl with the bash:
-
-```bash
-logout
-```
-
-And then use the wsl shutdown command so that the changes take effect:
-
-```cmd
-wsl --shutdown ubuntu_2004_jovyan
-```
-
-That's it! Next time wsl is launched, the ubuntu_2004_jovyan distribution should be the default distribution, 
-and jovyan should be the default user with all the required permissions.
+setup new user as `jovyan`. 
 
 ### Setting Up SSH To Access Repositories on Max Fordham GitHub
 
@@ -241,38 +98,28 @@ You should now be able to access the repositories on Max Fordham LLP, assuming t
 
 ### Install Mambaforge
 
-https://github.com/conda-forge/miniforge#mambaforge
+[micromamba-installation](https://mamba.readthedocs.io/en/latest/micromamba-installation.html#install-script)
 
 ```sh
-curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
-bash Mambaforge-$(uname)-$(uname -m).sh
+"${SHELL}" <(curl -L micro.mamba.pm/install.sh)
+
+# ^ press enter for default setup
+```
+
+add some bash aliases
+
+```
+nano .bash_aliases
+# paste
+alias start='mnt/c/windows/explorer.exe'
+alias mamba='micromamba'
+alias conda='micromamba'
+# cntrl+X to leave
 ```
 
 Restart wsl for the miniconda installation to take effect.
 
-### Mount mf internal conda channel
-
-WK wsl
-
-```bash
-sudo mkdir /mnt/conda-bld
-```
-
-```bash
-sudo mount -t drvfs '\\barbados\apps\conda\conda-bld' /mnt/conda-bld
-```
-
-Adding channels:
-
-```bash
-conda config --add channels file:///mnt/conda-bld
-```
-
-```bash
-conda config --add channels conda-forge
-```
-
-### Mount J:\drive onto Linux WSL
+### Mount J:\drive onto Linux WSL - NO LONGER REQUIRED
 
 WK wsl
 
@@ -286,7 +133,7 @@ sudo mount -t drvfs '\\barbados\jobs' /home/jovyan/jobs
 
 Note that the mounting will have to be performed each time on startup so we will add a mounting script in the next step.
 
-### Mounting MF internal conda channel and J:\drive on startup
+### Mounting MF internal conda channel and J:\drive on startup - NO LONGER REQUIRED
 
 We don't want to have to mount these two directories each time we boot up our system, so we will make it so these commands are run
 automatically on start up.
@@ -341,24 +188,6 @@ That's it! Now when you open WSL on start-up, it will prompt you for your passwo
 best practice is that every package / repo should have an environment file that defines its own requirements. 
 environments should be as small as they can be. 
 
-As a default env, it is suggested to setup "jlaunch" below - this is a lightweight jupyter environement that has nb_conda_kernels
-installed, allowing any other conda environment to run from a single jupyter instance. Any jupyter extension that contains built code 
-must be installed into the jlaunch environment. 
-
-WK wsl
-
-```bash
-#  install mamba
-conda install mamba -n base -c conda-forge -y
-#  create env for launching jupyterlab. 
-#  install anything that requires a built jupyterlab extension into this environment
-mamba create -n jlaunch -c conda-forge "python>3.8,<3.10" "jupyterlab>3.1" jupyterlab-spellchecker voila ipywidgets ipydatagrid ipyvuetify watchdog plotly matplotlib altair nb_black jupytext jupyterlab-lsp python-lsp-server theme-darcula
-conda activate
-mamba install -n jlaunch nb_conda_kernels #  this allows any conda env to be run from jlaunch
-#  activate 
-conda activate jlaunch
-```
-
 ### Install some handy CLI tools
 
 Firstly, update the repository cache.
@@ -381,14 +210,5 @@ tree is useful for viewing directory structures in linux.
 
 ### launch a juptyer lab session
 
-WK wsl
-
-```bash
-cd /mnt/c/engDev/git_mf
-# ^note. maybe should move over to the linux mount...
-jupyter lab
-```
-
-copy the ip into a browser for a Jupyter Lab session.
 
 ### launch a session with VS Code
