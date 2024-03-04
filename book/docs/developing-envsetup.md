@@ -3,18 +3,13 @@
 
 - [Standalone Development](#standalone-development)
   - [Introduction](#introduction)
+  - [Prerequisite](#prerequisite)
   - [Instructions](#instructions)
-    - [Hardare Config](#hardare-config)
-    - [Install WSL2](#install-wsl2)
-    - [Install Ubuntu2004](#install-ubuntu2004)
-    - [Install an additional Linux subsystem (if required in future)](#install-an-additional-linux-subsystem-if-required-in-future)
-    - [Install Miniconda](#install-miniconda)
-    - [Mount mf internal conda channel](#mount-mf-internal-conda-channel)
-    - [Mount J:\drive onto Linux WSL](#mount-jdrive-onto-linux-wsl)
-    - [Mounting MF internal conda channel and J:\drive on startup](#mounting-mf-internal-conda-channel-and-jdrive-on-startup)
-    - [create conda envs](#create-conda-envs)
-    - [launch a juptyer lab session](#launch-a-juptyer-lab-session)
-    - [launch a session with VS Code](#launch-a-session-with-vs-code)
+    - [Install Ubuntu on WSL](#install-ubuntu-on-wsl)
+    - [Set Up SSH To Access Repositories on Max Fordham GitHub](#set-up-ssh-to-access-repositories-on-max-fordham-github)
+    - [Install Conda Package Manager](#install-conda-package-manager)
+    - [Install some handy CLI tools](#install-some-handy-cli-tools)
+    - [Install Visual Studio Code](#install-visual-studio-code)
 
 ## Introduction
 
@@ -26,168 +21,86 @@ Given that the final resting place of standalone tools is the Linux JupyterHub s
 we try to make the development environment on the users machine as close to this as
 it can be.
 
-## Instructions
+## Prerequisite
 
-__Notes__
-
-- FDIR_SOFTWARE_REMOTE={{ servers.mffileserver.FDIR_SOFTWARE_REMOTE }} is where installer files for dev software is currently stored.
-- WK = Windows Key
-- install VSCode to the default install location
-
-### Hardware Config
-
-follow steps in this article:
+Hyper-V should already be enabled on your laptop but if you are having issues then follow this article:
 - https://mashtips.com/enable-virtualization-windows-10/
-and make sure Hyper-V is enabled. you don't have to mess with the BIOS settings.
 
+## Installation
 
-### Install Ubuntu on wsl
+### Install Ubuntu on WSL
 
 ```cmd
-wsl --help  # view help
-wsl --update  # as of 2023-10-12 the image has wsl-v1 not 2. UPDATE!  
-wsl --install -d Ubuntu  # install command
+wsl --install -d Ubuntu
 ```
 
-#### Creating new user in the distribution
+Create the new user as `jovyan` and set the password to something sensible.
 
-setup new user as `jovyan`. 
+Ensure that the WSL version of the distribution is set to version 2
 
-### Setting Up SSH To Access Repositories on Max Fordham GitHub
-
-1. Run
-
-```bash
-ssh-keygen
+```cmd
+wsl --set-version Ubuntu 2
 ```
+
+### Set Up SSH To Access Repositories on Max Fordham GitHub
+
+1. Create an SSH key pair using the following
+
+    ```bash
+    ssh-keygen
+    ```
 	
-	This will create a public (id_rsa.pub) and private key (id_rsa) in `/home/jovyan/.ssh'
-	
+    This will create a public `id_rsa.pub` and private key `id_rsa` in `/home/jovyan/.ssh` by default.
+        
 2. Copy the public key onto GitHub user's SSH keys
-
-	Run
 	
-```bash
-cat /home/jovyan/.ssh/id_rsa.pub
-```
-	
-	to show the public key. Copy it from the command window.
+    To show the public key:
 
-	- Then go to GitHub and click on your personal account. 
-	- Under the "Access" section there is "SSH and GPG keys".
-	- Click on that, add a name for the key, paste in the public key, and save.
+    ```bash
+    cat /home/jovyan/.ssh/id_rsa.pub
+    ```
+        
+    Copy it from the command window to your clipboard by highlighting the whole key and pressing CTRL+C.
 
-3. Permanently add SSH key to user agent
+    - Then go to GitHub and click on your personal account. 
+    - Under the "Access" section there is "SSH and GPG keys".
+    - Click on that, add a name for the key, paste in the public key, and save.
+    - Authorise the key for the `Max Fordham` organisation. You must be a member of the organisation to do this.
 
-```bash
-nano ~/.ssh/config
-Host github.com
-	IdentityFile ~/.ssh/id_rsa
-```
+3. Optional: Permanently add SSH key to user agent
+
+    This step is only required if the file name of the SSH is something other than `id_rsa` or the other default names.
+
+    ```bash
+    nano ~/.ssh/config
+    Host github.com
+        IdentityFile ~/.ssh/id_custom_name
+    ```
 
 4. Finally set up the git config by filling in email and name:
 
-```bash
-git config --global user.email "you@example.com"
-```
+    ```bash
+    git config --global user.email "you@example.com"
+    ```
 
-```bash
-git config --global user.name "Your Name"
-```
+    ```bash
+    git config --global user.name "Your Name"
+    ```
 
-You should now be able to access the repositories on Max Fordham LLP, assuming that you are a member of the organisation.
+    You should now be able to access the repositories on Max Fordham LLP, assuming that you are a member of the organisation.
 
-### Install Mambaforge
+### Install Conda Package Manager
 
-[micromamba-installation](https://mamba.readthedocs.io/en/latest/micromamba-installation.html#install-script)
+We utilise the conda package manager functionality through the following software: [miniforge](https://github.com/conda-forge/miniforge) 
 
-```sh
-"${SHELL}" <(curl -L micro.mamba.pm/install.sh)
-
-# ^ press enter for default setup
-```
-
-add some bash aliases
-
-```
-nano .bash_aliases
-# paste
-alias start='mnt/c/windows/explorer.exe'
-alias mamba='micromamba'
-alias conda='micromamba'
-# cntrl+X to leave
-```
-
-Restart wsl for the miniconda installation to take effect.
-
-### Mount J:\drive onto Linux WSL - NO LONGER REQUIRED
-
-WK wsl
+To install miniforge, run the folllowing in WSL
 
 ```bash
-sudo mkdir /home/jovyan/jobs
+curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+bash Miniforge3-$(uname)-$(uname -m).sh
 ```
 
-```bash
-sudo mount -t drvfs '\\barbados\jobs' /home/jovyan/jobs
-```
-
-Note that the mounting will have to be performed each time on startup so we will add a mounting script in the next step.
-
-### Mounting MF internal conda channel and J:\drive on startup - NO LONGER REQUIRED
-
-We don't want to have to mount these two directories each time we boot up our system, so we will make it so these commands are run
-automatically on start up.
-
-1. Change directory to /etc/profile.d
-    ```bash
-    cd /etc/profile.d
-    ```
-2. Create a shell file
-    ```bash
-    sudo touch mount_folders.sh
-    ```
-3. Open up mount_folders.sh in the text editor 
-    ```bash
-    sudo nano mount_folders.sh
-    ```
-4. Now copy the code from below and paste into text editor by right clicking on the mouse.
-    ```bash
-	DIR_CONDA="/mnt/conda-bld/"
-	FILE_CONDA="/mnt/conda-bld/linux-64"
-
-	DIR_JOBS="/home/jovyan/jobs"
-	FILE_JOBS="/home/jovyan/jobs/J4321"
-
-	if [ ! -d "$FILE_CONDA" ]; then
-	  # Take action if $FILE_CONDA does not exist. #
-	  sudo mount -t drvfs '\\barbados\apps\conda\conda-bld' /mnt/conda-bld
-	  echo "Mounting ${DIR_CONDA}."
-	fi
-
-	if [ ! -d "$FILE_JOBS" ]; then
-	  # Take action if $FILE_JOBS does not exist. # 
-	  sudo mount -t drvfs '\\barbados\jobs' /home/jovyan/jobs
-	  echo "Mounting ${DIR_JOBS}."
-	fi
-
-	cd /mnt/c/engDev/git_mf
-    ```
-5. Press CTRL - X and you will be prompted with whether you want to save. Press Y to save and then click enter to confirm the file name to save as. 
-Then this will exit out of the nano editor. 
-
-6. Add windows explorer to your linux bash_aliases (this means you can `start fnm.txt` to open a file or `start .` to open the folder in explorer.
-    ```bash
-    sudo nano ~/.bash_aliases
-	alias start='/mnt/c/windows/explorer.exe'
-    ```
-
-That's it! Now when you open WSL on start-up, it will prompt you for your password to mount both conda-bld and jobs (if they are not already mounted).
-
-### create conda envs
-
-best practice is that every package / repo should have an environment file that defines its own requirements. 
-environments should be as small as they can be. 
+Restart WSL for the miniforge installation to take effect.
 
 ### Install some handy CLI tools
 
@@ -200,7 +113,7 @@ sudo apt update
 Then run install commands
 
 ```bash
-python -m pip install rich-cli
+python -m pip install frogmouth
 sudo apt-get install ripgrep
 sudo apt install tree
 ```
@@ -209,7 +122,29 @@ sudo apt install tree
 tree is useful for viewing directory structures in linux.
 ```
 
-### launch a juptyer lab session
+It is also useful to add windows explorer to your linux bash_aliases. This means you can `start fnm.txt` to open a file or `start .` to open the folder in explorer.
 
+```bash
+sudo nano ~/.bash_aliases
+alias start='/mnt/c/windows/explorer.exe'
+```
 
-### launch a session with VS Code
+Restart WSL for the above changes to take effect.
+
+### Install Visual Studio Code
+
+Download Visual Studio Code: https://code.visualstudio.com/download
+
+Install VS Code by opening the downloaded `.exe`.
+
+Once in VS Code, install the recommended extensions:
+
+- WSL
+- Python
+- Jupyter
+- GitHub Copilot
+- Gitmoji
+- Black formatter ([Setup Black Formatter](https://code.visualstudio.com/docs/python/formatting))
+- Spell Check ([Change to British English](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-british-english#:~:text=Enable%20British%20English%20Dictionary,or%20in%20just%20the%20Workspace.))
+
+You should be all set up and ready to start coding! 🚀
