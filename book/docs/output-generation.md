@@ -2,34 +2,17 @@
 
 ![schedules-format-design-brief](images/schedules-format-design-brief.png)
 
-## Word docx
+## Quarto
 
-use pandoc to convert markdown to docx using a reference docx for template styling. this is how we're currently doing it.
+quarto is a scientific publishing system based on pandoc. its awesome.
+We compared to pandoc raw and jupyterbook and decided that quarto best fulfilled our requirements.
 
-## LaTex 
+### Output formats
 
-_currently not using this and using docx instead, but could convert in the future...
+- website
+- word docx
+- powerpoint pptx
+- pdf (latex)
 
-### from markdown using pandoc and pandoc-latex-template
-
-[pandoc-latex-template](https://github.com/Wandmalfarbe/pandoc-latex-template)
-
-required:
-```bash
-sudo apt install texlive-latex-extra
-sudo apt-get install texlive-fonts-recommended texlive-fonts-extra
-
-sudo apt install make
-sudo apt-get install latexmk
-sudo apt-get install texlive-xetex
-# ^ for jupyter book
-```
-
-then make:
-```bask
-pandoc example.md -o example.pdf --from markdown --template eisvogel --listings
-```
-
-### from JupyterBook
-
-see build_pdf.sh in this repo
+refer to the templates setup in [document-issue-io](https://github.com/maxfordham/document-issue/tree/main/packages/document-issue-io) and
+[document-issue-quarto](https://github.com/maxfordham/document-issue/tree/main/packages/document-issue-quarto) for good templates.

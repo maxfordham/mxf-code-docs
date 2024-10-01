@@ -30,17 +30,17 @@ Hyper-V should already be enabled on your laptop but if you are having issues th
 
 ### Install Ubuntu on WSL
 
+```{danger}
+couldn't get wsl working on a fresh install. 
+to fix: https://github.com/microsoft/WSL/issues/9521#issuecomment-2385289848
+```
+
 ```cmd
 wsl --install -d Ubuntu
 ```
 
-Create the new user as `jovyan` and set the password to something sensible.
+Create the new user as `jovyan` and set the password to something sensible you won't forget.
 
-Ensure that the WSL version of the distribution is set to version 2
-
-```cmd
-wsl --set-version Ubuntu 2
-```
 
 ### Set Up SSH To Access Repositories on Max Fordham GitHub
 
@@ -89,7 +89,7 @@ wsl --set-version Ubuntu 2
 
     You should now be able to access the repositories on Max Fordham LLP, assuming that you are a member of the organisation.
 
-### Install Conda Package Manager
+### Install Conda/mamba Package Manager
 
 We utilise the conda package manager functionality through the following software: [miniforge](https://github.com/conda-forge/miniforge) 
 
@@ -102,49 +102,87 @@ bash Miniforge3-$(uname)-$(uname -m).sh
 
 Restart WSL for the miniforge installation to take effect.
 
+By default, configure mamba not to edit shell settings, this means that by default it won't effect your shell operation.
+[Later, a simple bash_alias is added](#Setup-bash_aliases) to simply init the mamba shell.
+
+```
+installation finished.
+Do you wish to update your shell profile to automatically initialize conda?
+This will activate conda on startup and change the command prompt when activated.
+If you'd prefer that conda's base environment not be activated on startup,
+   run the following command when conda is activated:
+
+conda config --set auto_activate_base false
+
+You can undo this by running `conda init --reverse $SHELL`? [yes|no]
+[no] >>>
+
+You have chosen to not have conda modify your shell scripts at all.
+To activate conda's base environment in your current shell session:
+
+eval "$(/home/jovyan/miniforge3/bin/conda shell.YOUR_SHELL_NAME hook)"
+
+To install conda's shell functions for easier access, first activate, then:
+
+conda init
+
+Thank you for installing Miniforge3!
+```
+
+### Install pixi package manager (optional)
+
+- [install](https://pixi.sh/latest/#installation)
+  - `curl -fsSL https://pixi.sh/install.sh | bash` <-- check still current on install
+- [enable autocomplete](https://pixi.sh/latest/#autocompletion)
+  - `echo 'eval "$(pixi completion --shell bash)"' >> ~/.bashrc` <-- check still current on install
+
+
 ### Install some handy CLI tools
 
-Firstly, update the repository cache.
+can also use [pixi](https://pixi.sh/latest/basic_usage/#use-pixi-as-a-global-installation-tool) to globally install useful tools. 
+
+```bash
+pixi global install starship  # shell autocompletion
+pixi global install ripgrep  # searching text in files
+pixi global install tree  # viewing directory structures in linux
+pixi global install gh  # github CLI
+```
+
+
+also note that there are many ways to do this. the most standard way it to use apt-get. 
+e.g. 
 
 ```bash
 sudo apt update
-```
-
-Then run install commands
-
-```bash
-python -m pip install frogmouth
 sudo apt-get install ripgrep
 sudo apt install tree
 ```
 
-```{note}
-tree is useful for viewing directory structures in linux.
-```
+### setup repos for development
+
+```bash
+gh auth # follow authentification workflow
+gh repo list maxfordham
+gh repo clone maxfordham/xlsxdatagrid
+``` 
+
+
+### Setup bash_aliases
 
 It is also useful to add windows explorer to your linux bash_aliases. This means you can `start fnm.txt` to open a file or `start .` to open the folder in explorer.
 
 ```bash
 sudo nano ~/.bash_aliases
 alias start='/mnt/c/windows/explorer.exe'
+alias mamba-init='eval "$(/home/jovyan/miniforge3/bin/conda shell.bash hook)"'
 ```
 
 Restart WSL for the above changes to take effect.
 
+### Install Notepad ++
+
+[notepad++](developing-notepadplusplus.md)
+
 ### Install Visual Studio Code
 
-Download Visual Studio Code: https://code.visualstudio.com/download
-
-Install VS Code by opening the downloaded `.exe`.
-
-Once in VS Code, install the recommended extensions:
-
-- WSL
-- Python
-- Jupyter
-- GitHub Copilot
-- Gitmoji
-- Black formatter ([Setup Black Formatter](https://code.visualstudio.com/docs/python/formatting))
-- Spell Check ([Change to British English](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-british-english#:~:text=Enable%20British%20English%20Dictionary,or%20in%20just%20the%20Workspace.))
-
-You should be all set up and ready to start coding! 🚀
+[vscode](developing-vscode.md)
