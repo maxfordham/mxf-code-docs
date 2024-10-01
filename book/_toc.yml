@@ -14,7 +14,6 @@ parts:
     - file: docs/linux-netextender
     - file: docs/testing
     - file: docs/api-testing
-    - file: docs/chocolatey
     - file: docs/software-architecture.md
     - file: docs/packaging
     - file: docs/deploying
