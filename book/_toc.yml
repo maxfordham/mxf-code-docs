@@ -5,13 +5,11 @@ parts:
   chapters:
   - file: docs/technologies
   - file: docs/opensource-and-licensing
-  - file: docs/development-infrastructure
     sections:
     - file: docs/developing-envsetup
     - file: docs/jupyterlab-ui
     - file: docs/vscode
     - file: docs/git
-    - file: docs/linux-netextender
     - file: docs/testing
     - file: docs/api-testing
     - file: docs/software-architecture.md
