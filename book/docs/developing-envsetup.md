@@ -181,8 +181,8 @@ Restart WSL for the above changes to take effect.
 
 ### Install Notepad ++
 
-[notepad++](developing-envsetup-notepadplusplus.md)
+[notepad++](developing-notepadplusplus.md)
 
 ### Install Visual Studio Code
 
-[vscode](developing-envsetup-vscode.md)
+[vscode](developing-vscode.md)
