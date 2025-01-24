@@ -179,6 +179,11 @@ alias mamba-init='eval "$(/home/jovyan/miniforge3/bin/conda shell.bash hook)"'
 
 Restart WSL for the above changes to take effect.
 
+### Install wslu
+
+this allows you to open webpages from the cmd line and more...
+https://wslutiliti.es/wslu/install.html#ubuntu
+
 ### Install Notepad ++
 
 [notepad++](developing-notepadplusplus.md)
