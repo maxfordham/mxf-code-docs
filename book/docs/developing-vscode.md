@@ -14,10 +14,9 @@ Once in VS Code, install the recommended extensions:
 - Jupyter
 - GitHub Copilot
 - ruff
-
+- Todo Tree
 
 You should be all set up and ready to start coding! 🚀
-
 
 ## Extending with extensions - automating install
 
@@ -31,9 +30,10 @@ code --list-extensions | sed -e 's/^/code --install-extension /' > my_vscode_ext
 bash my_vscode_extensions.sh
 ```
 
-when I run the above I get the following: 
+when I run the above I get the following:
 
 `my_vscode_extensions.sh`
+
 ```bash
 code --install-extension alexcvzz.vscode-sqlite
 code --install-extension bierner.markdown-mermaid

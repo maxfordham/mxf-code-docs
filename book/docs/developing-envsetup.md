@@ -7,7 +7,7 @@
   - [Instructions](#instructions)
     - [Install Ubuntu on WSL](#install-ubuntu-on-wsl)
     - [Set Up SSH To Access Repositories on Max Fordham GitHub](#set-up-ssh-to-access-repositories-on-max-fordham-github)
-    - [Install Conda Package Manager](#install-conda-package-manager)
+    - [Install Conda Package Manager](#install-mamba-package-manager)
     - [Install some handy CLI tools](#install-some-handy-cli-tools)
     - [Install Visual Studio Code](#install-visual-studio-code)
 
@@ -41,7 +41,6 @@ wsl --install -d Ubuntu
 
 Create the new user as `jovyan` and set the password to something sensible you won't forget.
 
-
 ### Set Up SSH To Access Repositories on Max Fordham GitHub
 
 1. Create an SSH key pair using the following
@@ -49,7 +48,7 @@ Create the new user as `jovyan` and set the password to something sensible you w
     ```bash
     ssh-keygen
     ```
-	
+
     This will create a public `id_rsa.pub` and private key `id_rsa` in `/home/jovyan/.ssh` by default.
         
 2. Copy the public key onto GitHub user's SSH keys
@@ -89,45 +88,15 @@ Create the new user as `jovyan` and set the password to something sensible you w
 
     You should now be able to access the repositories on Max Fordham LLP, assuming that you are a member of the organisation.
 
-### Install Conda/mamba Package Manager
+### Install micromamba Package Manager
 
-We utilise the conda package manager functionality through the following software: [miniforge](https://github.com/conda-forge/miniforge) 
-
-To install miniforge, run the folllowing in WSL
-
-```bash
-curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
-bash Miniforge3-$(uname)-$(uname -m).sh
+```{note}
+not miniforge
 ```
 
-Restart WSL for the miniforge installation to take effect.
+Follow instructions: [micromamba](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html#).
 
-By default, configure mamba not to edit shell settings, this means that by default it won't effect your shell operation.
-[Later, a simple bash_alias is added](#Setup-bash_aliases) to simply init the mamba shell.
-
-```
-installation finished.
-Do you wish to update your shell profile to automatically initialize conda?
-This will activate conda on startup and change the command prompt when activated.
-If you'd prefer that conda's base environment not be activated on startup,
-   run the following command when conda is activated:
-
-conda config --set auto_activate_base false
-
-You can undo this by running `conda init --reverse $SHELL`? [yes|no]
-[no] >>>
-
-You have chosen to not have conda modify your shell scripts at all.
-To activate conda's base environment in your current shell session:
-
-eval "$(/home/jovyan/miniforge3/bin/conda shell.YOUR_SHELL_NAME hook)"
-
-To install conda's shell functions for easier access, first activate, then:
-
-conda init
-
-Thank you for installing Miniforge3!
-```
+add to `.bashrc` init = Y
 
 ### Install pixi package manager (optional)
 
@@ -136,10 +105,9 @@ Thank you for installing Miniforge3!
 - [enable autocomplete](https://pixi.sh/latest/#autocompletion)
   - `echo 'eval "$(pixi completion --shell bash)"' >> ~/.bashrc` <-- check still current on install
 
-
 ### Install some handy CLI tools
 
-can also use [pixi](https://pixi.sh/latest/basic_usage/#use-pixi-as-a-global-installation-tool) to globally install useful tools. 
+can also use [pixi](https://pixi.sh/latest/basic_usage/#use-pixi-as-a-global-installation-tool) to globally install useful tools.
 
 ```bash
 pixi global install starship  # shell autocompletion
@@ -148,9 +116,8 @@ pixi global install tree  # viewing directory structures in linux
 pixi global install gh  # github CLI
 ```
 
-
 also note that there are many ways to do this. the most standard way it to use apt-get. 
-e.g. 
+e.g.
 
 ```bash
 sudo apt update
@@ -163,9 +130,8 @@ sudo apt install tree
 ```bash
 gh auth # follow authentification workflow
 gh repo list maxfordham
-gh repo clone maxfordham/xlsxdatagrid
-``` 
-
+gh repo clone maxfordham/digital-schedules
+```
 
 ### Setup bash_aliases
 
@@ -174,15 +140,10 @@ It is also useful to add windows explorer to your linux bash_aliases. This means
 ```bash
 sudo nano ~/.bash_aliases
 alias start='/mnt/c/windows/explorer.exe'
-alias mamba-init='eval "$(/home/jovyan/miniforge3/bin/conda shell.bash hook)"'
+alias mamba='micromamba'
 ```
 
 Restart WSL for the above changes to take effect.
-
-### Install wslu
-
-this allows you to open webpages from the cmd line and more...
-https://wslutiliti.es/wslu/install.html#ubuntu
 
 ### Install Notepad ++
 
