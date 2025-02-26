@@ -53,7 +53,6 @@ Create the new user as `jovyan` and set the password to something sensible you w
 ### Set Up SSH To Access Repositories on Max Fordham GitHub
 
 1. Create an SSH key pair using the following
-
     ```bash
     ssh-keygen
     ```
@@ -65,7 +64,7 @@ Create the new user as `jovyan` and set the password to something sensible you w
     To show the public key:
 
     ```bash
-    cat /home/jovyan/.ssh/id_rsa.pub
+    cat /home/jovyan/.ssh/id_ed25519.pub
     ```
         
     Copy it from the command window to your clipboard by highlighting the whole key and pressing CTRL+C.
