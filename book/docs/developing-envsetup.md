@@ -109,6 +109,7 @@ Create the new user as `jovyan` and set the password to something sensible you w
 can also use [pixi](https://pixi.sh/latest/basic_usage/#use-pixi-as-a-global-installation-tool) to globally install useful tools.
 
 ```bash
+# run line-by-line
 pixi global install micromamba  # micromamba package manager
 pixi global install gh  # github CLI
 pixi global install starship  # shell autocompletion
@@ -119,16 +120,18 @@ pixi global install harlequin  # terminal based sql workbench
 pixi global install tiptip  # prettier `htop` system usage log
 ```
 
+```{note}
 also note that there are many ways to do this. the most standard way it to use apt-get. 
 e.g.
 
 ```bash
+# DO NOT RUN IF YOU RAN THE ABOVE
 sudo apt update
 sudo apt-get install ripgrep
 sudo apt install tree
 "${SHELL}" <(curl -L micro.mamba.pm/install.sh)  # micromamba
 ```
-
+```
 ### apt update
 
 run these periodically to stay up-to-date
@@ -140,6 +143,8 @@ sudo apt upgrade
 ### setup repos for development
 
 ```bash
+# run line-by-line
+
 gh auth # follow authentification workflow
 gh repo list maxfordham
 gh repo clone maxfordham/digital-schedules
@@ -153,9 +158,15 @@ gh issue list  --assignee "@me"  # view your issues
 It is also useful to add windows explorer to your linux bash_aliases. This means you can `start fnm.txt` to open a file or `start .` to open the folder in explorer.
 
 ```bash
+# run line-by-line
+
 sudo nano ~/.bash_aliases
+
+# copy in
 alias start='/mnt/c/windows/explorer.exe'
 alias mamba='micromamba'
+
+# cntrl + x, save Y
 ```
 
 Restart WSL for the above changes to take effect.
