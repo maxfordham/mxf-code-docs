@@ -27,7 +27,15 @@ A couple of steps below indicate "requires admin p/w". All other steps are to be
 
 ## Prerequisite (requires admin p/w)
 
-Hyper-V should already be enabled on your laptop but if you are having issues then follow this article:
+Need to enable Hyper-V and WSL. Follow these steps:
+
+- winkey + "turn windows features on or off" (opens settings diabl
+- ensure the following settings are checked:
+  - [x] Hyper-V
+  - [x] Windows Subsystem for Linux
+
+
+If you are having issues then there is discussion in this artice:
 
 - https://mashtips.com/enable-virtualization-windows-10/
 
