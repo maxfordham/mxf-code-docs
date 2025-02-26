@@ -21,6 +21,10 @@ Given that the final resting place of standalone tools is the Linux JupyterHub s
 we try to make the development environment on the users machine as close to this as
 it can be.
 
+```{note}
+A couple of steps below indicate "requires admin p/w". All other steps are to be done by the user.
+```
+
 ## Prerequisite (requires admin p/w)
 
 Hyper-V should already be enabled on your laptop but if you are having issues then follow this article:
