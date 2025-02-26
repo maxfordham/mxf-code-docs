@@ -21,32 +21,28 @@ Given that the final resting place of standalone tools is the Linux JupyterHub s
 we try to make the development environment on the users machine as close to this as
 it can be.
 
-```{note}
-A couple of steps below indicate "requires admin p/w". All other steps are to be done by the user.
-```
-
-## Prerequisite (requires admin p/w)
-
-Need to enable Hyper-V and WSL. Follow these steps:
-
-- winkey + "turn windows features on or off" (opens settings diabl
-- ensure the following settings are checked:
-  - [x] Hyper-V
-  - [x] Windows Subsystem for Linux
-
-
-If you are having issues then there is discussion in this artice:
-
-- https://mashtips.com/enable-virtualization-windows-10/
-
 ## Installation
 
 ### Install Ubuntu on WSL (requires admin p/w)
 
-```{danger}
-couldn't get wsl working on a fresh install. 
-to fix: https://github.com/microsoft/WSL/issues/9521#issuecomment-2385289848
+```{note}
+This step only requires admin p/w. All other steps are to be done by the user.
 ```
+
+#### Prerequisite Windows Features
+
+- winkey + "turn windows features on or off" (opens settings dialogue)
+- ensure the following settings are checked:
+  - [x] Hyper-V
+  - [x] Windows Subsystem for Linux
+  - [x] Windows Hypervisor Platform
+ 
+**Troubleshooting**
+
+- https://github.com/microsoft/WSL/issues/9521#issuecomment-2385289848
+- https://mashtips.com/enable-virtualization-windows-10/
+
+#### Install Ubuntu
 
 ```cmd
 wsl --install -d Ubuntu
