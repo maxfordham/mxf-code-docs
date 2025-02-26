@@ -1,18 +1,6 @@
 
 # Standalone Development
 
-- [Standalone Development](#standalone-development)
-  - [Introduction](#introduction)
-  - [Prerequisite](#prerequisite)
-  - [Instructions](#instructions)
-    - [Install Ubuntu on WSL](#install-ubuntu-on-wsl)
-    - [Set Up SSH To Access Repositories on Max Fordham GitHub](#set-up-ssh-to-access-repositories-on-max-fordham-github)
-    - [Install Conda Package Manager](#install-mamba-package-manager)
-    - [Install some handy CLI tools](#install-some-handy-cli-tools)
-    - [Install Visual Studio Code](#install-visual-studio-code)
-
-## Introduction
-
 Below are instructions about how to configure a development machine. Ideally they should
 be followed exactly, to ensure that tests etc. are reproducible across development team
 members.
