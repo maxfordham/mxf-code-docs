@@ -21,14 +21,15 @@ Given that the final resting place of standalone tools is the Linux JupyterHub s
 we try to make the development environment on the users machine as close to this as
 it can be.
 
-## Prerequisite
+## Prerequisite (requires admin p/w)
 
 Hyper-V should already be enabled on your laptop but if you are having issues then follow this article:
+
 - https://mashtips.com/enable-virtualization-windows-10/
 
 ## Installation
 
-### Install Ubuntu on WSL
+### Install Ubuntu on WSL (requires admin p/w)
 
 ```{danger}
 couldn't get wsl working on a fresh install. 
@@ -88,32 +89,27 @@ Create the new user as `jovyan` and set the password to something sensible you w
 
     You should now be able to access the repositories on Max Fordham LLP, assuming that you are a member of the organisation.
 
-### Install micromamba Package Manager
-
-```{note}
-not miniforge
-```
-
-Follow instructions: [micromamba](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html#).
-
-add to `.bashrc` init = Y
-
-### Install pixi package manager (optional)
+### Install [`pixi`](https://pixi.sh/latest/#installation) 
 
 - [install](https://pixi.sh/latest/#installation)
-  - `curl -fsSL https://pixi.sh/install.sh | bash` <-- check still current on install
+  - `curl -fsSL https://pixi.sh/install.sh | bash` <-- check still current on install guide
 - [enable autocomplete](https://pixi.sh/latest/#autocompletion)
-  - `echo 'eval "$(pixi completion --shell bash)"' >> ~/.bashrc` <-- check still current on install
+  - `echo 'eval "$(pixi completion --shell bash)"' >> ~/.bashrc` <-- check still current on install guide
 
-### Install some handy CLI tools
+
+### Install other CLI tools
 
 can also use [pixi](https://pixi.sh/latest/basic_usage/#use-pixi-as-a-global-installation-tool) to globally install useful tools.
 
 ```bash
+pixi global install micromamba  # micromamba package manager
+pixi global install gh  # github CLI
 pixi global install starship  # shell autocompletion
 pixi global install ripgrep  # searching text in files
 pixi global install tree  # viewing directory structures in linux
-pixi global install gh  # github CLI
+pixi global install rich-cli  # pretty terminal file viewer
+pixi global install harlequin  # terminal based sql workbench
+pixi global install tiptip  # prettier `htop` system usage log
 ```
 
 also note that there are many ways to do this. the most standard way it to use apt-get. 
@@ -123,6 +119,15 @@ e.g.
 sudo apt update
 sudo apt-get install ripgrep
 sudo apt install tree
+"${SHELL}" <(curl -L micro.mamba.pm/install.sh)  # micromamba
+```
+
+### apt update
+
+run these periodically to stay up-to-date
+```bash
+sudo apt update
+sudo apt upgrade
 ```
 
 ### setup repos for development
@@ -131,6 +136,9 @@ sudo apt install tree
 gh auth # follow authentification workflow
 gh repo list maxfordham
 gh repo clone maxfordham/digital-schedules
+
+cd digital-schedules
+gh issue list  --assignee "@me"  # view your issues
 ```
 
 ### Setup bash_aliases
@@ -149,6 +157,11 @@ Restart WSL for the above changes to take effect.
 
 [notepad++](developing-notepadplusplus.md)
 
+#### Customise
+
+- https://github.com/Edditoria/markdown-plus-plus
+- https://github.com/nea/MarkdownViewerPlusPlus
+
 ### Install Visual Studio Code
 
-[vscode](developing-vscode.md)
+[vscode](developing-vscode.md) (install as user)
