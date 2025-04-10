@@ -106,6 +106,9 @@ pixi global install tree  # viewing directory structures in linux
 pixi global install rich-cli  # pretty terminal file viewer
 pixi global install harlequin  # terminal based sql workbench
 pixi global install tiptip  # prettier `htop` system usage log
+pixi global install yazi  # rapid terminal file explorer (with image viewer!)
+pixi global install poppler  # adds pdf preview to yazi
+pixi global install uv  # like pip but better (generally we use pixi but some instructions use uv)
 ```
 
 ```{note}
