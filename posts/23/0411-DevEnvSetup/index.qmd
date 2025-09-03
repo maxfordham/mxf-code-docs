@@ -3,7 +3,7 @@ title: "Developer Environment Setup"
 author: "John Gunstone"
 date: "2023-04-11"
 date-modified: "2025-02-26"
-categories: [code, python]
+categories: [dev-setup]
 image: https://github.com/maxfordham/visual-design/blob/main/icons/engineer-icon.png?raw=true
 ---
 

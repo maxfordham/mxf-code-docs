@@ -4,7 +4,7 @@ author: "John Gunstone"
 date: "2025-04-04"
 date-modified: "2025-04-04"
 # date-format: "YYYY[-ONGOING]"
-categories: [code, infrastructure]
+categories: [devops]
 image: tech-stack.png
 ---
 
