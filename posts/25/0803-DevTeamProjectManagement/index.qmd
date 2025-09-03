@@ -34,4 +34,14 @@ See "[learn-scrum](https://github.com/imalitavakoli/learn-scrum)" for a quick in
 - "Product Owner": this is the client that we are producing for. Outcomes must be presented to them.
 - "Scrum Developers": the people delivering the work. 
 
+## Tasks to Complete in the Sprint Meeting
+
+- review what was achieved in the last sprint. Discuss uncompleted items and move to backlog.
+  - close Milestone or update date.
+- define the outcomes that you would like to achieve in the upcoming sprint
+  - create a GH Milestone in relevant repo
+- define the tasks to do to achieve those outcomes
+  - add tasks to milestone
+  - assign people to tasks
+  - review whether the tasks are achievable
 
