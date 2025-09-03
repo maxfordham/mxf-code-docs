@@ -1,0 +1,7 @@
+
+sw-in: # software internal
+  document-issue: "[`document-issue`](https://maxfordham.github.io/document-issue/){target='_blank'}"
+  ipyautoui: "[`ipyautoui`](https://maxfordham.github.io/ipyautoui/){target='_blank'}"
+sw-ex: # software external
+  quarto: "[`quarto`](https://quarto.org/){target='_blank'}"
+  ipywidgets: "[`ipywidgets`](https://ipywidgets.readthedocs.io/en/stable/){target='_blank'}"

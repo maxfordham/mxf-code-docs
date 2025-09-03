@@ -1,0 +1,24 @@
+project:
+  type: website
+
+website:
+  favicon: logo.png
+  title: "mxf-code-docs"
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/jgunstone
+
+format:
+  html:
+    css: styles.css
+    toc: true
+    # theme:
+    #   light: flatly
+    #   dark: darkly
+
+
+brand:
+  light: _brand-light.yml
+  dark: _brand-dark.yml

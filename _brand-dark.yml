@@ -1,0 +1,34 @@
+meta:
+  name: building | `<code>`
+  link: github.com/building-code/building-code
+
+logo:
+  small: building-code.svg
+  medium: building-code.svg
+  large: building-code.svg
+
+color:
+  # palette:
+  #   black: "#1A1A1A"
+  #   white: "#F9F9F9"
+  #   orange: "#FF6F20"
+  #   pink: "#FF3D7F"
+  foreground: white
+  background: black
+  # primary: orange
+  # danger: pink
+
+typography:
+  fonts:
+    - family: Carlito
+      source: google
+    - family: Rubik
+      source: google
+    - family: IBM Plex Mono
+      source: google
+
+  base: Carlito
+  headings:
+    family: Rubik
+    weight: 400
+  monospace: IBM Plex Mono

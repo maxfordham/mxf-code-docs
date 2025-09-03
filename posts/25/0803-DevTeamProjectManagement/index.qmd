@@ -1,0 +1,37 @@
+---
+title: "Software Development Project Management"
+author: "John Gunstone"
+date: "2025-08-03"
+date-modified: "2025-08-03"
+categories: [management]
+---
+
+Clients and Stakeholders define [projects](#projects). 
+To deliver projects we try to adopt [agile methodologies](https://agilemanifesto.org/). 
+The is delivered through [2-weekly sprints](https://www.atlassian.com/agile/scrum/sprints), coordinated by sprint planning meetings.
+
+See "[learn-scrum](https://github.com/imalitavakoli/learn-scrum)" for a quick intro into the broad principles.
+
+
+## Projects
+
+- Development projects are defined on the Wiki: https://wiki.maxfordham.com/Main/ProjectTopic
+- Projects must have pre-agreed Clients, Stakeholders and Budgets
+  - When a project becomes active ("Running") it must have an associated code in Timesheets
+  - See [NonFeeEarningTimesheetWorkTypesExplained](https://wiki.maxfordham.com/Main/NonFeeEarningTimesheetWorkTypesExplained)
+- A project should have an equivalent [maxfordham Github Project](https://github.com/orgs/maxfordham/projects) for task management.
+- A project will be delivered through the completion of many sprints (and milestones).
+
+## Sprints
+
+- 2-weekly meetings are used for sprint-planning where tasks are defined and assigned
+- ideally the end of a sprint achieves a GH milestone, in GH tasks (issues) can be added to milestones
+- uncompleted tasks are put back into the backlog
+
+## Key People
+
+- "Scrum Master": this will typically be Dan or John overseeing the technical progress of a project.
+- "Product Owner": this is the client that we are producing for. Outcomes must be presented to them.
+- "Scrum Developers": the people delivering the work. 
+
+
