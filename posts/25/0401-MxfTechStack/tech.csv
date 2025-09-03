@@ -1,0 +1,17 @@
+name,url,icon
+github,https://github.com/,https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png
+ansible,https://github.com/ansible/ansible,https://github.com/fastapi/fastapi/blob/master/docs/en/docs/img/favicon.png
+pixi,https://github.com/prefix-dev/pixi/,https://github.com/prefix-dev/pixi/blob/main/docs/assets/pixi.png
+hatch,https://hatch.pypa.io/latest/,https://github.com/pypa/hatch/blob/master/docs/assets/images/logo.svg
+jupyter,https://jupyter.org/,https://github.com/jupyterlab/jupyterlab/blob/main/docs/source/_static/logo-icon.png
+jupyterhub,https://jupyterhub.readthedocs.io/en/stable/
+repo2docker,https://repo2docker.readthedocs.io/en/latest/index.html
+fastapi,https://github.com/fastapi/fastapi,https://github.com/fastapi/fastapi/blob/master/docs/en/docs/img/favicon.png
+voila,https://github.com/voila-dashboards/voila
+ipyautoui,https://github.com/maxfordham/ipyautoui
+framework,https://observablehq.com/framework/
+quarto,https://quarto.org/
+document-issue,https://github.com/maxfordham/document-issue,https://github.com/maxfordham/document-issue/blob/main/docs/images/logo.png
+pyrevit,https://github.com/pyrevitlabs/pyRevit
+revitAPI,https://www.revitapidocs.com/2025.3/
+iesAPI,https://www.iesve.com/software/python-scripting

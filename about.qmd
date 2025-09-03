@@ -1,0 +1,15 @@
+---
+title: "About"
+about:
+  template: jolla
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/jgunstone
+    - icon: github
+      text: Github
+      href: https://github.com/dankell
+
+---
+
+`mxf-code-docs` serves as documentation for the internal software dev Team, and potentially in the future as a tech blog...

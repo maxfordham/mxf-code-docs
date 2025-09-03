@@ -1,0 +1,25 @@
+# TODO: setup auto-update pixi.lock https://pixi.sh/latest/advanced/updates_github_actions/#how-to-use
+
+name: Build docs
+
+on:
+    pull_request:
+      branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+            
+    steps:
+      - uses: actions/checkout@v4
+      - uses: prefix-dev/setup-pixi@v0.8.1
+        with:
+            pixi-version: v0.39.0
+            cache: true
+            cache-write: ${{ github.event_name == 'push' && github.ref_name == 'main' }}
+      - run: pixi run render
+      - name: Push docs to gh-pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: _site

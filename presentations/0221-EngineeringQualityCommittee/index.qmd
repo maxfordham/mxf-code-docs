@@ -1,0 +1,102 @@
+---
+title: "Engineering Quality Committee"
+subtitle: "Digital Transformation Strategy"
+author: "John Gunstone"
+date: "2025-02-21"
+format: revealjs
+logo: images/logo.png
+# brand: ../../../_brand-light.yml
+---
+
+## Digital Transformation
+
+![](images/digital-transformation-mmd.png)
+
+## Digital Infrastructure - Status Quo
+
+![](images/status-quo.png)
+
+## Digital Infrastructure - Brave New World
+
+![](images/brave-new-world.png)
+
+::: {.notes}
+- automated data transfer between software
+- data capture as a by-product of delivering projects
+:::
+
+## Digital Infrastructure - Tech Stack
+
+![](images/digital-infrastructure.png)
+
+## Digital Infrastructure - Toolbox
+
+![](images/toolbox.png)
+
+## Digital Schedules - APR2024 - Equipment
+
+![](images/equipment-intro.png)
+
+## Digital Schedules - APR2024 - Equipment
+
+![](images/digital-schedules-equipment.png)
+
+## Digital Schedules - APR2024 - Equipment
+
+![](images/equipment.png)
+
+## Digital Schedules - Aligning with Standards
+
+![](images/standards.png)
+
+## Digital Schedules - OCT2024 - POE
+
+![](images/poe-intro.png)
+
+## Digital Schedules - OCT2024 - POE
+
+![](images/digital-schedules-poe.png)
+
+## Digital Schedules - OCT2024 - POE
+
+![](images/poe.png)
+
+## Digital Schedules - JAN2025 - Net Zero Carbon App
+
+![](images/net-zero-intro.png)
+
+## Digital Schedules - JAN2025 - Net Zero Carbon App
+
+![](images/digital-schedules-nzc.png)
+
+## Digital Schedules - JAN2025 - Net Zero Carbon App
+
+![](images/net-zero-app.png)
+
+## Digital Schedules - FUTURE - Room Data Sheets
+
+![](images/rds-intro.png)
+
+## Digital Schedules - FUTURE - Room Data Sheets
+
+![](images/digital-schedules-rds.png)
+
+## Digital Schedules - JAN2025 - Room Data Sheets UoP
+
+![](images/rvt-room-data-sheets.png)
+
+## Digital Schedules - FUTURE - More Apps
+
+![](images/digital-schedules-more-apps.png)
+
+## Growing Engineering Data Resource - Dashboards
+
+![](images/engineering-data-dashboards.png)
+
+## Growing Engineering Data Resource
+
+![](images/engineering-data.png)
+
+## Engineering Development Timeline 24/25
+
+![](images/development-timeline.png)

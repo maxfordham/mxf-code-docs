@@ -1,0 +1,23 @@
+---
+title: "Digital Schedules Released"
+author: "John Gunstone"
+categories: [app, presentation]
+date: "2024-03-12"
+date-modified: "2024-03-12"
+format: 
+  html: 
+    page-layout: full
+---
+
+Digital Schedules formally released to the practice.
+Engineers are directed to the [Wiki Documentation](https://wiki.maxfordham.com/Main/DigitalSchedulesDocumentation). 
+This links to  which links to the software [GH docs](https://solid-memory-vyenw2o.pages.github.io/) that is built on GH and then pulled onto the [Wiki](https://wiki.maxfordham.com/digital-schedules-docs/aectemplater/index.html) which is embedded below.
+
+<div>
+
+```{=html}
+<iframe width="1200" height="800" src="https://wiki.maxfordham.com/digital-schedules-docs/aectemplater/index.html" data-external="1"></iframe>
+```
+
+</div>
+

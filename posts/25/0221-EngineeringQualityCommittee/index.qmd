@@ -1,0 +1,19 @@
+---
+title: "Engineering Quality Committee: Digital Transformation Strategy"
+author: "John Gunstone"
+categories: [strategy, presentation]
+date: "2025-02-21"
+date-modified: "2025-02-21"
+format: 
+  html: 
+    page-layout: full
+---
+
+
+<div>
+
+```{=html}
+<iframe class="slide-deck" width="1200" height="800" src="../../../presentations/0221-EngineeringQualityCommittee/index.html"></iframe>
+```
+
+</div>
