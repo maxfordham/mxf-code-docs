@@ -1,0 +1,282 @@
+[
+  {
+    "objectID": "experiments/logging_test/ui.html",
+    "href": "experiments/logging_test/ui.html",
+    "title": "mxf-code-docs",
+    "section": "",
+    "text": "import logging\nimport ipywidgets as w\n\nimport logging.config\nimport yaml\n\nwith open('file.yml', 'r') as f:\n    config = yaml.safe_load(f.read())\n    logging.config.dictConfig(config)\n\n# Get the logger, console_logger, which will print to the console.\n#logger = logging.getLogger('console_logger')\n\n\n\nfrom myadd import add\nfrom myminus import minus\n\n\n\n# REF\n# ---\n# https://github.com/jupyter-widgets/ipywidgets/pull/2268/commits/bced184b2486b1e6af61d2a3848ed755dec2071b#diff-a9f5e21507fb26263452386f1cb42ddbbaa7b7e26ccc5b1348fec1e205245b70\n# todo: use core ipywidgets when the above is merged\n\ndef div(a, b):\n    try:\n        c = a / b\n        logger.debug(\"c = %s\", c)\n        return c\n    except Exception as e:\n        logger.error(\"Exception occurred\", exc_info=True)\n\nclass Output(w.Output):\n    def register_logger(self, logger, *args, **kwargs):\n        \"\"\"Registers a handler to given logger to send output to output widget\"\"\"\n\n        import logging\n\n        class WidgetLogger(logging.Handler):\n            \"\"\" Class to implement a logging interface that outputs to the\n             Output widget\"\"\"\n\n            # have a class member to store the existing logger\n            logger_instance = logging.getLogger(\"__name__\")\n\n            def __init__(self, output_widget, *args, **kwargs):\n                # Initialize the Handler\n                logging.Handler.__init__(self, *args)\n                \n                # formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')\n                # self.setFormatter(formatter)\n\n                # save outer_instance\n                self.output = output_widget\n\n                # optional take format\n                # setFormatter function is derived from logging.Handler\n                for key, value in kwargs.items():\n                    if \"{}\".format(key) == \"format\":\n                        self.setFormatter(value)\n\n                # make the logger send data to this class\n                self.logger_instance.addHandler(self)\n\n            def emit(self, record):\n                \"\"\" Overload of logging.Handler method \"\"\"\n\n                record = self.format(record)\n                self.output.outputs = ({'name': 'stdout',\n                                                'output_type': 'stream',\n                                                'text': (record + '\\n')},) + self.output.outputs\n\n        logger.addHandler(WidgetLogger(self, *args, **kwargs))\n\n\nclass Ui(w.VBox):\n    def __init__(self, loggers: list):\n        self.a = w.IntText()\n        self.b = w.IntText()\n        self.c = w.IntText()\n        self.out = Output()\n        [self.out.register_logger(logger, format=logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')) for logger in loggers]\n        self.acc = w.Accordion(children=[self.out])\n        self.c.disabled = True\n        self.div = w.Button(description=\"operate\")\n        self.div.on_click(self.on_div)\n        super().__init__([self.a, self.b, self.c, self.div, self.acc])\n\n    def on_div(self, b):\n        _ = add(self.a.value, self.b.value)\n        _ = minus(_, self.a.value)\n        self.c.value = div(_, self.b.value)\n\n\nlogger = logging.getLogger(__name__)\nlogger.info('This is a debug message')\nloggers = [logging.getLogger(name) for name in logging.root.manager.loggerDict]\nloggers = [l for l in loggers if \"my\" in l.name ] + [logger]\nui = Ui(loggers=loggers)\nui\n\n\n\n\n\nloggi\n\n\n# [logging.getLogger(name) for name in logging.root.manager.loggerDict]\nloggers\n\n[&lt;Logger myadd (WARNING)&gt;,\n &lt;Logger myminus (WARNING)&gt;,\n &lt;Logger __main__ (WARNING)&gt;]\n\n\n\nloggers\n\n[&lt;Logger myadd (WARNING)&gt;,\n &lt;Logger myminus (WARNING)&gt;,\n &lt;Logger __main__ (WARNING)&gt;]\n\n\n\ndebug_view = w.Output(layout={'border': '1px solid black'})\n\n@debug_view.capture(clear_output=True)\ndef bad_callback(event):\n    print('This is about to explode')\n    return 1.0 / 0.0\n\nbutton = w.Button(\n    description='click me to raise an exception',\n    layout={'width': '300px'}\n)\nbutton.on_click(bad_callback)\nbutton\n\n\n\n\n\n# https://ipyw.readthedocs.io/en/7.7.1/examples/Output%20Widget.html\n\nimport ipywidgets as w\nimport logging\n\n\n\nhandler.clear_logs()\nlogger.info('Starting program')\n\ntry:\n    logger.info('About to try something dangerous...')\n    1.0/0.0\nexcept Exception as e:\n    logger.exception('An error occurred!')\n\n'__main__'"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "mxf-code-docs",
+    "section": "",
+    "text": "Modified\n\n\n\nDate\n\n\n\nTitle\n\n\n\n\n\n\n\n\nAug 3, 2025\n\n\nAug 3, 2025\n\n\nSoftware Development Project Management\n\n\n\n\n\n\nApr 4, 2025\n\n\nApr 4, 2025\n\n\nMax Fordham Engineering Development Tech Stack\n\n\n\n\n\n\nFeb 26, 2025\n\n\nApr 11, 2023\n\n\nDeveloper Environment Setup\n\n\n\n\n\n\nFeb 21, 2025\n\n\nFeb 21, 2025\n\n\nEngineering Quality Committee: Digital Transformation Strategy\n\n\n\n\n\n\nMar 12, 2024\n\n\nMar 12, 2024\n\n\nDigital Schedules Released\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/24/0312-DigitalSchedulesReleased/index.html",
+    "href": "posts/24/0312-DigitalSchedulesReleased/index.html",
+    "title": "Digital Schedules Released",
+    "section": "",
+    "text": "Digital Schedules formally released to the practice. Engineers are directed to the Wiki Documentation. This links to which links to the software GH docs that is built on GH and then pulled onto the Wiki which is embedded below."
+  },
+  {
+    "objectID": "posts/25/0803-DevTeamProjectManagement/index.html",
+    "href": "posts/25/0803-DevTeamProjectManagement/index.html",
+    "title": "Software Development Project Management",
+    "section": "",
+    "text": "Clients and Stakeholders define projects. To deliver projects we try to adopt agile methodologies. The is delivered through 2-weekly sprints, coordinated by sprint planning meetings.\nSee “learn-scrum” for a quick intro into the broad principles."
+  },
+  {
+    "objectID": "posts/25/0803-DevTeamProjectManagement/index.html#projects",
+    "href": "posts/25/0803-DevTeamProjectManagement/index.html#projects",
+    "title": "Software Development Project Management",
+    "section": "Projects",
+    "text": "Projects\n\nDevelopment projects are defined on the Wiki: https://wiki.maxfordham.com/Main/ProjectTopic\nProjects must have pre-agreed Clients, Stakeholders and Budgets\n\nWhen a project becomes active (“Running”) it must have an associated code in Timesheets\nSee NonFeeEarningTimesheetWorkTypesExplained\n\nA project should have an equivalent maxfordham Github Project for task management.\nA project will be delivered through the completion of many sprints (and milestones)."
+  },
+  {
+    "objectID": "posts/25/0803-DevTeamProjectManagement/index.html#sprints",
+    "href": "posts/25/0803-DevTeamProjectManagement/index.html#sprints",
+    "title": "Software Development Project Management",
+    "section": "Sprints",
+    "text": "Sprints\n\n2-weekly meetings are used for sprint-planning where tasks are defined and assigned\nideally the end of a sprint achieves a GH milestone, in GH tasks (issues) can be added to milestones\nuncompleted tasks are put back into the backlog"
+  },
+  {
+    "objectID": "posts/25/0803-DevTeamProjectManagement/index.html#key-people",
+    "href": "posts/25/0803-DevTeamProjectManagement/index.html#key-people",
+    "title": "Software Development Project Management",
+    "section": "Key People",
+    "text": "Key People\n\n“Scrum Master”: this will typically be Dan or John overseeing the technical progress of a project.\n“Product Owner”: this is the client that we are producing for. Outcomes must be presented to them.\n“Scrum Developers”: the people delivering the work."
+  },
+  {
+    "objectID": "posts/25/0803-DevTeamProjectManagement/index.html#tasks-to-complete-in-the-sprint-meeting",
+    "href": "posts/25/0803-DevTeamProjectManagement/index.html#tasks-to-complete-in-the-sprint-meeting",
+    "title": "Software Development Project Management",
+    "section": "Tasks to Complete in the Sprint Meeting",
+    "text": "Tasks to Complete in the Sprint Meeting\n\nreview what was achieved in the last sprint. Discuss uncompleted items and move to backlog.\n\nclose Milestone or update date.\n\ndefine the outcomes that you would like to achieve in the upcoming sprint\n\ncreate a GH Milestone in relevant repo\n\ndefine the tasks to do to achieve those outcomes\n\nadd tasks to milestone\nassign people to tasks\nreview whether the tasks are achievable"
+  },
+  {
+    "objectID": "posts/25/0401-MxfTechStack/index.html",
+    "href": "posts/25/0401-MxfTechStack/index.html",
+    "title": "Max Fordham Engineering Development Tech Stack",
+    "section": "",
+    "text": "To enable and facilitate the development of automation tools and applications at Max Fordham required the design and implementation of new tech infrasture. This is described by the image below, and summarised as follows:"
+  },
+  {
+    "objectID": "posts/25/0401-MxfTechStack/index.html#toolbox",
+    "href": "posts/25/0401-MxfTechStack/index.html#toolbox",
+    "title": "Max Fordham Engineering Development Tech Stack",
+    "section": "Toolbox",
+    "text": "Toolbox\nThe user-facing app store is a (tljh-voila-gallery)[https://github.com/voila-dashboards/tljh-voila-gallery]:\n\n\n\ntoolbox"
+  },
+  {
+    "objectID": "posts/25/0401-MxfTechStack/index.html#jupyterlab",
+    "href": "posts/25/0401-MxfTechStack/index.html#jupyterlab",
+    "title": "Max Fordham Engineering Development Tech Stack",
+    "section": "JupyterLab",
+    "text": "JupyterLab\nEngineers are also given access to an internal jupyterlab configured with Max Fordham standard tools, enabling them to interact with engineering data stored in the backend database.\n\n\n\njupyterlab"
+  },
+  {
+    "objectID": "posts/25/0401-MxfTechStack/index.html#observable-framework-dashboards",
+    "href": "posts/25/0401-MxfTechStack/index.html#observable-framework-dashboards",
+    "title": "Max Fordham Engineering Development Tech Stack",
+    "section": "Observable Framework Dashboards",
+    "text": "Observable Framework Dashboards\n\n\n\nengineering-data-dashboards"
+  },
+  {
+    "objectID": "posts/25/0401-MxfTechStack/index.html#growing-infrastructure-over-time",
+    "href": "posts/25/0401-MxfTechStack/index.html#growing-infrastructure-over-time",
+    "title": "Max Fordham Engineering Development Tech Stack",
+    "section": "Growing Infrastructure over Time",
+    "text": "Growing Infrastructure over Time\nThe image below indicates how the platform is expected to grow to add additional apps, data and insights."
+  },
+  {
+    "objectID": "posts/23/0411-DevEnvSetup/index.html",
+    "href": "posts/23/0411-DevEnvSetup/index.html",
+    "title": "Developer Environment Setup",
+    "section": "",
+    "text": "Setting up WSL has certain risks. It requires an Adminstrator password to the machine."
+  },
+  {
+    "objectID": "posts/23/0411-DevEnvSetup/index.html#introduction",
+    "href": "posts/23/0411-DevEnvSetup/index.html#introduction",
+    "title": "Developer Environment Setup",
+    "section": "Introduction",
+    "text": "Introduction\nBelow are instructions about how to configure a development machine. Ideally they should be followed exactly, to ensure that tests etc. are reproducible across development team members.\nGiven that the final resting place of standalone tools is the Linux JupyterHub server, we try to make the development environment on the users machine as close to this as it can be."
+  },
+  {
+    "objectID": "posts/23/0411-DevEnvSetup/index.html#prerequisite",
+    "href": "posts/23/0411-DevEnvSetup/index.html#prerequisite",
+    "title": "Developer Environment Setup",
+    "section": "Prerequisite",
+    "text": "Prerequisite\nHyper-V should already be enabled on your laptop but if you are having issues then follow this article:\n\nhttps://mashtips.com/enable-virtualization-windows-10/"
+  },
+  {
+    "objectID": "posts/23/0411-DevEnvSetup/index.html#installation",
+    "href": "posts/23/0411-DevEnvSetup/index.html#installation",
+    "title": "Developer Environment Setup",
+    "section": "Installation",
+    "text": "Installation\n\nInstall Ubuntu on WSL\ncouldn't get wsl working on a fresh install. \nto fix: https://github.com/microsoft/WSL/issues/9521#issuecomment-2385289848\nwsl --install -d Ubuntu\nCreate the new user as jovyan and set the password to something sensible you won’t forget.\n\n\nSet Up SSH To Access Repositories on Max Fordham GitHub\n\nCreate an SSH key pair using the following\nssh-keygen\nThis will create a public id_rsa.pub and private key id_rsa in /home/jovyan/.ssh by default.\nCopy the public key onto GitHub user’s SSH keys\nTo show the public key:\ncat /home/jovyan/.ssh/id_rsa.pub\nCopy it from the command window to your clipboard by highlighting the whole key and pressing CTRL+C.\n\nThen go to GitHub and click on your personal account.\nUnder the “Access” section there is “SSH and GPG keys”.\nClick on that, add a name for the key, paste in the public key, and save.\nAuthorise the key for the Max Fordham organisation. You must be a member of the organisation to do this.\n\nOptional: Permanently add SSH key to user agent\nThis step is only required if the file name of the SSH is something other than id_rsa or the other default names.\nnano ~/.ssh/config\nHost github.com\n    IdentityFile ~/.ssh/id_custom_name\nFinally set up the git config by filling in email and name:\ngit config --global user.email \"you@example.com\"\ngit config --global user.name \"Your Name\"\nYou should now be able to access the repositories on Max Fordham LLP, assuming that you are a member of the organisation.\n\n\n\nInstall micromamba Package Manager\nnot miniforge\nFollow instructions: micromamba.\nadd to .bashrc init = Y\n\n\nInstall pixi package manager (optional)\n\ninstall\n\ncurl -fsSL https://pixi.sh/install.sh | bash &lt;– check still current on install\n\nenable autocomplete\n\necho 'eval \"$(pixi completion --shell bash)\"' &gt;&gt; ~/.bashrc &lt;– check still current on install\n\n\n\n\nInstall some handy CLI tools\ncan also use pixi to globally install useful tools.\npixi global install starship  # shell autocompletion\npixi global install ripgrep  # searching text in files\npixi global install tree  # viewing directory structures in linux\npixi global install gh  # github CLI\nalso note that there are many ways to do this. the most standard way it to use apt-get. e.g.\nsudo apt update\nsudo apt-get install ripgrep\nsudo apt install tree\n\n\nsetup repos for development\ngh auth # follow authentification workflow\ngh repo list maxfordham\ngh repo clone maxfordham/digital-schedules\n\n\nSetup bash_aliases\nIt is also useful to add windows explorer to your linux bash_aliases. This means you can start fnm.txt to open a file or start . to open the folder in explorer.\nsudo nano ~/.bash_aliases\nalias start='/mnt/c/windows/explorer.exe'\nalias mamba='micromamba'\nRestart WSL for the above changes to take effect.\n\n\nInstall Notepad ++\nnotepad++\n\n\nInstall Visual Studio Code\nvscode"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "mxf-code-docs serves as documentation for the internal software dev Team, and potentially in the future as a tech blog…"
+  },
+  {
+    "objectID": "presentations/0221-EngineeringQualityCommittee/index.html#digital-transformation",
+    "href": "presentations/0221-EngineeringQualityCommittee/index.html#digital-transformation",
+    "title": "Engineering Quality Committee",
+    "section": "Digital Transformation",
+    "text": "Digital Transformation"
+  },
+  {
+    "objectID": "presentations/0221-EngineeringQualityCommittee/index.html#digital-infrastructure---status-quo",
+    "href": "presentations/0221-EngineeringQualityCommittee/index.html#digital-infrastructure---status-quo",
+    "title": "Engineering Quality Committee",
+    "section": "Digital Infrastructure - Status Quo",
+    "text": "Digital Infrastructure - Status Quo"
+  },
+  {
+    "objectID": "presentations/0221-EngineeringQualityCommittee/index.html#digital-infrastructure---brave-new-world",
+    "href": "presentations/0221-EngineeringQualityCommittee/index.html#digital-infrastructure---brave-new-world",
+    "title": "Engineering Quality Committee",
+    "section": "Digital Infrastructure - Brave New World",
+    "text": "Digital Infrastructure - Brave New World\n\n\n\nautomated data transfer between software\ndata capture as a by-product of delivering projects"
+  },
+  {
+    "objectID": "presentations/0221-EngineeringQualityCommittee/index.html#digital-infrastructure---tech-stack",
+    "href": "presentations/0221-EngineeringQualityCommittee/index.html#digital-infrastructure---tech-stack",
+    "title": "Engineering Quality Committee",
+    "section": "Digital Infrastructure - Tech Stack",
+    "text": "Digital Infrastructure - Tech Stack"
+  },
+  {
+    "objectID": "presentations/0221-EngineeringQualityCommittee/index.html#digital-infrastructure---toolbox",
+    "href": "presentations/0221-EngineeringQualityCommittee/index.html#digital-infrastructure---toolbox",
+    "title": "Engineering Quality Committee",
+    "section": "Digital Infrastructure - Toolbox",
+    "text": "Digital Infrastructure - Toolbox"
+  },
+  {
+    "objectID": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---apr2024---equipment",
+    "href": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---apr2024---equipment",
+    "title": "Engineering Quality Committee",
+    "section": "Digital Schedules - APR2024 - Equipment",
+    "text": "Digital Schedules - APR2024 - Equipment"
+  },
+  {
+    "objectID": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---apr2024---equipment-1",
+    "href": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---apr2024---equipment-1",
+    "title": "Engineering Quality Committee",
+    "section": "Digital Schedules - APR2024 - Equipment",
+    "text": "Digital Schedules - APR2024 - Equipment"
+  },
+  {
+    "objectID": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---apr2024---equipment-2",
+    "href": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---apr2024---equipment-2",
+    "title": "Engineering Quality Committee",
+    "section": "Digital Schedules - APR2024 - Equipment",
+    "text": "Digital Schedules - APR2024 - Equipment"
+  },
+  {
+    "objectID": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---aligning-with-standards",
+    "href": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---aligning-with-standards",
+    "title": "Engineering Quality Committee",
+    "section": "Digital Schedules - Aligning with Standards",
+    "text": "Digital Schedules - Aligning with Standards"
+  },
+  {
+    "objectID": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---oct2024---poe",
+    "href": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---oct2024---poe",
+    "title": "Engineering Quality Committee",
+    "section": "Digital Schedules - OCT2024 - POE",
+    "text": "Digital Schedules - OCT2024 - POE"
+  },
+  {
+    "objectID": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---oct2024---poe-1",
+    "href": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---oct2024---poe-1",
+    "title": "Engineering Quality Committee",
+    "section": "Digital Schedules - OCT2024 - POE",
+    "text": "Digital Schedules - OCT2024 - POE"
+  },
+  {
+    "objectID": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---oct2024---poe-2",
+    "href": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---oct2024---poe-2",
+    "title": "Engineering Quality Committee",
+    "section": "Digital Schedules - OCT2024 - POE",
+    "text": "Digital Schedules - OCT2024 - POE"
+  },
+  {
+    "objectID": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---jan2025---net-zero-carbon-app",
+    "href": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---jan2025---net-zero-carbon-app",
+    "title": "Engineering Quality Committee",
+    "section": "Digital Schedules - JAN2025 - Net Zero Carbon App",
+    "text": "Digital Schedules - JAN2025 - Net Zero Carbon App"
+  },
+  {
+    "objectID": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---jan2025---net-zero-carbon-app-1",
+    "href": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---jan2025---net-zero-carbon-app-1",
+    "title": "Engineering Quality Committee",
+    "section": "Digital Schedules - JAN2025 - Net Zero Carbon App",
+    "text": "Digital Schedules - JAN2025 - Net Zero Carbon App"
+  },
+  {
+    "objectID": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---jan2025---net-zero-carbon-app-2",
+    "href": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---jan2025---net-zero-carbon-app-2",
+    "title": "Engineering Quality Committee",
+    "section": "Digital Schedules - JAN2025 - Net Zero Carbon App",
+    "text": "Digital Schedules - JAN2025 - Net Zero Carbon App"
+  },
+  {
+    "objectID": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---future---room-data-sheets",
+    "href": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---future---room-data-sheets",
+    "title": "Engineering Quality Committee",
+    "section": "Digital Schedules - FUTURE - Room Data Sheets",
+    "text": "Digital Schedules - FUTURE - Room Data Sheets"
+  },
+  {
+    "objectID": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---future---room-data-sheets-1",
+    "href": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---future---room-data-sheets-1",
+    "title": "Engineering Quality Committee",
+    "section": "Digital Schedules - FUTURE - Room Data Sheets",
+    "text": "Digital Schedules - FUTURE - Room Data Sheets"
+  },
+  {
+    "objectID": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---jan2025---room-data-sheets-uop",
+    "href": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---jan2025---room-data-sheets-uop",
+    "title": "Engineering Quality Committee",
+    "section": "Digital Schedules - JAN2025 - Room Data Sheets UoP",
+    "text": "Digital Schedules - JAN2025 - Room Data Sheets UoP"
+  },
+  {
+    "objectID": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---future---more-apps",
+    "href": "presentations/0221-EngineeringQualityCommittee/index.html#digital-schedules---future---more-apps",
+    "title": "Engineering Quality Committee",
+    "section": "Digital Schedules - FUTURE - More Apps",
+    "text": "Digital Schedules - FUTURE - More Apps"
+  },
+  {
+    "objectID": "presentations/0221-EngineeringQualityCommittee/index.html#growing-engineering-data-resource---dashboards",
+    "href": "presentations/0221-EngineeringQualityCommittee/index.html#growing-engineering-data-resource---dashboards",
+    "title": "Engineering Quality Committee",
+    "section": "Growing Engineering Data Resource - Dashboards",
+    "text": "Growing Engineering Data Resource - Dashboards"
+  },
+  {
+    "objectID": "presentations/0221-EngineeringQualityCommittee/index.html#growing-engineering-data-resource",
+    "href": "presentations/0221-EngineeringQualityCommittee/index.html#growing-engineering-data-resource",
+    "title": "Engineering Quality Committee",
+    "section": "Growing Engineering Data Resource",
+    "text": "Growing Engineering Data Resource"
+  },
+  {
+    "objectID": "presentations/0221-EngineeringQualityCommittee/index.html#engineering-development-timeline-2425",
+    "href": "presentations/0221-EngineeringQualityCommittee/index.html#engineering-development-timeline-2425",
+    "title": "Engineering Quality Committee",
+    "section": "Engineering Development Timeline 24/25",
+    "text": "Engineering Development Timeline 24/25"
+  }
+]
