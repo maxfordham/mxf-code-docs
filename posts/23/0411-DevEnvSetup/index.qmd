@@ -3,6 +3,7 @@ title: "Developer Environment Setup"
 author: "John Gunstone"
 date: "2023-04-11"
 date-modified: "2025-09-08"
+toc-depth: 3
 categories: [dev-setup]
 image: https://github.com/maxfordham/visual-design/blob/main/icons/engineer-icon.png?raw=true
 ---
@@ -41,7 +42,7 @@ to fix: https://github.com/microsoft/WSL/issues/9521#issuecomment-2385289848
 wsl --install -d Ubuntu
 ```
 
-Create the new user as `jovyan` and set the password to something sensible you won't forget.
+Create the new user as `jovyan`. Set password as `jovyan` as default setup.
 
 ### Set Up SSH To Access Repositories on Max Fordham GitHub
 
@@ -99,17 +100,24 @@ Create the new user as `jovyan` and set the password to something sensible you w
 
 ### Install some handy CLI tools
 
-can also use [pixi](https://pixi.sh/latest/basic_usage/#use-pixi-as-a-global-installation-tool) to globally install useful tools.
+can also use [pixi global](https://pixi.sh/latest/basic_usage/#use-pixi-as-a-global-installation-tool) to globally install useful tools.
 
 ```bash
-pixi global install micromamba  # micormamba pkg manager
+pixi global install micromamba  # micromamba pkg manager
+pixi global install yazi  # tui file browser
 pixi global install starship  # shell autocompletion
 pixi global install ripgrep  # searching text in files
 pixi global install tree  # viewing directory structures in linux
 pixi global install gh  # github CLI
+pixi global install nodejs  # for js dev. though maybe check the prefix.dev nodejs feedstock to ensure it is up-to-date.
+pixi global install harlequin  # TUI SQL editor IDE
+pixi global install harlequin-mysql  # TUI SQL editor IDE mysql connector
 ```
 
-also note that there are many other ways to do this. the most standard way it to use apt-get. 
+::: {.callout-note collapse="true"}
+### Other install methods (e.g. apt-get)
+
+there are many other ways to do this. the most standard way it to use `apt-get`, 
 e.g.
 
 ```bash
@@ -117,6 +125,8 @@ sudo apt update
 sudo apt-get install ripgrep
 sudo apt install tree
 ```
+but for simplicity we recommend using `pixi-global` to manage these extra clis. 
+:::
 
 ### setup repos for development
 
