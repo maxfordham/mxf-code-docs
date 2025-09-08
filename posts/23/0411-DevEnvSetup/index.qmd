@@ -7,8 +7,9 @@ categories: [dev-setup]
 image: https://github.com/maxfordham/visual-design/blob/main/icons/engineer-icon.png?raw=true
 ---
 
-::: {.warning}
-Setting up WSL has certain risks. It requires an Adminstrator password to the machine.
+::: {.callout-warning}
+Setting up WSL has certain risks.
+It requires an Adminstrator password to the machine for the initial steps highlighted below.
 :::
 
 - [Introduction](#introduction)
@@ -30,7 +31,7 @@ Given that the final resting place of standalone tools is the Linux JupyterHub s
 we try to make the development environment on the users machine as close to this as
 it can be.
 
-## Prerequisite
+## Prerequisite (admin required)
 
 Hyper-V should already be enabled on your laptop but if you are having issues then follow this article:
 
@@ -38,7 +39,7 @@ Hyper-V should already be enabled on your laptop but if you are having issues th
 
 ## Installation
 
-### Install Ubuntu on WSL
+### Install Ubuntu on WSL (admin required)
 
 ```{danger}
 couldn't get wsl working on a fresh install. 
