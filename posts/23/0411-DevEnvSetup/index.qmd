@@ -2,7 +2,7 @@
 title: "Developer Environment Setup"
 author: "John Gunstone"
 date: "2023-04-11"
-date-modified: "2025-02-26"
+date-modified: "2025-09-08"
 categories: [dev-setup]
 image: https://github.com/maxfordham/visual-design/blob/main/icons/engineer-icon.png?raw=true
 ---
@@ -11,17 +11,6 @@ image: https://github.com/maxfordham/visual-design/blob/main/icons/engineer-icon
 Setting up WSL has certain risks.
 It requires an Adminstrator password to the machine for the initial steps highlighted below.
 :::
-
-- [Introduction](#introduction)
-- [Prerequisite](#prerequisite)
-- [Instructions](#instructions)
-  - [Install Ubuntu on WSL](#install-ubuntu-on-wsl)
-  - [Set Up SSH To Access Repositories on Max Fordham GitHub](#set-up-ssh-to-access-repositories-on-max-fordham-github)
-  - [Install Conda Package Manager](#install-mamba-package-manager)
-  - [Install some handy CLI tools](#install-some-handy-cli-tools)
-  - [Install Visual Studio Code](#install-visual-studio-code)
-
-## Introduction
 
 Below are instructions about how to configure a development machine. Ideally they should
 be followed exactly, to ensure that tests etc. are reproducible across development team
@@ -41,10 +30,12 @@ Hyper-V should already be enabled on your laptop but if you are having issues th
 
 ### Install Ubuntu on WSL (admin required)
 
-```{danger}
+
+::: {.callout-danger}
+
 couldn't get wsl working on a fresh install. 
 to fix: https://github.com/microsoft/WSL/issues/9521#issuecomment-2385289848
-```
+::: 
 
 ```cmd
 wsl --install -d Ubuntu
@@ -99,17 +90,7 @@ Create the new user as `jovyan` and set the password to something sensible you w
 
     You should now be able to access the repositories on Max Fordham LLP, assuming that you are a member of the organisation.
 
-### Install micromamba Package Manager
-
-```{note}
-not miniforge
-```
-
-Follow instructions: [micromamba](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html#).
-
-add to `.bashrc` init = Y
-
-### Install pixi package manager (optional)
+### Install pixi package manager
 
 - [install](https://pixi.sh/latest/#installation)
   - `curl -fsSL https://pixi.sh/install.sh | bash` <-- check still current on install
@@ -121,13 +102,14 @@ add to `.bashrc` init = Y
 can also use [pixi](https://pixi.sh/latest/basic_usage/#use-pixi-as-a-global-installation-tool) to globally install useful tools.
 
 ```bash
+pixi global install micromamba  # micormamba pkg manager
 pixi global install starship  # shell autocompletion
 pixi global install ripgrep  # searching text in files
 pixi global install tree  # viewing directory structures in linux
 pixi global install gh  # github CLI
 ```
 
-also note that there are many ways to do this. the most standard way it to use apt-get. 
+also note that there are many other ways to do this. the most standard way it to use apt-get. 
 e.g.
 
 ```bash
@@ -156,10 +138,17 @@ alias mamba='micromamba'
 
 Restart WSL for the above changes to take effect.
 
-### Install Notepad ++
 
-[notepad++](https://notepad-plus-plus.org/downloads/)
+## Other Software
 
-### Install Visual Studio Code
+### [notepad++](https://notepad-plus-plus.org/downloads/)
 
-[vscode](https://code.visualstudio.com/)
+### [vscode](https://code.visualstudio.com/)
+
+### [MySQL 8 Server](https://dev.mysql.com/downloads/mysql/8.0.html)
+
+### [MySql Workbench](https://www.mysql.com/products/workbench/)
+
+### [Windows Terminal](https://github.com/microsoft/terminal)
+
+
