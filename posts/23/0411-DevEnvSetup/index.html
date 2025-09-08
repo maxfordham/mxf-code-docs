@@ -417,7 +417,7 @@ Warning
 <p>couldn’t get wsl working on a fresh install. to fix: https://github.com/microsoft/WSL/issues/9521#issuecomment-2385289848</p>
 </div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode cmd code-with-copy"><code class="sourceCode dosbat"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>wsl -<span class="at">-install</span> <span class="at">-d</span> Ubuntu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Create the new user as <code>jovyan</code> and set the password to something sensible you won’t forget.</p>
+<p>Create the new user as <code>jovyan</code>. Set password as <code>jovyan</code> as default setup.</p>
 </section>
 <section id="set-up-ssh-to-access-repositories-on-max-fordham-github" class="level3">
 <h3 class="anchored" data-anchor-id="set-up-ssh-to-access-repositories-on-max-fordham-github">Set Up SSH To Access Repositories on Max Fordham GitHub</h3>
@@ -461,16 +461,36 @@ Warning
 </section>
 <section id="install-some-handy-cli-tools" class="level3">
 <h3 class="anchored" data-anchor-id="install-some-handy-cli-tools">Install some handy CLI tools</h3>
-<p>can also use <a href="https://pixi.sh/latest/basic_usage/#use-pixi-as-a-global-installation-tool">pixi</a> to globally install useful tools.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install micromamba  <span class="co"># micormamba pkg manager</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install starship  <span class="co"># shell autocompletion</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install ripgrep  <span class="co"># searching text in files</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install tree  <span class="co"># viewing directory structures in linux</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install gh  <span class="co"># github CLI</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>also note that there are many other ways to do this. the most standard way it to use apt-get. e.g.</p>
+<p>can also use <a href="https://pixi.sh/latest/basic_usage/#use-pixi-as-a-global-installation-tool">pixi global</a> to globally install useful tools.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install micromamba  <span class="co"># micromamba pkg manager</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install yazi  <span class="co"># tui file browser</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install starship  <span class="co"># shell autocompletion</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install ripgrep  <span class="co"># searching text in files</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install tree  <span class="co"># viewing directory structures in linux</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install gh  <span class="co"># github CLI</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install nodejs  <span class="co"># for js dev. though maybe check the prefix.dev nodejs feedstock to ensure it is up-to-date.</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install harlequin  <span class="co"># TUI SQL editor IDE</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install harlequin-mysql  <span class="co"># TUI SQL editor IDE mysql connector</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Other install methods (e.g.&nbsp;apt-get)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>there are many other ways to do this. the most standard way it to use <code>apt-get</code>, e.g.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install ripgrep</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install tree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>but for simplicity we recommend using <code>pixi-global</code> to manage these extra clis.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="setup-repos-for-development" class="level3">
 <h3 class="anchored" data-anchor-id="setup-repos-for-development">setup repos for development</h3>
