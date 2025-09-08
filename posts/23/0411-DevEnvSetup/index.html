@@ -322,19 +322,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#prerequisite-admin-required" id="toc-prerequisite-admin-required" class="nav-link" data-scroll-target="#prerequisite-admin-required">Prerequisite (admin required)</a></li>
+  <li><a href="#prerequisite-admin-required" id="toc-prerequisite-admin-required" class="nav-link active" data-scroll-target="#prerequisite-admin-required">Prerequisite (admin required)</a></li>
   <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a>
   <ul class="collapse">
   <li><a href="#install-ubuntu-on-wsl-admin-required" id="toc-install-ubuntu-on-wsl-admin-required" class="nav-link" data-scroll-target="#install-ubuntu-on-wsl-admin-required">Install Ubuntu on WSL (admin required)</a></li>
   <li><a href="#set-up-ssh-to-access-repositories-on-max-fordham-github" id="toc-set-up-ssh-to-access-repositories-on-max-fordham-github" class="nav-link" data-scroll-target="#set-up-ssh-to-access-repositories-on-max-fordham-github">Set Up SSH To Access Repositories on Max Fordham GitHub</a></li>
-  <li><a href="#install-micromamba-package-manager" id="toc-install-micromamba-package-manager" class="nav-link" data-scroll-target="#install-micromamba-package-manager">Install micromamba Package Manager</a></li>
-  <li><a href="#install-pixi-package-manager-optional" id="toc-install-pixi-package-manager-optional" class="nav-link" data-scroll-target="#install-pixi-package-manager-optional">Install pixi package manager (optional)</a></li>
+  <li><a href="#install-pixi-package-manager" id="toc-install-pixi-package-manager" class="nav-link" data-scroll-target="#install-pixi-package-manager">Install pixi package manager</a></li>
   <li><a href="#install-some-handy-cli-tools" id="toc-install-some-handy-cli-tools" class="nav-link" data-scroll-target="#install-some-handy-cli-tools">Install some handy CLI tools</a></li>
   <li><a href="#setup-repos-for-development" id="toc-setup-repos-for-development" class="nav-link" data-scroll-target="#setup-repos-for-development">setup repos for development</a></li>
   <li><a href="#setup-bash_aliases" id="toc-setup-bash_aliases" class="nav-link" data-scroll-target="#setup-bash_aliases">Setup bash_aliases</a></li>
-  <li><a href="#install-notepad" id="toc-install-notepad" class="nav-link" data-scroll-target="#install-notepad">Install Notepad ++</a></li>
-  <li><a href="#install-visual-studio-code" id="toc-install-visual-studio-code" class="nav-link" data-scroll-target="#install-visual-studio-code">Install Visual Studio Code</a></li>
+  </ul></li>
+  <li><a href="#other-software" id="toc-other-software" class="nav-link" data-scroll-target="#other-software">Other Software</a>
+  <ul class="collapse">
+  <li><a href="#notepad" id="toc-notepad" class="nav-link" data-scroll-target="#notepad">notepad++</a></li>
+  <li><a href="#vscode" id="toc-vscode" class="nav-link" data-scroll-target="#vscode">vscode</a></li>
+  <li><a href="#mysql-8-server" id="toc-mysql-8-server" class="nav-link" data-scroll-target="#mysql-8-server">MySQL 8 Server</a></li>
+  <li><a href="#mysql-workbench" id="toc-mysql-workbench" class="nav-link" data-scroll-target="#mysql-workbench">MySql Workbench</a></li>
+  <li><a href="#windows-terminal" id="toc-windows-terminal" class="nav-link" data-scroll-target="#windows-terminal">Windows Terminal</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -372,7 +376,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 26, 2025</p>
+      <p class="date-modified">September 8, 2025</p>
     </div>
   </div>
     
@@ -396,23 +400,8 @@ Warning
 <p>Setting up WSL has certain risks. It requires an Adminstrator password to the machine for the initial steps highlighted below.</p>
 </div>
 </div>
-<ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#prerequisite">Prerequisite</a></li>
-<li><a href="#instructions">Instructions</a>
-<ul>
-<li><a href="#install-ubuntu-on-wsl">Install Ubuntu on WSL</a></li>
-<li><a href="#set-up-ssh-to-access-repositories-on-max-fordham-github">Set Up SSH To Access Repositories on Max Fordham GitHub</a></li>
-<li><a href="#install-mamba-package-manager">Install Conda Package Manager</a></li>
-<li><a href="#install-some-handy-cli-tools">Install some handy CLI tools</a></li>
-<li><a href="#install-visual-studio-code">Install Visual Studio Code</a></li>
-</ul></li>
-</ul>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Below are instructions about how to configure a development machine. Ideally they should be followed exactly, to ensure that tests etc. are reproducible across development team members.</p>
 <p>Given that the final resting place of standalone tools is the Linux JupyterHub server, we try to make the development environment on the users machine as close to this as it can be.</p>
-</section>
 <section id="prerequisite-admin-required" class="level2">
 <h2 class="anchored" data-anchor-id="prerequisite-admin-required">Prerequisite (admin required)</h2>
 <p>Hyper-V should already be enabled on your laptop but if you are having issues then follow this article:</p>
@@ -424,20 +413,21 @@ Warning
 <h2 class="anchored" data-anchor-id="installation">Installation</h2>
 <section id="install-ubuntu-on-wsl-admin-required" class="level3">
 <h3 class="anchored" data-anchor-id="install-ubuntu-on-wsl-admin-required">Install Ubuntu on WSL (admin required)</h3>
-<pre class="{danger}"><code>couldn't get wsl working on a fresh install. 
-to fix: https://github.com/microsoft/WSL/issues/9521#issuecomment-2385289848</code></pre>
-<div class="sourceCode" id="cb2"><pre class="sourceCode cmd code-with-copy"><code class="sourceCode dosbat"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>wsl -<span class="at">-install</span> <span class="at">-d</span> Ubuntu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-danger">
+<p>couldn’t get wsl working on a fresh install. to fix: https://github.com/microsoft/WSL/issues/9521#issuecomment-2385289848</p>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cmd code-with-copy"><code class="sourceCode dosbat"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>wsl -<span class="at">-install</span> <span class="at">-d</span> Ubuntu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Create the new user as <code>jovyan</code> and set the password to something sensible you won’t forget.</p>
 </section>
 <section id="set-up-ssh-to-access-repositories-on-max-fordham-github" class="level3">
 <h3 class="anchored" data-anchor-id="set-up-ssh-to-access-repositories-on-max-fordham-github">Set Up SSH To Access Repositories on Max Fordham GitHub</h3>
 <ol type="1">
 <li><p>Create an SSH key pair using the following</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This will create a public <code>id_rsa.pub</code> and private key <code>id_rsa</code> in <code>/home/jovyan/.ssh</code> by default.</p></li>
 <li><p>Copy the public key onto GitHub user’s SSH keys</p>
 <p>To show the public key:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> /home/jovyan/.ssh/id_rsa.pub</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> /home/jovyan/.ssh/id_rsa.pub</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Copy it from the command window to your clipboard by highlighting the whole key and pressing CTRL+C.</p>
 <ul>
 <li>Then go to GitHub and click on your personal account.</li>
@@ -447,23 +437,17 @@ to fix: https://github.com/microsoft/WSL/issues/9521#issuecomment-2385289848</co
 </ul></li>
 <li><p>Optional: Permanently add SSH key to user agent</p>
 <p>This step is only required if the file name of the SSH is something other than <code>id_rsa</code> or the other default names.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> ~/.ssh/config</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Host</span> github.com</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">IdentityFile</span> ~/.ssh/id_custom_name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> ~/.ssh/config</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Host</span> github.com</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">IdentityFile</span> ~/.ssh/id_custom_name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Finally set up the git config by filling in email and name:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"you@example.com"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"you@example.com"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You should now be able to access the repositories on Max Fordham LLP, assuming that you are a member of the organisation.</p></li>
 </ol>
 </section>
-<section id="install-micromamba-package-manager" class="level3">
-<h3 class="anchored" data-anchor-id="install-micromamba-package-manager">Install micromamba Package Manager</h3>
-<pre class="{note}"><code>not miniforge</code></pre>
-<p>Follow instructions: <a href="https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html#">micromamba</a>.</p>
-<p>add to <code>.bashrc</code> init = Y</p>
-</section>
-<section id="install-pixi-package-manager-optional" class="level3">
-<h3 class="anchored" data-anchor-id="install-pixi-package-manager-optional">Install pixi package manager (optional)</h3>
+<section id="install-pixi-package-manager" class="level3">
+<h3 class="anchored" data-anchor-id="install-pixi-package-manager">Install pixi package manager</h3>
 <ul>
 <li><a href="https://pixi.sh/latest/#installation">install</a>
 <ul>
@@ -478,36 +462,47 @@ to fix: https://github.com/microsoft/WSL/issues/9521#issuecomment-2385289848</co
 <section id="install-some-handy-cli-tools" class="level3">
 <h3 class="anchored" data-anchor-id="install-some-handy-cli-tools">Install some handy CLI tools</h3>
 <p>can also use <a href="https://pixi.sh/latest/basic_usage/#use-pixi-as-a-global-installation-tool">pixi</a> to globally install useful tools.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install starship  <span class="co"># shell autocompletion</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install ripgrep  <span class="co"># searching text in files</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install tree  <span class="co"># viewing directory structures in linux</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install gh  <span class="co"># github CLI</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>also note that there are many ways to do this. the most standard way it to use apt-get. e.g.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install ripgrep</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install tree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install micromamba  <span class="co"># micormamba pkg manager</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install starship  <span class="co"># shell autocompletion</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install ripgrep  <span class="co"># searching text in files</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install tree  <span class="co"># viewing directory structures in linux</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ex">pixi</span> global install gh  <span class="co"># github CLI</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>also note that there are many other ways to do this. the most standard way it to use apt-get. e.g.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install ripgrep</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install tree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="setup-repos-for-development" class="level3">
 <h3 class="anchored" data-anchor-id="setup-repos-for-development">setup repos for development</h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> auth <span class="co"># follow authentification workflow</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo list maxfordham</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo clone maxfordham/digital-schedules</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> auth <span class="co"># follow authentification workflow</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo list maxfordham</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo clone maxfordham/digital-schedules</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="setup-bash_aliases" class="level3">
 <h3 class="anchored" data-anchor-id="setup-bash_aliases">Setup bash_aliases</h3>
 <p>It is also useful to add windows explorer to your linux bash_aliases. This means you can <code>start fnm.txt</code> to open a file or <code>start .</code> to open the folder in explorer.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nano ~/.bash_aliases</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> start=<span class="st">'/mnt/c/windows/explorer.exe'</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> mamba=<span class="st">'micromamba'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nano ~/.bash_aliases</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> start=<span class="st">'/mnt/c/windows/explorer.exe'</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> mamba=<span class="st">'micromamba'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Restart WSL for the above changes to take effect.</p>
 </section>
-<section id="install-notepad" class="level3">
-<h3 class="anchored" data-anchor-id="install-notepad">Install Notepad ++</h3>
-<p><a href="https://notepad-plus-plus.org/downloads/">notepad++</a></p>
 </section>
-<section id="install-visual-studio-code" class="level3">
-<h3 class="anchored" data-anchor-id="install-visual-studio-code">Install Visual Studio Code</h3>
-<p><a href="https://code.visualstudio.com/">vscode</a></p>
+<section id="other-software" class="level2">
+<h2 class="anchored" data-anchor-id="other-software">Other Software</h2>
+<section id="notepad" class="level3">
+<h3 class="anchored" data-anchor-id="notepad"><a href="https://notepad-plus-plus.org/downloads/">notepad++</a></h3>
+</section>
+<section id="vscode" class="level3">
+<h3 class="anchored" data-anchor-id="vscode"><a href="https://code.visualstudio.com/">vscode</a></h3>
+</section>
+<section id="mysql-8-server" class="level3">
+<h3 class="anchored" data-anchor-id="mysql-8-server"><a href="https://dev.mysql.com/downloads/mysql/8.0.html">MySQL 8 Server</a></h3>
+</section>
+<section id="mysql-workbench" class="level3">
+<h3 class="anchored" data-anchor-id="mysql-workbench"><a href="https://www.mysql.com/products/workbench/">MySql Workbench</a></h3>
+</section>
+<section id="windows-terminal" class="level3">
+<h3 class="anchored" data-anchor-id="windows-terminal"><a href="https://github.com/microsoft/terminal">Windows Terminal</a></h3>
 
 
 </section>
