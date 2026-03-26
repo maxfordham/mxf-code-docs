@@ -1,0 +1,115 @@
+---
+title: "Engineering Software Handover"
+author: "John Gunstone"
+date: "2026-03-12"
+date-modified: "2026-03-26"
+---
+
+To avoid duplication, please refer to the existing
+[Engineering Software Services Overview](https://wiki.maxfordham.com/jupyterhub-maxfordham/services.html)
+documentation for an overview of the
+services provided, a rationale for their existence and a summary of the team
+responsible for their development and upkeep. This will need reviewing and
+updating by the new ownership team moving forward.
+
+## Handover Relationships
+
+- [ ] Quantstack
+  - [ ] write down potential things they could help with
+- [ ] BDNS
+  - [ ] email Rita to add Tomek, Waqas & Kathryn to BDNS mailing list
+
+## Unfinished Work
+
+1. [Digital Schedules - Phase2](...)
+   - Robust support for Types and Instances and flexible / project specific naming conventions
+     - Needed Electrical Distribution Equipment Schedule
+     - Suggest that Mechanical Equipment Schedules should also update to match
+       (i.e. Vent, Heating & Cooling etc.)
+   - Reference Schedules
+     - Needed for p/w, d/w, ancilliaries
+     - data types is different to normal schedules, more reference lookup data that will not change.
+     - suggest storing the data as a [datapackage](https://datapackage.org/)
+     (see [netzero-metrics-reference-data](https://github.com/maxfordham/netzero-metrics-reference-data) for an example)
+     and then building the pdf output schedule from that. They can be a bit more custom given that they don't change.
+     They may (should) be configurable (e.g. selected pipe materials and that changes whats displayed or something).
+2. [Room Data Sheets](...)
+  - [ ] add import / export from excel
+  - [ ] transpose data to have space params as rows
+  - Ensure revit -> digital-schedules API queries work with larger models
+  - Add support for excel only based workflow
+3. [Plantroom Schedules](...)
+  - [ ] move to separate app
+
+
+## TODO
+
+- [ ] Email the Project Administrators and the DNG
+- [ ] Brief Dan on the DNG tool current status
+
+
+
+
+## Proposed next Projects
+
+### Document Issue
+
+Direct replacement of existing DNG spreadsheet.
+
+### Start using Claude Opus
+
+Push on with Agent based workflows to improve productivity.
+Work on clear briefings and documentation, this also creates the opportunity for collaboration and alignment with project teams.
+
+
+## Musings
+
+## How to create an Engineering Software Team?
+
+I think the senior management first need to consider / recognise / acknowledge the
+scale of the change. All calcs can be automated. Almost all project data can be accurately
+stored in BIM/BEM data objects (Revit, IFC, hbjson etc.). Reports can be say 80% templated (using
+code based automation tools) with project teams editing project specifics. This cannot be done
+by a couple of developers in a back room but is a practice wide shift towards tech solutions,
+lead by a well resourced team of developers who have the authority to set the agenda.
+From a resource point of view I think in the long-term that this means something like:
+
+- 5-10 engineering focused software engineers, software product managers
+- 20 project based engineers capable of using code-based tools on projects
+
+A comment Olly made when he left is that senior management are not engaged in the work we are
+doing. I agree. It feels like a bit of a taboo as it costs money to deliver when ironically it
+is has the potential to genuinely improve business profitability.
+
+The result of this is that Engineers continue to spend resource delivering in the same old way
+and not trying to engage in new methods. I think that the recent push for more standard Excel
+Spreadsheets is a good example of this. Whilst they are clearly high quality and better than not
+having anything, they are directly opposed to developing more code-based / data-driven tools to
+do the same thing. Simple statements like `no new standard calcs are to be made in excel, instead
+favouring modern code-based workflows` would be powerful to guide Engineers towards more forward
+looking methods.
+
+## Who can write code?
+
+- Software development and writing code is now mainstream. Python is taught in
+  secondary schools and university. AI is very good at writing code when given
+  clear directives. Writing code is an obvious skill for any technical
+  profession (like Engineering) faciliting calculation, task automation and much more.
+- Code is not Software. Code can be quick, dirty and throwaway. Much like an excel
+  calc it is made and discarded or created for a one-time use. It can be a quick, simple
+  tool for Engineering. Creating a piece of software is about clearly defining what the
+  code is for and making it reusable, packaged, tested etc. i.e. code can be a simple
+  project calc but software is more like a Maurizio spreadsheet. Currently at MXF the
+  development team makes software but very few Engineers quick code.
+- Engineers can code. Once an Engineer has used the same code on many projects it can
+  easily be turned into robust software. I think this is an untapped resource.
+
+
+## Data-driven reports are low-hanging fruit (@BPM)
+
+Jupyter Notebooks allow users to combine formatted text, ad-hoc python code and battletested
+python code from library imports. They can be printed as issuable pdf documents. Based on
+consistent input data (e.g. from a simulation model); tables, graphs, figures and chunks of text
+can be generated automatically and will update when the simulation model data updates.
+This makes it straightforward to create a set of data-extraction scripts and standard
+ reports and analyses focussed on a given type of analysis (e.g. TM52, TM54, NABERS etc.).
