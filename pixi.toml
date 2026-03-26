@@ -1,4 +1,4 @@
-[project]
+[workspace]
 authors = ["jgunstone <j.gunstone@maxfordham.com>"]
 channels = ["conda-forge"]
 name = "building-code"
@@ -9,6 +9,7 @@ version = "0.1.0"
 jlab = "jupyter lab"
 render = "quarto render ."
 preview = "quarto preview ."
+open = { cmd = "/mnt/c/windows/explorer.exe index.html", cwd = "_site"} # this will only work on WSL
 
 [dependencies]
 quarto = ">=1.7,<2"
