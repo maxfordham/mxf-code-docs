@@ -14,3 +14,9 @@ open = { cmd = "/mnt/c/windows/explorer.exe index.html", cwd = "_site"} # this w
 [dependencies]
 quarto = ">=1.7,<2"
 jupyterlab = ">=4.4.0,<5"
+itables = ">=2.7.3,<3"
+pandas = ">=3.0.2,<4"
+jupytext = ">=1.19.1,<2"
+
+[pypi-dependencies]
+jupyterlab-quarto = ">=0.3.5, <0.4"
