@@ -79,9 +79,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-b30e670e5601cfaa85bdef5efa539e15.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-f4a6b78295b9eaf9047c1b5b753411cc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-9d3779afaca1de9b3d7c2f5fdf27f3fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-f4a6b78295b9eaf9047c1b5b753411cc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-095370f90a568b9886a4da7d97619216.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-10ab467497e037eae8029922bbecdf76.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-095370f90a568b9886a4da7d97619216.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -304,7 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/jgunstone"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/maxfordham"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -330,7 +330,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#monorepos" id="toc-monorepos" class="nav-link" data-scroll-target="#monorepos">Monorepos</a></li>
   <li><a href="#pyrevit-revit-customisation-scripts" id="toc-pyrevit-revit-customisation-scripts" class="nav-link" data-scroll-target="#pyrevit-revit-customisation-scripts">pyRevit (Revit customisation scripts)</a></li>
   <li><a href="#other" id="toc-other" class="nav-link" data-scroll-target="#other">Other</a></li>
-  <li><a href="#all-python" id="toc-all-python" class="nav-link" data-scroll-target="#all-python">All python</a></li>
+  <li><a href="#all-python-repos" id="toc-all-python-repos" class="nav-link" data-scroll-target="#all-python-repos">All python repos</a></li>
   </ul>
 </nav>
     </div>
@@ -375,17 +375,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p>This is an overview of python repos used for Engineering Software Development. For a more Engineer / High-Level / less code-focussed summary see <a href="https://wiki.maxfordham.com/jupyterhub-maxfordham/services.html">jupyterhub-maxfordham/services</a>.</p>
 <section id="python-apps-repos-on-toolbox" class="level2">
 <h2 class="anchored" data-anchor-id="python-apps-repos-on-toolbox">Python Apps repos (on toolbox)</h2>
-<div id="cell-3" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> <span class="st">"gh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook --topic app"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>display_gh_result(cmd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-4" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display cell-output-markdown">
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo list maxfordham <span class="at">-L</span> 100 <span class="at">--no-archived</span> <span class="at">-l</span> python,jupyter-notebook <span class="at">--topic</span> app</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo list maxfordham <span class="at">-L</span> 100 <span class="at">--no-archived</span> <span class="at">-l</span> python,jupyter-notebook <span class="at">--topic</span> app</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-display">
 <!--| quarto-html-table-processing: none -->
-<table id="itables_a81e0c9c_3680_44d1_80a8_f197957450ef">
+<table id="itables_462b5f4d_8e45_4678_b2a3_fad2ce64a29d">
   <tbody>
     <tr>
       <td style="vertical-align:middle; text-align:left"><a href="https://mwouts.github.io/itables/"><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="64" viewbox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
@@ -455,14 +454,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="module">
     import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.5.1/dt_bundle.js';
 
-    document.querySelectorAll("#itables_a81e0c9c_3680_44d1_80a8_f197957450ef:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_462b5f4d_8e45_4678_b2a3_fad2ce64a29d:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
         let dt_args = {
           "classes": ["display", "compact"],
           "columnDefs": [{"targets": [2, 3], "width": "100px"}, {"targets": [0], "width": "300px"}, {"className": "dt-left", "targets": "_all"}],
-          "data_json": "[[\"<a href=\\\"https://github.com/maxfordham/digital-schedules-apps\\\" target=_blank>maxfordham/digital-schedules-apps</a>\", \"\\ud83d\\udcc3\\ud83d\\udc69\\u200d\\ud83d\\udcbb Digital Schedules Applications. repo2docker with built apps only. source code in digital-schedules repo.\", \"internal\", \"2026-03-26\"], [\"<a href=\\\"https://github.com/maxfordham/engineering-dashboards\\\" target=_blank>maxfordham/engineering-dashboards</a>\", \"Using Observable to construct Engineering Dashboards. Also includes code for central-engineering-spend toolbox app.\", \"internal\", \"2026-03-30\"], [\"<a href=\\\"https://github.com/maxfordham/digital-schedules\\\" target=_blank>maxfordham/digital-schedules</a>\", \"Monorepo for digital scheduling packages. Source for aectemplater API and equipment-schedules, aectemplater, room-data-schedules, netzero-metrics toolbox apps.\", \"internal\", \"2026-03-26\"], [\"<a href=\\\"https://github.com/maxfordham/nat-vent-calc\\\" target=_blank>maxfordham/nat-vent-calc</a>\", \"Natural Ventilation Calculator. Uses the Air Infiltration Development Algorithm, M Liddament - AIVC Guide to Ventilation 1995, extended by Owen Beckett 2019. Runs an algorithmic solver to calculate to calculate volume of airflow through openings. Can also manage multiple zones and additional fan-powered ventilation.\", \"private\", \"2024-11-26\"], [\"<a href=\\\"https://github.com/maxfordham/wufitoolbox\\\" target=_blank>maxfordham/wufitoolbox</a>\", \"App to plot output data from WUFI heat and moisture modelling software. Particularly useful to analyse the probability of mould growth for a given wall build up.\", \"private\", \"2024-01-26\"], [\"<a href=\\\"https://github.com/maxfordham/thermal-comfort-plotter\\\" target=_blank>maxfordham/thermal-comfort-plotter</a>\", \"Tool to plot occupant comfort based on environmental conditions\", \"internal\", \"2024-01-09\"]]",
+          "data_json": "[[\"<a href=\\\"https://github.com/maxfordham/digital-schedules-apps\\\" target=_blank>maxfordham/digital-schedules-apps</a>\", \"\\ud83d\\udcc3\\ud83d\\udc69\\u200d\\ud83d\\udcbb Digital Schedules Applications. repo2docker with built apps only. source code in digital-schedules repo.\", \"internal\", \"2026-03-26\"], [\"<a href=\\\"https://github.com/maxfordham/engineering-dashboards\\\" target=_blank>maxfordham/engineering-dashboards</a>\", \"Using Observable to construct Engineering Dashboards. Also includes code for central-engineering-spend toolbox app.\", \"internal\", \"2026-03-31\"], [\"<a href=\\\"https://github.com/maxfordham/digital-schedules\\\" target=_blank>maxfordham/digital-schedules</a>\", \"Monorepo for digital scheduling packages. Source for aectemplater API and equipment-schedules, aectemplater, room-data-schedules, netzero-metrics toolbox apps.\", \"internal\", \"2026-03-26\"], [\"<a href=\\\"https://github.com/maxfordham/nat-vent-calc\\\" target=_blank>maxfordham/nat-vent-calc</a>\", \"Natural Ventilation Calculator. Uses the Air Infiltration Development Algorithm, M Liddament - AIVC Guide to Ventilation 1995, extended by Owen Beckett 2019. Runs an algorithmic solver to calculate to calculate volume of airflow through openings. Can also manage multiple zones and additional fan-powered ventilation.\", \"private\", \"2024-11-26\"], [\"<a href=\\\"https://github.com/maxfordham/wufitoolbox\\\" target=_blank>maxfordham/wufitoolbox</a>\", \"App to plot output data from WUFI heat and moisture modelling software. Particularly useful to analyse the probability of mould growth for a given wall build up.\", \"private\", \"2024-01-26\"], [\"<a href=\\\"https://github.com/maxfordham/thermal-comfort-plotter\\\" target=_blank>maxfordham/thermal-comfort-plotter</a>\", \"Tool to plot occupant comfort based on environmental conditions\", \"internal\", \"2024-01-09\"]]",
           "layout": {"bottomEnd": null, "bottomStart": null, "topEnd": null, "topStart": null},
           "order": [],
           "pageLength": -1,
@@ -480,15 +479,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="python-packages" class="level2">
 <h2 class="anchored" data-anchor-id="python-packages">Python packages</h2>
 <p>These are library style packages. They do not involve any data storage and do not present as an app. They are backend packages used be the apps and API to do things.</p>
-<div id="cell-5" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> <span class="st">"gh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook --topic package"</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>display_gh_result(cmd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-6" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display cell-output-markdown">
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo list maxfordham <span class="at">-L</span> 100 <span class="at">--no-archived</span> <span class="at">-l</span> python,jupyter-notebook <span class="at">--topic</span> package</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo list maxfordham <span class="at">-L</span> 100 <span class="at">--no-archived</span> <span class="at">-l</span> python,jupyter-notebook <span class="at">--topic</span> package</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-display">
 <!--| quarto-html-table-processing: none -->
-<table id="itables_36c9288f_67c8_4b06_b86b_09b4efee6667">
+<table id="itables_91bc032e_73fd_463c_ace3_6cef23a8d0d1">
   <tbody>
     <tr>
       <td style="vertical-align:middle; text-align:left"><a href="https://mwouts.github.io/itables/"><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="64" viewbox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
@@ -558,7 +555,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="module">
     import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.5.1/dt_bundle.js';
 
-    document.querySelectorAll("#itables_36c9288f_67c8_4b06_b86b_09b4efee6667:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_91bc032e_73fd_463c_ace3_6cef23a8d0d1:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -583,11 +580,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="monorepos" class="level2">
 <h2 class="anchored" data-anchor-id="monorepos">Monorepos</h2>
 <p>This means that they contain multiple packages. Some may be library packages and some deployed apps. <code>maxfordham/digital-schedules</code> is a monorepo with library packages and the <code>aectemplater</code> api as a package along with the <code>aectemplater-ui</code> package which essentially contains all the source code for the digital-schedules related apps on toolox.</p>
-<div id="cell-7" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> <span class="st">"gh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook --topic monorepo"</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>display_gh_result(cmd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-8" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> <span class="st">"gh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook --topic monorepo"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>display_gh_result(cmd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display cell-output-markdown">
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo list maxfordham <span class="at">-L</span> 100 <span class="at">--no-archived</span> <span class="at">-l</span> python,jupyter-notebook <span class="at">--topic</span> monorepo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo list maxfordham <span class="at">-L</span> 100 <span class="at">--no-archived</span> <span class="at">-l</span> python,jupyter-notebook <span class="at">--topic</span> monorepo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-display">
 <!--| quarto-html-table-processing: none -->
@@ -685,11 +682,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="pyrevit-revit-customisation-scripts" class="level2">
 <h2 class="anchored" data-anchor-id="pyrevit-revit-customisation-scripts">pyRevit (Revit customisation scripts)</h2>
-<div id="cell-9" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> <span class="st">"gh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook --topic pyrevit"</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>display_gh_result(cmd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-10" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> <span class="st">"gh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook --topic pyrevit"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>display_gh_result(cmd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display cell-output-markdown">
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo list maxfordham <span class="at">-L</span> 100 <span class="at">--no-archived</span> <span class="at">-l</span> python,jupyter-notebook <span class="at">--topic</span> pyrevit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo list maxfordham <span class="at">-L</span> 100 <span class="at">--no-archived</span> <span class="at">-l</span> python,jupyter-notebook <span class="at">--topic</span> pyrevit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-display">
 <!--| quarto-html-table-processing: none -->
@@ -787,19 +784,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="other" class="level2">
 <h2 class="anchored" data-anchor-id="other">Other</h2>
-<p>jupyterhub-maxfordham ansible deployment repo</p>
-</section>
-<section id="all-python" class="level2">
-<h2 class="anchored" data-anchor-id="all-python">All python</h2>
-<div id="cell-12" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> <span class="st">"gh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook"</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>display_gh_result(cmd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>maxfordham/jupyterhub-maxfordham is an ansible deployment repo originally setup by quantstack that is used for deploying all of the jupyterhub and aectemplater-api (FastAPI) servers (dev and prod).</p>
+<div id="cell-12" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> <span class="st">"gh repo list maxfordham -L 100 --no-archived --topic deployment"</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>display_gh_result(cmd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display cell-output-markdown">
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo list maxfordham <span class="at">-L</span> 100 <span class="at">--no-archived</span> <span class="at">-l</span> python,jupyter-notebook</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo list maxfordham <span class="at">-L</span> 100 <span class="at">--no-archived</span> <span class="at">--topic</span> deployment</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-display">
 <!--| quarto-html-table-processing: none -->
-<table id="itables_4ef02151_5548_414c_9ae9_e2113d505ce5">
+<table id="itables_f52472cc_fe66_4cc5_9966_5b8d5cb30a68">
   <tbody>
     <tr>
       <td style="vertical-align:middle; text-align:left"><a href="https://mwouts.github.io/itables/"><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="64" viewbox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
@@ -869,14 +863,129 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="module">
     import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.5.1/dt_bundle.js';
 
-    document.querySelectorAll("#itables_4ef02151_5548_414c_9ae9_e2113d505ce5:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_f52472cc_fe66_4cc5_9966_5b8d5cb30a68:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
         let dt_args = {
           "classes": ["display", "compact"],
           "columnDefs": [{"targets": [2, 3], "width": "100px"}, {"targets": [0], "width": "300px"}, {"className": "dt-left", "targets": "_all"}],
-          "data_json": "[[\"<a href=\\\"https://github.com/maxfordham/mxf-code-docs\\\" target=_blank>maxfordham/mxf-code-docs</a>\", \"developer docs for best practices for engineering development at Max Fordham\", \"public\", \"2026-03-26\"], [\"<a href=\\\"https://github.com/maxfordham/jupyterlab-maxfordham\\\" target=_blank>maxfordham/jupyterlab-maxfordham</a>\", \"A feature rich conda environment for general purpose python programming. Comes with tutorials included and deployed using repo2docker.\", \"public\", \"2026-03-26\"], [\"<a href=\\\"https://github.com/maxfordham/digital-schedules-apps\\\" target=_blank>maxfordham/digital-schedules-apps</a>\", \"\\ud83d\\udcc3\\ud83d\\udc69\\u200d\\ud83d\\udcbb Digital Schedules Applications. repo2docker with built apps only. source code in digital-schedules repo.\", \"internal\", \"2026-03-26\"], [\"<a href=\\\"https://github.com/maxfordham/engineering-dashboards\\\" target=_blank>maxfordham/engineering-dashboards</a>\", \"Using Observable to construct Engineering Dashboards. Also includes code for central-engineering-spend toolbox app.\", \"internal\", \"2026-03-30\"], [\"<a href=\\\"https://github.com/maxfordham/digital-schedules\\\" target=_blank>maxfordham/digital-schedules</a>\", \"Monorepo for digital scheduling packages. Source for aectemplater API and equipment-schedules, aectemplater, room-data-schedules, netzero-metrics toolbox apps.\", \"internal\", \"2026-03-26\"], [\"<a href=\\\"https://github.com/maxfordham/ipyautoui\\\" target=_blank>maxfordham/ipyautoui</a>\", \"create ipywidgets user input form pydantic model or jsonschema\", \"public\", \"2026-03-26\"], [\"<a href=\\\"https://github.com/maxfordham/digital-schedules-docs\\\" target=_blank>maxfordham/digital-schedules-docs</a>\", \"parent repo for all documentation for projects supporting Digital Schedules\", \"internal\", \"2026-03-24\"], [\"<a href=\\\"https://github.com/maxfordham/digital-schedules-pyrevit\\\" target=_blank>maxfordham/digital-schedules-pyrevit</a>\", \"Max Fordham's Digital Schedules pyRevit extension\", \"private\", \"2026-03-19\"], [\"<a href=\\\"https://github.com/maxfordham/bdns-plus\\\" target=_blank>maxfordham/bdns-plus</a>\", \"Tagging methodology for BIM objects and physical equipment for the built environment. Superset of BDNS.\", \"public\", \"2026-03-12\"], [\"<a href=\\\"https://github.com/maxfordham/pyRevit-mxf\\\" target=_blank>maxfordham/pyRevit-mxf</a>\", \"monorepo containing majority of Revit scripts. views and sheets, insulation tools etc. refactor into multiple extension folders in the future\", \"internal\", \"2025-12-10\"], [\"<a href=\\\"https://github.com/maxfordham/xlsxdatagrid\\\" target=_blank>maxfordham/xlsxdatagrid</a>\", \"write rich formatted excel datagrid tables based on schema definitions\", \"public\", \"2025-12-05\"], [\"<a href=\\\"https://github.com/maxfordham/document-issue\\\" target=_blank>maxfordham/document-issue</a>\", \"Defines the data structure of the meta-data associated with the issue of a document in the AEC industry. Follows recommendations in BS EN ISO 19650\\u20112:2018.\", \"public\", \"2025-11-18\"], [\"<a href=\\\"https://github.com/maxfordham/netzero-metrics\\\" target=_blank>maxfordham/netzero-metrics</a>\", \"Calculate UK Net Zero Carbon Building (UKNZCB) targets / metrics\", \"public\", \"2025-11-13\"], [\"<a href=\\\"https://github.com/maxfordham/netzero-metrics-reference-data\\\" target=_blank>maxfordham/netzero-metrics-reference-data</a>\", \"datapackage with energy use intensity (eui) targets taken from the UK Net Zero Carbon Building Standard\", \"public\", \"2025-11-11\"], [\"<a href=\\\"https://github.com/maxfordham/pyuniclass\\\" target=_blank>maxfordham/pyuniclass</a>\", \"simple package for reading uniclass tables from excel files.\", \"public\", \"2025-10-02\"], [\"<a href=\\\"https://github.com/maxfordham/full-stack-dev-interview\\\" target=_blank>maxfordham/full-stack-dev-interview</a>\", \"technical questions for full stack developer role. Web dev and engineering tooling.\", \"public\", \"2025-08-04\"], [\"<a href=\\\"https://github.com/maxfordham/pyrulefilter\\\" target=_blank>maxfordham/pyrulefilter</a>\", \"filters data based on RuleSets. works on definitions similar to those used by the RevitAPI\", \"public\", \"2025-07-04\"], [\"<a href=\\\"https://github.com/maxfordham/ipyrun\\\" target=_blank>maxfordham/ipyrun</a>\", \"A generic user interface for running scripts. Data inputs to scripts are defined by standard datafiles (e.g. csv, json), and data files are generated as outputs when the script is run. A timestamped record of script execution is maintained. An ipywdiget user interface allows users to edit script input data and view outputs of script execution.\", \"public\", \"2025-06-23\"], [\"<a href=\\\"https://github.com/maxfordham/adaptive-comfort\\\" target=_blank>maxfordham/adaptive-comfort</a>\", \"This package assesses the thermal comfort of a space within a building against the Criterion defined in CIBSE TM52 and TM59.\", \"internal\", \"2024-12-10\"], [\"<a href=\\\"https://github.com/maxfordham/ies-adaptive-comfort\\\" target=_blank>maxfordham/ies-adaptive-comfort</a>\", \"This repository obtains scripts used for running CIBSE's overheating analyses and is dependent on Max Fordham's adaptive-comfort repository\", \"private\", \"2024-11-29\"], [\"<a href=\\\"https://github.com/maxfordham/nat-vent-calc\\\" target=_blank>maxfordham/nat-vent-calc</a>\", \"Natural Ventilation Calculator. Uses the Air Infiltration Development Algorithm, M Liddament - AIVC Guide to Ventilation 1995, extended by Owen Beckett 2019. Runs an algorithmic solver to calculate to calculate volume of airflow through openings. Can also manage multiple zones and additional fan-powered ventilation.\", \"private\", \"2024-11-26\"], [\"<a href=\\\"https://github.com/maxfordham/tm59-archetype-results-viewer\\\" target=_blank>maxfordham/tm59-archetype-results-viewer</a>\", \"Tool to plot the results of a parametric analysis of CIBSE TM59 overheating results under many architectural conditions.\", \"private\", \"2024-11-25\"], [\"<a href=\\\"https://github.com/maxfordham/specs\\\" target=_blank>maxfordham/specs</a>\", \"WIP demo for templated specs in Jupyter Notebooks\", \"internal\", \"2024-06-18\"], [\"<a href=\\\"https://github.com/maxfordham/wufitoolbox\\\" target=_blank>maxfordham/wufitoolbox</a>\", \"App to plot output data from WUFI heat and moisture modelling software. Particularly useful to analyse the probability of mould growth for a given wall build up.\", \"private\", \"2024-01-26\"], [\"<a href=\\\"https://github.com/maxfordham/thermal-comfort-plotter\\\" target=_blank>maxfordham/thermal-comfort-plotter</a>\", \"Tool to plot occupant comfort based on environmental conditions\", \"internal\", \"2024-01-09\"], [\"<a href=\\\"https://github.com/maxfordham/tool-usage\\\" target=_blank>maxfordham/tool-usage</a>\", \"tracking the usage of MF internal tools. visualise with Vega\", \"public\", \"2023-10-12\"], [\"<a href=\\\"https://github.com/maxfordham/maplocal-mxf\\\" target=_blank>maxfordham/maplocal-mxf</a>\", \"A simple example of repo2docker configuration to use with `ipyautoui` and `maplocal`. This allows users to open files and folders from button clicks in jupyter server apps.\", \"internal\", \"2023-07-07\"], [\"<a href=\\\"https://github.com/maxfordham/mf-file-utilities\\\" target=_blank>maxfordham/mf-file-utilities</a>\", \"python wrapper around Dan Kelly's app launcher to open files from the browser\", \"internal\", \"2022-11-11\"], [\"<a href=\\\"https://github.com/maxfordham/fastapi-snippets\\\" target=_blank>maxfordham/fastapi-snippets</a>\", \"FastAPI simple set-up for testing and experimenting\", \"public\", \"2022-07-06\"]]",
+          "data_json": "[[\"<a href=\\\"https://github.com/maxfordham/jupyterhub-maxfordham\\\" target=_blank>maxfordham/jupyterhub-maxfordham</a>\", \"Contains Ansible playbooks and configurations for JupyterHub and API deployment\", \"private\", \"2026-03-30\"]]",
+          "layout": {"bottomEnd": null, "bottomStart": null, "topEnd": null, "topStart": null},
+          "order": [],
+          "pageLength": -1,
+          "paging": false,
+          "style": {"text-align": "left"},
+          "table_html": "<table><thead>\n    <tr style=\"text-align: right;\">\n      \n      <th>repository</th>\n      <th>description</th>\n      <th>visibility</th>\n      <th>last_updated</th>\n    </tr>\n  </thead></table>",
+          "text_in_header_can_be_selected": true
+        };
+        new ITable(table, dt_args);
+    });
+</script>
+</div>
+</div>
+</section>
+<section id="all-python-repos" class="level2">
+<h2 class="anchored" data-anchor-id="all-python-repos">All python repos</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This command is a catch-all for all python / jupyter-notebook based repos. Provided all the topics are set correctly, the above views summed together should approx equal this one ideally, but that probs isn’t the case!</p>
+</div>
+</div>
+<div id="cell-14" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> <span class="st">"gh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook"</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>display_gh_result(cmd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo list maxfordham <span class="at">-L</span> 100 <span class="at">--no-archived</span> <span class="at">-l</span> python,jupyter-notebook</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell-output cell-output-display">
+<!--| quarto-html-table-processing: none -->
+<table id="itables_48908193_072f_4e1e_bf1f_325d52d13ca2">
+  <tbody>
+    <tr>
+      <td style="vertical-align:middle; text-align:left"><a href="https://mwouts.github.io/itables/"><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="64" viewbox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
+    <g style="fill:#d9d7fc">
+        <path d="M100,400H500V357H100Z"></path>
+        <path d="M100,300H400V257H100Z"></path>
+        <path d="M0,200H400V157H0Z"></path>
+        <path d="M100,100H500V57H100Z"></path>
+        <path d="M100,350H500V307H100Z"></path>
+        <path d="M100,250H400V207H100Z"></path>
+        <path d="M0,150H400V107H0Z"></path>
+        <path d="M100,50H500V7H100Z"></path>
+    </g>
+    <g style="fill:#1a1366;stroke:#1a1366;">
+   <rect x="100" y="7" width="400" height="43">
+    <animate attributename="width" values="0;400;0" dur="5s" repeatcount="indefinite"></animate>
+      <animate attributename="x" values="100;100;500" dur="5s" repeatcount="indefinite"></animate>
+  </rect>
+        <rect x="0" y="107" width="400" height="43">
+    <animate attributename="width" values="0;400;0" dur="3.5s" repeatcount="indefinite"></animate>
+    <animate attributename="x" values="0;0;400" dur="3.5s" repeatcount="indefinite"></animate>
+  </rect>
+        <rect x="100" y="207" width="300" height="43">
+    <animate attributename="width" values="0;300;0" dur="3s" repeatcount="indefinite"></animate>
+    <animate attributename="x" values="100;100;400" dur="3s" repeatcount="indefinite"></animate>
+  </rect>
+        <rect x="100" y="307" width="400" height="43">
+    <animate attributename="width" values="0;400;0" dur="4s" repeatcount="indefinite"></animate>
+      <animate attributename="x" values="100;100;500" dur="4s" repeatcount="indefinite"></animate>
+  </rect>
+        <g style="fill:transparent;stroke-width:8; stroke-linejoin:round" rx="5">
+            <g transform="translate(45 50) rotate(-45)">
+                <circle r="33" cx="0" cy="0"></circle>
+                <rect x="-8" y="32" width="16" height="30"></rect>
+            </g>
+
+            <g transform="translate(450 152)">
+                <polyline points="-15,-20 -35,-20 -35,40 25,40 25,20"></polyline>
+                <rect x="-15" y="-40" width="60" height="60"></rect>
+            </g>
+
+            <g transform="translate(50 352)">
+                <polygon points="-35,-5 0,-40 35,-5"></polygon>
+                <polygon points="-35,10 0,45 35,10"></polygon>
+            </g>
+
+            <g transform="translate(75 250)">
+                <polyline points="-30,30 -60,0 -30,-30"></polyline>
+                <polyline points="0,30 -30,0 0,-30"></polyline>
+            </g>
+
+            <g transform="translate(425 250) rotate(180)">
+                <polyline points="-30,30 -60,0 -30,-30"></polyline>
+                <polyline points="0,30 -30,0 0,-30"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>
+</a>
+        Loading ITables v2.7.3 from the internet...
+        (need <a href="https://mwouts.github.io/itables/troubleshooting.html">help</a>?)
+      </td>
+    </tr>
+  </tbody>
+</table>
+<link href="https://www.unpkg.com/dt_for_itables@2.5.1/dt_bundle.css" rel="stylesheet">
+<script type="module">
+    import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.5.1/dt_bundle.js';
+
+    document.querySelectorAll("#itables_48908193_072f_4e1e_bf1f_325d52d13ca2:not(.dataTable)").forEach(table => {
+        if (!(table instanceof HTMLTableElement))
+            return;
+
+        let dt_args = {
+          "classes": ["display", "compact"],
+          "columnDefs": [{"targets": [2, 3], "width": "100px"}, {"targets": [0], "width": "300px"}, {"className": "dt-left", "targets": "_all"}],
+          "data_json": "[[\"<a href=\\\"https://github.com/maxfordham/mxf-code-docs\\\" target=_blank>maxfordham/mxf-code-docs</a>\", \"developer docs for best practices for engineering development at Max Fordham\", \"public\", \"2026-03-31\"], [\"<a href=\\\"https://github.com/maxfordham/jupyterlab-maxfordham\\\" target=_blank>maxfordham/jupyterlab-maxfordham</a>\", \"A feature rich conda environment for general purpose python programming. Comes with tutorials included and deployed using repo2docker.\", \"public\", \"2026-03-26\"], [\"<a href=\\\"https://github.com/maxfordham/digital-schedules-apps\\\" target=_blank>maxfordham/digital-schedules-apps</a>\", \"\\ud83d\\udcc3\\ud83d\\udc69\\u200d\\ud83d\\udcbb Digital Schedules Applications. repo2docker with built apps only. source code in digital-schedules repo.\", \"internal\", \"2026-03-26\"], [\"<a href=\\\"https://github.com/maxfordham/engineering-dashboards\\\" target=_blank>maxfordham/engineering-dashboards</a>\", \"Using Observable to construct Engineering Dashboards. Also includes code for central-engineering-spend toolbox app.\", \"internal\", \"2026-03-31\"], [\"<a href=\\\"https://github.com/maxfordham/digital-schedules\\\" target=_blank>maxfordham/digital-schedules</a>\", \"Monorepo for digital scheduling packages. Source for aectemplater API and equipment-schedules, aectemplater, room-data-schedules, netzero-metrics toolbox apps.\", \"internal\", \"2026-03-26\"], [\"<a href=\\\"https://github.com/maxfordham/ipyautoui\\\" target=_blank>maxfordham/ipyautoui</a>\", \"create ipywidgets user input form pydantic model or jsonschema\", \"public\", \"2026-03-26\"], [\"<a href=\\\"https://github.com/maxfordham/digital-schedules-docs\\\" target=_blank>maxfordham/digital-schedules-docs</a>\", \"parent repo for all documentation for projects supporting Digital Schedules\", \"internal\", \"2026-03-24\"], [\"<a href=\\\"https://github.com/maxfordham/digital-schedules-pyrevit\\\" target=_blank>maxfordham/digital-schedules-pyrevit</a>\", \"Max Fordham's Digital Schedules pyRevit extension\", \"private\", \"2026-03-19\"], [\"<a href=\\\"https://github.com/maxfordham/bdns-plus\\\" target=_blank>maxfordham/bdns-plus</a>\", \"Tagging methodology for BIM objects and physical equipment for the built environment. Superset of BDNS.\", \"public\", \"2026-03-12\"], [\"<a href=\\\"https://github.com/maxfordham/pyRevit-mxf\\\" target=_blank>maxfordham/pyRevit-mxf</a>\", \"monorepo containing majority of Revit scripts. views and sheets, insulation tools etc. refactor into multiple extension folders in the future\", \"internal\", \"2025-12-10\"], [\"<a href=\\\"https://github.com/maxfordham/xlsxdatagrid\\\" target=_blank>maxfordham/xlsxdatagrid</a>\", \"write rich formatted excel datagrid tables based on schema definitions\", \"public\", \"2025-12-05\"], [\"<a href=\\\"https://github.com/maxfordham/document-issue\\\" target=_blank>maxfordham/document-issue</a>\", \"Defines the data structure of the meta-data associated with the issue of a document in the AEC industry. Follows recommendations in BS EN ISO 19650\\u20112:2018.\", \"public\", \"2025-11-18\"], [\"<a href=\\\"https://github.com/maxfordham/netzero-metrics\\\" target=_blank>maxfordham/netzero-metrics</a>\", \"Calculate UK Net Zero Carbon Building (UKNZCB) targets / metrics\", \"public\", \"2025-11-13\"], [\"<a href=\\\"https://github.com/maxfordham/netzero-metrics-reference-data\\\" target=_blank>maxfordham/netzero-metrics-reference-data</a>\", \"datapackage with energy use intensity (eui) targets taken from the UK Net Zero Carbon Building Standard\", \"public\", \"2025-11-11\"], [\"<a href=\\\"https://github.com/maxfordham/pyuniclass\\\" target=_blank>maxfordham/pyuniclass</a>\", \"simple package for reading uniclass tables from excel files.\", \"public\", \"2025-10-02\"], [\"<a href=\\\"https://github.com/maxfordham/full-stack-dev-interview\\\" target=_blank>maxfordham/full-stack-dev-interview</a>\", \"technical questions for full stack developer role. Web dev and engineering tooling.\", \"public\", \"2025-08-04\"], [\"<a href=\\\"https://github.com/maxfordham/pyrulefilter\\\" target=_blank>maxfordham/pyrulefilter</a>\", \"filters data based on RuleSets. works on definitions similar to those used by the RevitAPI\", \"public\", \"2025-07-04\"], [\"<a href=\\\"https://github.com/maxfordham/ipyrun\\\" target=_blank>maxfordham/ipyrun</a>\", \"A generic user interface for running scripts. Data inputs to scripts are defined by standard datafiles (e.g. csv, json), and data files are generated as outputs when the script is run. A timestamped record of script execution is maintained. An ipywdiget user interface allows users to edit script input data and view outputs of script execution.\", \"public\", \"2025-06-23\"], [\"<a href=\\\"https://github.com/maxfordham/adaptive-comfort\\\" target=_blank>maxfordham/adaptive-comfort</a>\", \"This package assesses the thermal comfort of a space within a building against the Criterion defined in CIBSE TM52 and TM59.\", \"internal\", \"2024-12-10\"], [\"<a href=\\\"https://github.com/maxfordham/ies-adaptive-comfort\\\" target=_blank>maxfordham/ies-adaptive-comfort</a>\", \"This repository obtains scripts used for running CIBSE's overheating analyses and is dependent on Max Fordham's adaptive-comfort repository\", \"private\", \"2024-11-29\"], [\"<a href=\\\"https://github.com/maxfordham/nat-vent-calc\\\" target=_blank>maxfordham/nat-vent-calc</a>\", \"Natural Ventilation Calculator. Uses the Air Infiltration Development Algorithm, M Liddament - AIVC Guide to Ventilation 1995, extended by Owen Beckett 2019. Runs an algorithmic solver to calculate to calculate volume of airflow through openings. Can also manage multiple zones and additional fan-powered ventilation.\", \"private\", \"2024-11-26\"], [\"<a href=\\\"https://github.com/maxfordham/tm59-archetype-results-viewer\\\" target=_blank>maxfordham/tm59-archetype-results-viewer</a>\", \"Tool to plot the results of a parametric analysis of CIBSE TM59 overheating results under many architectural conditions.\", \"private\", \"2024-11-25\"], [\"<a href=\\\"https://github.com/maxfordham/specs\\\" target=_blank>maxfordham/specs</a>\", \"WIP demo for templated specs in Jupyter Notebooks\", \"internal\", \"2024-06-18\"], [\"<a href=\\\"https://github.com/maxfordham/wufitoolbox\\\" target=_blank>maxfordham/wufitoolbox</a>\", \"App to plot output data from WUFI heat and moisture modelling software. Particularly useful to analyse the probability of mould growth for a given wall build up.\", \"private\", \"2024-01-26\"], [\"<a href=\\\"https://github.com/maxfordham/thermal-comfort-plotter\\\" target=_blank>maxfordham/thermal-comfort-plotter</a>\", \"Tool to plot occupant comfort based on environmental conditions\", \"internal\", \"2024-01-09\"], [\"<a href=\\\"https://github.com/maxfordham/tool-usage\\\" target=_blank>maxfordham/tool-usage</a>\", \"tracking the usage of MF internal tools. visualise with Vega\", \"public\", \"2023-10-12\"], [\"<a href=\\\"https://github.com/maxfordham/maplocal-mxf\\\" target=_blank>maxfordham/maplocal-mxf</a>\", \"A simple example of repo2docker configuration to use with `ipyautoui` and `maplocal`. This allows users to open files and folders from button clicks in jupyter server apps.\", \"internal\", \"2023-07-07\"], [\"<a href=\\\"https://github.com/maxfordham/mf-file-utilities\\\" target=_blank>maxfordham/mf-file-utilities</a>\", \"python wrapper around Dan Kelly's app launcher to open files from the browser\", \"internal\", \"2022-11-11\"], [\"<a href=\\\"https://github.com/maxfordham/fastapi-snippets\\\" target=_blank>maxfordham/fastapi-snippets</a>\", \"FastAPI simple set-up for testing and experimenting\", \"public\", \"2022-07-06\"]]",
           "layout": {"bottomEnd": "paging", "bottomStart": "info", "topEnd": "search", "topStart": "pageLength"},
           "order": [],
           "pageLength": -1,

@@ -25,7 +25,7 @@
     "href": "posts/26/0312-HandoverJG/index.html#todo",
     "title": "Engineering Software Handover",
     "section": "TODO",
-    "text": "TODO\n\nEmail the Project Administrators and the DNG\nBrief Dan on the DNG tool current status"
+    "text": "TODO\n\norganise leaving drinks\nBrief Dan and devs on the DNG tool current status\nEmail the Project Administrators and the DNG\nfeedback on SDLC\nupdate room data sheet docs based on Kathryn’s feedback\nmove ipyautoui to jupyter-widgets-contributors\nmove bdns-plus to theodi"
   },
   {
     "objectID": "posts/26/0312-HandoverJG/index.html#proposed-next-projects",
@@ -347,21 +347,21 @@
     "href": "posts/26/0326-python-engineering-repos-overview/index.html",
     "title": "Python Engineering Repos Overview",
     "section": "",
-    "text": "cmd = \"gh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook --topic app\"\ndisplay_gh_result(cmd)\n\ngh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook --topic app\n\n\n\n\n  \n    \n      \n    \n        \n        \n        \n        \n        \n        \n        \n        \n    \n    \n   \n    \n      \n  \n        \n    \n    \n  \n        \n    \n    \n  \n        \n    \n      \n  \n        \n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n        \n    \n\n\n        Loading ITables v2.7.3 from the internet...\n        (need help?)"
+    "text": "This is an overview of python repos used for Engineering Software Development. For a more Engineer / High-Level / less code-focussed summary see jupyterhub-maxfordham/services."
   },
   {
     "objectID": "posts/26/0326-python-engineering-repos-overview/index.html#python-apps-repos-on-toolbox",
     "href": "posts/26/0326-python-engineering-repos-overview/index.html#python-apps-repos-on-toolbox",
     "title": "Python Engineering Repos Overview",
-    "section": "",
-    "text": "cmd = \"gh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook --topic app\"\ndisplay_gh_result(cmd)\n\ngh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook --topic app\n\n\n\n\n  \n    \n      \n    \n        \n        \n        \n        \n        \n        \n        \n        \n    \n    \n   \n    \n      \n  \n        \n    \n    \n  \n        \n    \n    \n  \n        \n    \n      \n  \n        \n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n        \n    \n\n\n        Loading ITables v2.7.3 from the internet...\n        (need help?)"
+    "section": "Python Apps repos (on toolbox)",
+    "text": "Python Apps repos (on toolbox)\n\n\ngh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook --topic app\n\n\n\n\n  \n    \n      \n    \n        \n        \n        \n        \n        \n        \n        \n        \n    \n    \n   \n    \n      \n  \n        \n    \n    \n  \n        \n    \n    \n  \n        \n    \n      \n  \n        \n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n        \n    \n\n\n        Loading ITables v2.7.3 from the internet...\n        (need help?)"
   },
   {
     "objectID": "posts/26/0326-python-engineering-repos-overview/index.html#python-packages",
     "href": "posts/26/0326-python-engineering-repos-overview/index.html#python-packages",
     "title": "Python Engineering Repos Overview",
     "section": "Python packages",
-    "text": "Python packages\nThese are library style packages. They do not involve any data storage and do not present as an app. They are backend packages used be the apps and API to do things.\n\ncmd = \"gh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook --topic package\"\ndisplay_gh_result(cmd)\n\ngh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook --topic package\n\n\n\n\n  \n    \n      \n    \n        \n        \n        \n        \n        \n        \n        \n        \n    \n    \n   \n    \n      \n  \n        \n    \n    \n  \n        \n    \n    \n  \n        \n    \n      \n  \n        \n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n        \n    \n\n\n        Loading ITables v2.7.3 from the internet...\n        (need help?)"
+    "text": "Python packages\nThese are library style packages. They do not involve any data storage and do not present as an app. They are backend packages used be the apps and API to do things.\n\n\ngh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook --topic package\n\n\n\n\n  \n    \n      \n    \n        \n        \n        \n        \n        \n        \n        \n        \n    \n    \n   \n    \n      \n  \n        \n    \n    \n  \n        \n    \n    \n  \n        \n    \n      \n  \n        \n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n        \n    \n\n\n        Loading ITables v2.7.3 from the internet...\n        (need help?)"
   },
   {
     "objectID": "posts/26/0326-python-engineering-repos-overview/index.html#monorepos",
@@ -382,13 +382,13 @@
     "href": "posts/26/0326-python-engineering-repos-overview/index.html#other",
     "title": "Python Engineering Repos Overview",
     "section": "Other",
-    "text": "Other\njupyterhub-maxfordham ansible deployment repo"
+    "text": "Other\nmaxfordham/jupyterhub-maxfordham is an ansible deployment repo originally setup by quantstack that is used for deploying all of the jupyterhub and aectemplater-api (FastAPI) servers (dev and prod).\n\ncmd = \"gh repo list maxfordham -L 100 --no-archived --topic deployment\"\ndisplay_gh_result(cmd)\n\ngh repo list maxfordham -L 100 --no-archived --topic deployment\n\n\n\n\n  \n    \n      \n    \n        \n        \n        \n        \n        \n        \n        \n        \n    \n    \n   \n    \n      \n  \n        \n    \n    \n  \n        \n    \n    \n  \n        \n    \n      \n  \n        \n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n        \n    \n\n\n        Loading ITables v2.7.3 from the internet...\n        (need help?)"
   },
   {
-    "objectID": "posts/26/0326-python-engineering-repos-overview/index.html#all-python",
-    "href": "posts/26/0326-python-engineering-repos-overview/index.html#all-python",
+    "objectID": "posts/26/0326-python-engineering-repos-overview/index.html#all-python-repos",
+    "href": "posts/26/0326-python-engineering-repos-overview/index.html#all-python-repos",
     "title": "Python Engineering Repos Overview",
-    "section": "All python",
-    "text": "All python\n\ncmd = \"gh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook\"\ndisplay_gh_result(cmd)\n\ngh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook\n\n\n\n\n  \n    \n      \n    \n        \n        \n        \n        \n        \n        \n        \n        \n    \n    \n   \n    \n      \n  \n        \n    \n    \n  \n        \n    \n    \n  \n        \n    \n      \n  \n        \n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n        \n    \n\n\n        Loading ITables v2.7.3 from the internet...\n        (need help?)"
+    "section": "All python repos",
+    "text": "All python repos\n\n\n\n\n\n\nNote\n\n\n\nThis command is a catch-all for all python / jupyter-notebook based repos. Provided all the topics are set correctly, the above views summed together should approx equal this one ideally, but that probs isn’t the case!\n\n\n\ncmd = \"gh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook\"\ndisplay_gh_result(cmd)\n\ngh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook\n\n\n\n\n  \n    \n      \n    \n        \n        \n        \n        \n        \n        \n        \n        \n    \n    \n   \n    \n      \n  \n        \n    \n    \n  \n        \n    \n    \n  \n        \n    \n      \n  \n        \n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n        \n    \n\n\n        Loading ITables v2.7.3 from the internet...\n        (need help?)"
   }
 ]
