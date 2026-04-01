@@ -1,4 +1,4 @@
-  ---
+---
 title: "Engineering Software Handover"
 author: "John Gunstone"
 date: "2026-03-12"
@@ -44,9 +44,13 @@ updating by the new ownership team moving forward.
 
 ## TODO
 
+- [x] organise leaving drinks
+- [x] Brief Dan and devs on the DNG tool current status
 - [ ] Email the Project Administrators and the DNG
-- [ ] Brief Dan on the DNG tool current status
-
+- [ ] feedback on [SDLC](https://maxfordham0-my.sharepoint.com/:w:/g/personal/d_kelly_maxfordham_com/IQBP5fYIlwE9TZb-UxCLP95aAUliDOWzWRj83-jf_k8vjrM?wdExp=TEAMS-TREATMENT&web=1)
+- [ ] update room data sheet docs based on Kathryn's feedback
+- [ ] move ipyautoui to jupyter-widgets-contributors
+- [ ] move bdns-plus to theodi
 
 
 
