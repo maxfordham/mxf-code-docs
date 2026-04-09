@@ -25,7 +25,7 @@
     "href": "posts/26/0312-HandoverJG/index.html#todo",
     "title": "Engineering Software Handover",
     "section": "TODO",
-    "text": "TODO\n\norganise leaving drinks\nBrief Dan and devs on the DNG tool current status\nEmail the Project Administrators and the DNG\nfeedback on SDLC\nupdate room data sheet docs based on Kathryn’s feedback\nmove ipyautoui to jupyter-widgets-contributors\nmove bdns-plus to theodi"
+    "text": "TODO\n\nEmail the Project Administrators and the DNG\nBrief Dan on the DNG tool current status"
   },
   {
     "objectID": "posts/26/0312-HandoverJG/index.html#proposed-next-projects",
@@ -137,7 +137,7 @@
     "href": "index.html",
     "title": "mxf-code-docs",
     "section": "",
-    "text": "Modified\n\n\n\nDate\n\n\n\nTitle\n\n\n\n\n\n\n\n\nMar 26, 2026\n\n\nMar 26, 2026\n\n\nPython Engineering Repos Overview\n\n\n\n\n\n\nMar 26, 2026\n\n\nMar 12, 2026\n\n\nEngineering Software Handover\n\n\n\n\n\n\nSep 8, 2025\n\n\nApr 11, 2023\n\n\nDeveloper Environment Setup\n\n\n\n\n\n\nAug 3, 2025\n\n\nAug 3, 2025\n\n\nSoftware Development Project Management\n\n\n\n\n\n\nApr 4, 2025\n\n\nApr 4, 2025\n\n\nMax Fordham Engineering Development Tech Stack\n\n\n\n\n\n\nFeb 21, 2025\n\n\nFeb 21, 2025\n\n\nEngineering Quality Committee: Digital Transformation Strategy\n\n\n\n\n\n\nMar 12, 2024\n\n\nMar 12, 2024\n\n\nDigital Schedules Released\n\n\n\n\n\n\nNo matching items"
+    "text": "Modified\n\n\n\nDate\n\n\n\nTitle\n\n\n\n\n\n\n\n\nApr 2, 2026\n\n\nApr 2, 2026\n\n\nWA-JG-Handover Notes\n\n\n\n\n\n\nMar 26, 2026\n\n\nMar 12, 2026\n\n\nEngineering Software Handover\n\n\n\n\n\n\nSep 8, 2025\n\n\nApr 11, 2023\n\n\nDeveloper Environment Setup\n\n\n\n\n\n\nAug 3, 2025\n\n\nAug 3, 2025\n\n\nSoftware Development Project Management\n\n\n\n\n\n\nApr 4, 2025\n\n\nApr 4, 2025\n\n\nMax Fordham Engineering Development Tech Stack\n\n\n\n\n\n\nFeb 21, 2025\n\n\nFeb 21, 2025\n\n\nEngineering Quality Committee: Digital Transformation Strategy\n\n\n\n\n\n\nMar 12, 2024\n\n\nMar 12, 2024\n\n\nDigital Schedules Released\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -343,52 +343,17 @@
     "text": "Growing Infrastructure over Time\nThe image below indicates how the platform is expected to grow to add additional apps, data and insights."
   },
   {
-    "objectID": "posts/26/0326-python-engineering-repos-overview/index.html",
-    "href": "posts/26/0326-python-engineering-repos-overview/index.html",
-    "title": "Python Engineering Repos Overview",
+    "objectID": "posts/26/0402-WA-JG-handover/index.html",
+    "href": "posts/26/0402-WA-JG-handover/index.html",
+    "title": "WA-JG-Handover Notes",
     "section": "",
-    "text": "This is an overview of python repos used for Engineering Software Development. For a more Engineer / High-Level / less code-focussed summary see jupyterhub-maxfordham/services."
+    "text": "We need the following repositories available in the Y:\\Revit\\MF Scripts directory:\n\npyRevit-mxf\npyRevitDigitalSchedules\n\n\n\nRead the README file in:\nY:\\Revit\\MF Scripts\n\n\n\n\nClone pyRevit-mxf and pyRevitDigitalSchedules\nMap the pyRevit extension to the directory in pyRevit settings inside Revit\nEnable Load beta tools in Core Settings\nMake changes, press buttons, print to console, and review output\nUse is_beta: true to hide development buttons"
   },
   {
-    "objectID": "posts/26/0326-python-engineering-repos-overview/index.html#python-apps-repos-on-toolbox",
-    "href": "posts/26/0326-python-engineering-repos-overview/index.html#python-apps-repos-on-toolbox",
-    "title": "Python Engineering Repos Overview",
-    "section": "Python Apps repos (on toolbox)",
-    "text": "Python Apps repos (on toolbox)\n\n\ngh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook --topic app\n\n\n\n\n  \n    \n      \n    \n        \n        \n        \n        \n        \n        \n        \n        \n    \n    \n   \n    \n      \n  \n        \n    \n    \n  \n        \n    \n    \n  \n        \n    \n      \n  \n        \n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n        \n    \n\n\n        Loading ITables v2.7.3 from the internet...\n        (need help?)"
-  },
-  {
-    "objectID": "posts/26/0326-python-engineering-repos-overview/index.html#python-packages",
-    "href": "posts/26/0326-python-engineering-repos-overview/index.html#python-packages",
-    "title": "Python Engineering Repos Overview",
-    "section": "Python packages",
-    "text": "Python packages\nThese are library style packages. They do not involve any data storage and do not present as an app. They are backend packages used be the apps and API to do things.\n\n\ngh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook --topic package\n\n\n\n\n  \n    \n      \n    \n        \n        \n        \n        \n        \n        \n        \n        \n    \n    \n   \n    \n      \n  \n        \n    \n    \n  \n        \n    \n    \n  \n        \n    \n      \n  \n        \n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n        \n    \n\n\n        Loading ITables v2.7.3 from the internet...\n        (need help?)"
-  },
-  {
-    "objectID": "posts/26/0326-python-engineering-repos-overview/index.html#monorepos",
-    "href": "posts/26/0326-python-engineering-repos-overview/index.html#monorepos",
-    "title": "Python Engineering Repos Overview",
-    "section": "Monorepos",
-    "text": "Monorepos\nThis means that they contain multiple packages. Some may be library packages and some deployed apps. maxfordham/digital-schedules is a monorepo with library packages and the aectemplater api as a package along with the aectemplater-ui package which essentially contains all the source code for the digital-schedules related apps on toolox.\n\ncmd = \"gh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook --topic monorepo\"\ndisplay_gh_result(cmd)\n\ngh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook --topic monorepo\n\n\n\n\n  \n    \n      \n    \n        \n        \n        \n        \n        \n        \n        \n        \n    \n    \n   \n    \n      \n  \n        \n    \n    \n  \n        \n    \n    \n  \n        \n    \n      \n  \n        \n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n        \n    \n\n\n        Loading ITables v2.7.3 from the internet...\n        (need help?)"
-  },
-  {
-    "objectID": "posts/26/0326-python-engineering-repos-overview/index.html#pyrevit-revit-customisation-scripts",
-    "href": "posts/26/0326-python-engineering-repos-overview/index.html#pyrevit-revit-customisation-scripts",
-    "title": "Python Engineering Repos Overview",
-    "section": "pyRevit (Revit customisation scripts)",
-    "text": "pyRevit (Revit customisation scripts)\n\ncmd = \"gh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook --topic pyrevit\"\ndisplay_gh_result(cmd)\n\ngh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook --topic pyrevit\n\n\n\n\n  \n    \n      \n    \n        \n        \n        \n        \n        \n        \n        \n        \n    \n    \n   \n    \n      \n  \n        \n    \n    \n  \n        \n    \n    \n  \n        \n    \n      \n  \n        \n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n        \n    \n\n\n        Loading ITables v2.7.3 from the internet...\n        (need help?)"
-  },
-  {
-    "objectID": "posts/26/0326-python-engineering-repos-overview/index.html#other",
-    "href": "posts/26/0326-python-engineering-repos-overview/index.html#other",
-    "title": "Python Engineering Repos Overview",
-    "section": "Other",
-    "text": "Other\nmaxfordham/jupyterhub-maxfordham is an ansible deployment repo originally setup by quantstack that is used for deploying all of the jupyterhub and aectemplater-api (FastAPI) servers (dev and prod).\n\ncmd = \"gh repo list maxfordham -L 100 --no-archived --topic deployment\"\ndisplay_gh_result(cmd)\n\ngh repo list maxfordham -L 100 --no-archived --topic deployment\n\n\n\n\n  \n    \n      \n    \n        \n        \n        \n        \n        \n        \n        \n        \n    \n    \n   \n    \n      \n  \n        \n    \n    \n  \n        \n    \n    \n  \n        \n    \n      \n  \n        \n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n        \n    \n\n\n        Loading ITables v2.7.3 from the internet...\n        (need help?)"
-  },
-  {
-    "objectID": "posts/26/0326-python-engineering-repos-overview/index.html#all-python-repos",
-    "href": "posts/26/0326-python-engineering-repos-overview/index.html#all-python-repos",
-    "title": "Python Engineering Repos Overview",
-    "section": "All python repos",
-    "text": "All python repos\n\n\n\n\n\n\nNote\n\n\n\nThis command is a catch-all for all python / jupyter-notebook based repos. Provided all the topics are set correctly, the above views summed together should approx equal this one ideally, but that probs isn’t the case!\n\n\n\ncmd = \"gh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook\"\ndisplay_gh_result(cmd)\n\ngh repo list maxfordham -L 100 --no-archived -l python,jupyter-notebook\n\n\n\n\n  \n    \n      \n    \n        \n        \n        \n        \n        \n        \n        \n        \n    \n    \n   \n    \n      \n  \n        \n    \n    \n  \n        \n    \n    \n  \n        \n    \n      \n  \n        \n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n\n            \n                \n                \n            \n        \n    \n\n\n        Loading ITables v2.7.3 from the internet...\n        (need help?)"
+    "objectID": "posts/26/0402-WA-JG-handover/index.html#pyrevit",
+    "href": "posts/26/0402-WA-JG-handover/index.html#pyrevit",
+    "title": "WA-JG-Handover Notes",
+    "section": "",
+    "text": "We need the following repositories available in the Y:\\Revit\\MF Scripts directory:\n\npyRevit-mxf\npyRevitDigitalSchedules\n\n\n\nRead the README file in:\nY:\\Revit\\MF Scripts\n\n\n\n\nClone pyRevit-mxf and pyRevitDigitalSchedules\nMap the pyRevit extension to the directory in pyRevit settings inside Revit\nEnable Load beta tools in Core Settings\nMake changes, press buttons, print to console, and review output\nUse is_beta: true to hide development buttons"
   }
 ]

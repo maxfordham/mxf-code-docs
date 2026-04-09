@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="John Gunstone">
-<meta name="dcterms.date" content="2024-03-12">
+<meta name="author" content="Waqas Arshad">
+<meta name="dcterms.date" content="2026-04-02">
 
-<title>Digital Schedules Released – mxf-code-docs</title>
+<title>WA-JG-Handover Notes – mxf-code-docs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -279,47 +279,53 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#pyrevit" id="toc-pyrevit" class="nav-link active" data-scroll-target="#pyrevit">PyRevit</a>
+  <ul class="collapse">
+  <li><a href="#deployment" id="toc-deployment" class="nav-link" data-scroll-target="#deployment">Deployment</a></li>
+  <li><a href="#development-setup" id="toc-development-setup" class="nav-link" data-scroll-target="#development-setup">Development setup</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Digital Schedules Released</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">presentation</div>
-    <div class="quarto-category">release</div>
-  </div>
-  </div>
+<h1 class="title">WA-JG-Handover Notes</h1>
+</div>
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta">
 
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>John Gunstone </p>
+             <p>Waqas Arshad </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 12, 2024</p>
+      <p class="date">April 2, 2026</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">March 12, 2024</p>
+      <p class="date-modified">April 2, 2026</p>
     </div>
   </div>
     
@@ -330,12 +336,31 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Digital Schedules formally released to the practice. Engineers are directed to the <a href="https://wiki.maxfordham.com/Main/DigitalSchedulesDocumentation">Wiki Documentation</a>. This links to which links to the software <a href="https://solid-memory-vyenw2o.pages.github.io/">GH docs</a> that is built on GH and then pulled onto the <a href="https://wiki.maxfordham.com/digital-schedules-docs/aectemplater/index.html">Wiki</a> which is embedded below.</p>
-<div>
-<iframe width="1200" height="800" src="https://wiki.maxfordham.com/digital-schedules-docs/aectemplater/index.html" data-external="1"></iframe>
-</div>
+<section id="pyrevit" class="level2">
+<h2 class="anchored" data-anchor-id="pyrevit">PyRevit</h2>
+<p>We need the following repositories available in the <code>Y:\Revit\MF Scripts</code> directory:</p>
+<ul>
+<li><code>pyRevit-mxf</code></li>
+<li><code>pyRevitDigitalSchedules</code></li>
+</ul>
+<section id="deployment" class="level3">
+<h3 class="anchored" data-anchor-id="deployment">Deployment</h3>
+<p>Read the <code>README</code> file in:</p>
+<p><code>Y:\Revit\MF Scripts</code></p>
+</section>
+<section id="development-setup" class="level3">
+<h3 class="anchored" data-anchor-id="development-setup">Development setup</h3>
+<ul>
+<li>Clone <code>pyRevit-mxf</code> and <code>pyRevitDigitalSchedules</code></li>
+<li>Map the pyRevit extension to the directory in <strong>pyRevit settings</strong> inside Revit</li>
+<li>Enable <strong>Load beta tools</strong> in <strong>Core Settings</strong></li>
+<li>Make changes, press buttons, print to console, and review output</li>
+<li>Use <code>is_beta: true</code> to hide development buttons</li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
