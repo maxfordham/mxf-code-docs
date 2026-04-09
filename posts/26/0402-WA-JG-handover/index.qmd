@@ -1,0 +1,27 @@
+---
+title: WA-JG-Handover Notes
+author: "Waqas Arshad"
+date: "2026-04-02"
+date-modified: "2026-04-02"
+---
+
+## PyRevit
+
+We need the following repositories available in the `Y:\Revit\MF Scripts` directory:
+
+- `pyRevit-mxf`
+- `pyRevitDigitalSchedules`
+
+### Deployment
+
+Read the `README` file in:
+
+`Y:\Revit\MF Scripts`
+
+### Development setup
+
+- Clone `pyRevit-mxf` and `pyRevitDigitalSchedules`
+- Map the pyRevit extension to the directory in **pyRevit settings** inside Revit
+- Enable **Load beta tools** in **Core Settings**
+- Make changes, press buttons, print to console, and review output
+- Use `is_beta: true` to hide development buttons
