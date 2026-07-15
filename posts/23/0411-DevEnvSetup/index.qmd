@@ -1,8 +1,7 @@
 ---
 title: "Developer Environment Setup"
-author: "John Gunstone"
 date: "2023-04-11"
-date-modified: "2025-09-08"
+date-modified: "2026-07-15"
 toc-depth: 3
 categories: [dev-setup]
 image: https://github.com/maxfordham/visual-design/blob/main/icons/engineer-icon.png?raw=true
@@ -37,6 +36,8 @@ Hyper-V should already be enabled on your laptop but if you are having issues th
 couldn't get wsl working on a fresh install. 
 to fix: https://github.com/microsoft/WSL/issues/9521#issuecomment-2385289848
 ::: 
+
+Once wsl is installed, restart your machine and then run the following command in an admin command prompt to install Ubuntu:
 
 ```cmd
 wsl --install -d Ubuntu
@@ -131,7 +132,7 @@ but for simplicity we recommend using `pixi-global` to manage these extra clis.
 ### setup repos for development
 
 ```bash
-gh auth # follow authentification workflow
+gh auth login # follow authentification workflow
 gh repo list maxfordham
 gh repo clone maxfordham/digital-schedules
 ```
